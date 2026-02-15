@@ -1,33 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Clock } from "lucide-react"
-
-const posts = [
-  {
-    image: "/images/blog-accreditation.jpg",
-    category: "Accreditation",
-    title: "5 Steps to Prepare for JCI Accreditation in Nigeria",
-    excerpt:
-      "A practical roadmap for healthcare facilities looking to achieve international accreditation standards and elevate patient care quality.",
-    readTime: "8 min read",
-  },
-  {
-    image: "/images/blog-management.jpg",
-    category: "Management",
-    title: "The Future of Healthcare Management in West Africa",
-    excerpt:
-      "Exploring emerging trends, technology adoption, and leadership strategies shaping the next decade of healthcare delivery.",
-    readTime: "6 min read",
-  },
-  {
-    image: "/images/blog-revenue.jpg",
-    category: "Finance",
-    title: "Improving Hospital Revenue Cycle",
-    excerpt:
-      "Proven strategies to optimize billing, reduce claim denials, and strengthen financial performance across your healthcare organization.",
-    readTime: "10 min read",
-  },
-]
+import { BLOG_POSTS } from "@/lib/blog-posts"
 
 export function BlogSection() {
   return (
@@ -47,16 +21,16 @@ export function BlogSection() {
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
+          {BLOG_POSTS.map((post) => (
             <Link
               key={post.title}
-              href="#"
+              href={`/blog/${post.slug}`}
               className="group overflow-hidden rounded-xl border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
                   src={post.image}
-                  alt={post.title}
+                  alt={post.imageAlt}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

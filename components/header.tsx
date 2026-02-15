@@ -22,11 +22,11 @@ const services = [
 ]
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services", hasDropdown: true },
-  { label: "Resources", href: "#insights" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/services", hasDropdown: true },
+  { label: "Resources", href: "/#insights" },
+  { label: "Contact", href: "/#contact" },
 ]
 
 export function Header() {
@@ -50,7 +50,7 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
         {/* Logo */}
-        <Link href="#" className="flex flex-col">
+        <Link href="/" className="flex flex-col">
           <span className="text-xl font-bold tracking-tight text-primary">
             QHSConsultant
           </span>
@@ -77,7 +77,7 @@ export function Header() {
                   {services.map((s) => (
                     <Link
                       key={s}
-                      href="#services"
+                      href="/services"
                       className="block rounded-md px-3 py-2 text-sm text-card-foreground transition-colors hover:bg-muted hover:text-primary"
                     >
                       {s}
@@ -92,11 +92,11 @@ export function Header() {
         {/* Right side */}
         <div className="hidden items-center gap-4 lg:flex">
           <a
-            href="tel:+2349030508264"
+            href="tel:+12526914076"
             className="flex items-center gap-2 text-sm font-medium text-foreground"
           >
             <Phone className="h-4 w-4 text-primary" />
-            +234 903 050 8264
+            +1 (252) 691 4076
           </a>
           <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
             Free Consultation
@@ -134,7 +134,7 @@ export function Header() {
                       {services.map((s) => (
                         <Link
                           key={s}
-                          href="#services"
+                          href="/services"
                           className="block py-1.5 text-sm text-muted-foreground hover:text-primary"
                           onClick={() => setMobileOpen(false)}
                         >
@@ -157,11 +157,11 @@ export function Header() {
           ))}
           <div className="mt-4 flex flex-col gap-3">
             <a
-              href="tel:+2349030508264"
+              href="tel:+12526914076"
               className="flex items-center gap-2 text-sm font-medium text-foreground"
             >
               <Phone className="h-4 w-4 text-primary" />
-              +234 903 050 8264
+              +1 (252) 691 4076
             </a>
             <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
               Free Consultation

@@ -17,7 +17,7 @@ const features = [
   {
     title: "Hospital Operations & Turnaround",
     description:
-      "We specialize in turning underperforming facilities into efficient, patient-centered organizations. Our operational frameworks have delivered measurable improvements across 50+ hospitals.",
+      "We specialize in turning underperforming facilities into efficient, patient-centered organizations. Our operational frameworks have delivered measurable improvements across 10+ hospitals.",
     bullets: [
       "Workflow optimization and lean management",
       "Revenue cycle improvement",
@@ -91,8 +91,11 @@ export function FeaturedServices() {
                       ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90"
                       : "bg-background text-foreground hover:bg-background/90"
                   }
+                  asChild
                 >
-                  {feature.cta}
+                  <a href={idx === 0 ? "tel:+12526914076" : "/services#operations"}>
+                    {feature.cta}
+                  </a>
                 </Button>
               </div>
             </div>

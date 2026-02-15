@@ -15,93 +15,23 @@ import {
   type LucideIcon,
 } from "lucide-react"
 import Link from "next/link"
+import { SERVICES } from "@/lib/services-data"
 
-interface Service {
-  icon: LucideIcon
-  title: string
-  description: string
+const iconMap: Record<string, LucideIcon> = {
+  accreditation: Award,
+  operations: Building2,
+  strategic: Target,
+  clinical: Stethoscope,
+  orthopedic: Bone,
+  financial: DollarSign,
+  hr: Users,
+  compliance: ShieldCheck,
+  technology: Monitor,
+  corporate: Briefcase,
+  investment: TrendingUp,
+  training: GraduationCap,
+  interim: UserCheck,
 }
-
-const services: Service[] = [
-  {
-    icon: Award,
-    title: "Accreditation & Quality Management",
-    description:
-      "Expert guidance through JCI and SQH accreditation processes with proven methodologies.",
-  },
-  {
-    icon: Building2,
-    title: "Hospital Operations & Management",
-    description:
-      "Streamline operations and improve efficiency across your healthcare facility.",
-  },
-  {
-    icon: Target,
-    title: "Strategic Planning & Development",
-    description:
-      "Develop actionable strategies to drive growth and long-term sustainability.",
-  },
-  {
-    icon: Stethoscope,
-    title: "Clinical Governance & Medical Staff",
-    description:
-      "Establish robust clinical governance frameworks and credentialing systems.",
-  },
-  {
-    icon: Bone,
-    title: "Orthopedic Service Line Consulting",
-    description:
-      "Specialized consulting for orthopedic departments and service lines.",
-  },
-  {
-    icon: DollarSign,
-    title: "Financial & Revenue Cycle",
-    description:
-      "Optimize revenue cycles and financial performance for sustainable growth.",
-  },
-  {
-    icon: Users,
-    title: "Human Resource Management",
-    description:
-      "Build high-performing healthcare teams with talent strategies that work.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Compliance & Risk Management",
-    description:
-      "Navigate regulatory requirements and minimize operational risks effectively.",
-  },
-  {
-    icon: Monitor,
-    title: "Technology & Information Systems",
-    description:
-      "Leverage health IT solutions to improve care delivery and data management.",
-  },
-  {
-    icon: Briefcase,
-    title: "Corporate Healthcare Advisory",
-    description:
-      "Strategic advisory services for corporate healthcare programs and benefits.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Investment & Due Diligence",
-    description:
-      "Comprehensive due diligence services for healthcare investment decisions.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Training & Capacity Building",
-    description:
-      "Upskill your workforce with tailored training and development programs.",
-  },
-  {
-    icon: UserCheck,
-    title: "Interim Management Services",
-    description:
-      "Experienced interim leaders to guide your facility through transitions.",
-  },
-]
 
 export function ServicesGrid() {
   return (
@@ -122,26 +52,29 @@ export function ServicesGrid() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <Link
-              key={service.title}
-              href="#"
-              className="group rounded-xl border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
-                <service.icon className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="mb-2 text-lg font-semibold text-card-foreground">
-                {service.title}
-              </h3>
-              <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                {service.description}
-              </p>
-              <span className="inline-flex items-center text-sm font-medium text-primary transition-colors group-hover:underline">
-                {"Learn More \u2192"}
-              </span>
-            </Link>
-          ))}
+          {SERVICES.map((service) => {
+            const Icon = iconMap[service.id] ?? Award
+            return (
+              <Link
+                key={service.id}
+                href={`/services#${service.id}`}
+                className="group rounded-xl border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
+                  <Icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="mb-2 text-lg font-semibold text-card-foreground">
+                  {service.title}
+                </h3>
+                <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                  {service.shortDescription}
+                </p>
+                <span className="inline-flex items-center text-sm font-medium text-primary transition-colors group-hover:underline">
+                  {"Learn More \u2192"}
+                </span>
+              </Link>
+            )
+          })}
         </div>
       </div>
     </section>

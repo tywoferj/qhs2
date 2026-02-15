@@ -2,11 +2,11 @@ import Link from "next/link"
 import { MapPin, Phone, Mail } from "lucide-react"
 
 const quickLinks = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Resources", href: "#insights" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/services" },
+  { label: "Resources", href: "/#insights" },
+  { label: "Contact", href: "/#contact" },
 ]
 
 const serviceLinks = [
@@ -26,7 +26,7 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <Link href="#" className="inline-block">
+            <Link href="/" className="inline-block">
               <span className="text-xl font-bold text-primary-foreground">
                 QHSConsultant
               </span>
@@ -106,12 +106,13 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                <a
-                  href="tel:+2349030508264"
-                  className="text-sm text-background/60 hover:text-background"
-                >
-                  +234 903 050 8264
-                </a>
+                <span className="text-sm text-background/60">
+                  Discuss services:{" "}
+                  <a href="tel:+12526914076" className="hover:text-background">+1 (252) 691 4076</a>
+                  <br />
+                  Book with Dr Onakoya:{" "}
+                  <a href="tel:+15732647695" className="hover:text-background">+1 (573) 264 7695</a>
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
@@ -135,13 +136,13 @@ export function Footer() {
           </p>
           <div className="flex gap-6">
             <Link
-              href="#"
+              href="/privacy-policy"
               className="text-xs text-background/40 transition-colors hover:text-background/70"
             >
               Privacy Policy
             </Link>
             <Link
-              href="#"
+              href="/terms-of-service"
               className="text-xs text-background/40 transition-colors hover:text-background/70"
             >
               Terms of Service

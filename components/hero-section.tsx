@@ -1,11 +1,12 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Award, Building2, Clock } from "lucide-react"
+import { IMAGES } from "@/lib/images"
 
 const trustBadges = [
   { icon: Clock, label: "30+ Years", sub: "Experience" },
   { icon: Award, label: "JCI Certified", sub: "Experts" },
-  { icon: Building2, label: "50+ Hospitals", sub: "Transformed" },
+  { icon: Building2, label: "10+ Hospitals", sub: "Transformed" },
 ]
 
 export function HeroSection() {
@@ -34,15 +35,17 @@ export function HeroSection() {
             <Button
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90"
+              asChild
             >
-              Schedule Free Consultation
+              <a href="tel:+15732647695">Book with Dr Onakoya</a>
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="border-primary text-primary hover:bg-primary/5"
+              asChild
             >
-              Explore Services
+              <a href="/services">Explore Services</a>
             </Button>
           </div>
 
@@ -66,8 +69,8 @@ export function HeroSection() {
         <div className="relative flex-1 lg:max-w-[40%]">
           <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl">
             <Image
-              src="/images/hero-healthcare.jpg"
-              alt="Modern healthcare facility interior"
+              src={IMAGES.hero}
+              alt="Modern healthcare facility interior - Nigeria healthcare consultancy"
               width={800}
               height={600}
               className="h-auto w-full object-cover"

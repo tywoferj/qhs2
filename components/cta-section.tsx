@@ -1,10 +1,13 @@
 import { Button } from "@/components/ui/button"
 import { Phone } from "lucide-react"
+import Link from "next/link"
+
+const PHONE_SERVICES = "+12526914076"
+const PHONE_APPOINTMENT = "+15732647695"
 
 export function CtaSection() {
   return (
     <section id="contact" className="relative overflow-hidden bg-foreground py-20 lg:py-28">
-      {/* Decorative elements */}
       <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-primary/10" />
       <div className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-secondary/10" />
 
@@ -20,20 +23,33 @@ export function CtaSection() {
           <Button
             size="lg"
             className="bg-primary text-primary-foreground hover:bg-primary/90"
+            asChild
           >
-            Get Started Today
+            <Link href="/services">Explore Our Services</Link>
           </Button>
         </div>
-        <p className="mt-6 flex items-center justify-center gap-2 text-sm text-background/60">
-          <Phone className="h-4 w-4" />
-          Or call:{" "}
-          <a
-            href="tel:+2349030508264"
-            className="font-medium text-background/80 underline underline-offset-4 hover:text-background"
-          >
-            +234 903 050 8264
-          </a>
-        </p>
+        <div className="mt-6 space-y-2 text-sm text-background/60">
+          <p className="flex flex-wrap items-center justify-center gap-2">
+            <Phone className="h-4 w-4" />
+            <span>Discuss our services:</span>
+            <a
+              href={`tel:${PHONE_SERVICES}`}
+              className="font-medium text-background/80 underline underline-offset-4 hover:text-background"
+            >
+              +1 (252) 691 4076
+            </a>
+          </p>
+          <p className="flex flex-wrap items-center justify-center gap-2">
+            <Phone className="h-4 w-4" />
+            <span>Book appointment with Dr Onakoya:</span>
+            <a
+              href={`tel:${PHONE_APPOINTMENT}`}
+              className="font-medium text-background/80 underline underline-offset-4 hover:text-background"
+            >
+              +1 (573) 264 7695
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   )
