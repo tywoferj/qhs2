@@ -1,26 +1,46 @@
 /**
  * Image URLs for healthcare consultancy site.
- * Uses Unsplash for reliable loading; replace with /images/* when you add local assets.
+ * Services, About, and Contact use unique images. Sourced from Pexels and Unsplash
+ * for diverse representation (African/Black healthcare, Nigerian hospitals, modern facilities).
+ * Replace with /images/* when you have local Nigerian hospital photos.
  */
 const UNSPLASH = "https://images.unsplash.com"
+const PEXELS = "https://images.pexels.com/photos"
+
+const u = (id: string, w = 800, q = 85) =>
+  `${UNSPLASH}/photo-${id}?w=${w}&q=${q}`
+const p = (id: number, w = 800) =>
+  `${PEXELS}/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`
+
+/** Hero slider: 1 = medical team, 2 = modern clinic interior, 3 = modern clinic. Add your images to public/images/ */
+const HERO_SLIDE_FALLBACK_TEAM = u("1519494026892-80bbd2d6fd0d")
+const HERO_SLIDE_FALLBACK_CLINIC = u("1582750433449-648ed127bb54")
+const HERO_SLIDE_3_MODERN_CLINIC = u("1579684385127-1ef15d508118")
+export const HERO_SLIDER_IMAGES = [
+  "/images/hero-slide-1.png",   // Diverse medical team in hospital hallway
+  "/images/hero-slide-2.png",   // Modern clinic interior (reception, etc.)
+  HERO_SLIDE_3_MODERN_CLINIC,  // Modern clinic (third slide – always loads)
+] as const
+export { HERO_SLIDE_FALLBACK_TEAM, HERO_SLIDE_FALLBACK_CLINIC }
 
 export const IMAGES = {
-  hero: `${UNSPLASH}/photo-1519494026892-80bbd2d6fd0d?w=800&q=85`,
-  blogAccreditation: `${UNSPLASH}/photo-1579684385127-1ef15d508118?w=600&q=80`,
-  blogManagement: `${UNSPLASH}/photo-1559757148-5c350d0d3c56?w=600&q=80`,
-  blogRevenue: `${UNSPLASH}/photo-1576091160399-112ba8d25d1d?w=600&q=80`,
-  // Services – unique image per service for SEO and engagement
-  serviceAccreditation: `${UNSPLASH}/photo-1579684385127-1ef15d508118?w=800&q=85`,
-  serviceOperations: `${UNSPLASH}/photo-1559757148-5c350d0d3c56?w=800&q=85`,
-  serviceStrategic: `${UNSPLASH}/photo-1576091160399-112ba8d25d1d?w=800&q=85`,
-  serviceClinical: `${UNSPLASH}/photo-1631217868264-e5b90bb7e133?w=800&q=85`,
-  serviceOrthopedic: `${UNSPLASH}/photo-1579684385127-1ef15d508118?w=800&q=85`,
-  serviceFinancial: `${UNSPLASH}/photo-1554224155-6726b3ff858f?w=800&q=85`,
-  serviceHR: `${UNSPLASH}/photo-1522071820081-009f0129c71c?w=800&q=85`,
-  serviceCompliance: `${UNSPLASH}/photo-1450101499163-c8848c66ca85?w=800&q=85`,
-  serviceTechnology: `${UNSPLASH}/photo-1576091160399-112ba8d25d1d?w=800&q=85`,
-  serviceCorporate: `${UNSPLASH}/photo-1552664730-d307ca884978?w=800&q=85`,
-  serviceInvestment: `${UNSPLASH}/photo-1560472354-b33ff0c44a43?w=800&q=85`,
-  serviceTraining: `${UNSPLASH}/photo-1523240795612-9a054b0db644?w=800&q=85`,
-  serviceInterim: `${UNSPLASH}/photo-1579684385127-1ef15d508118?w=800&q=85`,
+  hero: u("1519494026892-80bbd2d6fd0d"),
+  blogAccreditation: u("1519494026892-80bbd2d6fd0d", 600),
+  blogManagement: u("1582750433449-648ed127bb54", 600),
+  blogRevenue: u("1579684385127-1ef15d508118", 600),
+
+  // About Us – healthcare team / facility
+  aboutPage: u("1519494026892-80bbd2d6fd0d"),
+
+  // Contact Us – welcoming healthcare
+  contactPage: u("1582750433449-648ed127bb54"),
+
+  // Services – Unsplash numeric-hash format so images load
+  serviceHealthcareStrategy: u("1579684385127-1ef15d508118"),
+  serviceClinicalStrategy: u("1576091160399-112ba8d25d1d"),
+  serviceMedicalTraining: u("1559757148-5c350d0d3c56"),
+  serviceHealthcareQuality: u("1519494026892-80bbd2d6fd0d"),
+  serviceAccreditation: u("1582750433449-648ed127bb54"),
+  serviceClinicalRiskGovernance: u("1450101499163-c8848c66ca85"),
+  serviceMedicalEquipmentSourcing: u("1552664730-d307ca884978"),
 } as const

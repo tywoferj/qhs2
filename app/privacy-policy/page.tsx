@@ -4,9 +4,9 @@ import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | QHSConsultant – Healthcare Consultancy Nigeria",
+  title: "Privacy Policy | Q.H.S Consultants Ltd. – Healthcare Consultancy Nigeria",
   description:
-    "Privacy policy for QHSConsultant. How we collect, use, and protect your information when you use our healthcare consultancy services in Nigeria.",
+    "Privacy policy for Quality Healthcare Services (Q.H.S) Consultants Ltd. How we collect, use, and protect your information when you use our consultancy and advisory services in Nigeria.",
 }
 
 export default function PrivacyPolicyPage() {
@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
           <div className="prose prose-neutral dark:prose-invert mt-10 max-w-none">
             <h2 className="text-xl font-semibold text-foreground">1. Introduction</h2>
             <p className="text-muted-foreground">
-              QHSConsultant (“we,” “our,” or “us”) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our healthcare consultancy services in Nigeria, or contact us by phone, email, or other means. Please read this policy carefully.
+              Quality Healthcare Services (Q.H.S) Consultants Ltd. (“we,” “our,” or “us”) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our consultancy and advisory services in Nigeria, or contact us by phone, email, or other means. Please read this policy carefully.
             </p>
 
             <h2 className="mt-8 text-xl font-semibold text-foreground">2. Information We Collect</h2>

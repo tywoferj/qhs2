@@ -1,7 +1,6 @@
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Award, Building2, Clock } from "lucide-react"
-import { IMAGES } from "@/lib/images"
+import { HeroSlider } from "@/components/hero-slider"
 
 const trustBadges = [
   { icon: Clock, label: "30+ Years", sub: "Experience" },
@@ -65,23 +64,11 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Right image */}
-        <div className="relative flex-1 lg:max-w-[40%]">
-          <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl">
-            <Image
-              src={IMAGES.hero}
-              alt="Modern healthcare facility interior - Nigeria healthcare consultancy"
-              width={800}
-              height={600}
-              className="h-auto w-full object-cover"
-              priority
-              quality={85}
-              sizes="(max-width: 1024px) 100vw, 40vw"
-            />
-            <div className="absolute inset-0 bg-primary/20" />
-          </div>
+        {/* Right image – slider, slightly larger */}
+        <div className="relative flex-1 lg:max-w-[48%] lg:min-h-[380px]">
+          <HeroSlider />
           {/* Floating stat card */}
-          <div className="absolute -bottom-4 -left-4 rounded-xl bg-card p-4 shadow-lg md:-bottom-6 md:-left-6">
+          <div className="absolute -bottom-4 -left-4 z-10 rounded-xl bg-card p-4 shadow-lg md:-bottom-6 md:-left-6">
             <p className="text-2xl font-bold text-primary">98%</p>
             <p className="text-xs text-muted-foreground">Success Rate</p>
           </div>

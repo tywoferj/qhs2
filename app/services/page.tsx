@@ -8,13 +8,13 @@ import { CheckCircle2, Phone } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Healthcare Consultancy Services in Nigeria | JCI, Operations & Strategy | QHSConsultant",
+  title: "Consultancy & Advisory Services | Q.H.S Consultants Ltd.",
   description:
-    "Expert healthcare consultancy in Nigeria: JCI & SQH accreditation, hospital operations, strategic planning, revenue cycle, training & interim management. Call +1 (252) 691 4076.",
+    "Quality Healthcare Services (Q.H.S) Consultants Ltd.: healthcare strategy, clinical strategy, medical training, healthcare quality, accreditation, clinical risk and governance, medical equipment sourcing. Call +1 (252) 691 4076.",
   openGraph: {
-    title: "Healthcare Consultancy Services in Nigeria | QHSConsultant",
+    title: "Consultancy & Advisory Services | Q.H.S Consultants Ltd.",
     description:
-      "JCI accreditation, hospital operations, strategic planning, and more. Trusted by 10+ hospitals across Nigeria and West Africa.",
+      "Healthcare strategy, clinical strategy, medical training, healthcare quality, accreditation, clinical risk and governance, medical equipment sourcing.",
   },
 }
 
@@ -76,9 +76,11 @@ export default function ServicesPage() {
                   </div>
                 </div>
                 <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                  <h2 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
-                    {service.title}
-                  </h2>
+                  <Link href={`/services/${service.id}`}>
+                    <h2 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl hover:text-primary hover:underline">
+                      {service.title}
+                    </h2>
+                  </Link>
                   <p className="mt-4 text-muted-foreground">
                     {service.longDescription}
                   </p>

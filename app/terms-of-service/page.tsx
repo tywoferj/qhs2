@@ -4,9 +4,9 @@ import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Terms of Service | QHSConsultant – Healthcare Consultancy Nigeria",
+  title: "Terms of Service | Q.H.S Consultants Ltd. – Healthcare Consultancy Nigeria",
   description:
-    "Terms of service for QHSConsultant healthcare consultancy. Conditions for using our accreditation, operations, and consulting services in Nigeria.",
+    "Terms of service for Quality Healthcare Services (Q.H.S) Consultants Ltd. Conditions for using our consultancy and advisory services in Nigeria.",
 }
 
 export default function TermsOfServicePage() {
@@ -31,12 +31,12 @@ export default function TermsOfServicePage() {
           <div className="prose prose-neutral dark:prose-invert mt-10 max-w-none">
             <h2 className="text-xl font-semibold text-foreground">1. Agreement to Terms</h2>
             <p className="text-muted-foreground">
-              By accessing or using the QHSConsultant website and services, you agree to be bound by these Terms of Service. If you do not agree, please do not use our website or engage our healthcare consultancy, accreditation, or advisory services.
+              By accessing or using the Quality Healthcare Services (Q.H.S) Consultants Ltd. website and services, you agree to be bound by these Terms of Service. If you do not agree, please do not use our website or engage our consultancy and advisory services.
             </p>
 
             <h2 className="mt-8 text-xl font-semibold text-foreground">2. Services</h2>
             <p className="text-muted-foreground">
-              QHSConsultant provides healthcare consultancy services in Nigeria and the West African region, including but not limited to JCI and SQH accreditation support, hospital operations and management, strategic planning, clinical governance, financial and revenue cycle consulting, training, and interim management. Specific scope, deliverables, and fees are set out in separate agreements or statements of work.
+              Quality Healthcare Services (Q.H.S) Consultants Ltd. provides consultancy and advisory services in Nigeria and the West African region, including healthcare strategy, clinical strategy, medical training, healthcare quality, accreditation, clinical risk and governance, and medical equipment sourcing. Specific scope, deliverables, and fees are set out in separate agreements or statements of work.
             </p>
 
             <h2 className="mt-8 text-xl font-semibold text-foreground">3. Use of Website and Information</h2>
@@ -51,7 +51,7 @@ export default function TermsOfServicePage() {
 
             <h2 className="mt-8 text-xl font-semibold text-foreground">5. Limitation of Liability</h2>
             <p className="text-muted-foreground">
-              To the fullest extent permitted by law, QHSConsultant and its consultants shall not be liable for any indirect, incidental, or consequential damages arising from your use of our website or services. Our total liability for any claim shall not exceed the fees paid by you for the relevant engagement.
+              To the fullest extent permitted by law, Quality Healthcare Services (Q.H.S) Consultants Ltd. and its consultants shall not be liable for any indirect, incidental, or consequential damages arising from your use of our website or services. Our total liability for any claim shall not exceed the fees paid by you for the relevant engagement.
             </p>
 
             <h2 className="mt-8 text-xl font-semibold text-foreground">6. Contact and Appointments</h2>

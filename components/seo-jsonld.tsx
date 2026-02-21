@@ -6,22 +6,30 @@ export function SeoJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "QHSConsultant",
+    name: "Quality Healthcare Services (Q.H.S) Consultants Ltd.",
     description:
-      "Healthcare consultancy in Nigeria. JCI & SQH accreditation, hospital operations, strategic planning, and healthcare consulting across Nigeria and West Africa.",
+      "Consultancy and advisory in healthcare strategy, clinical strategy, medical training, healthcare quality, accreditation, clinical risk and governance, and medical equipment sourcing in Nigeria and West Africa.",
     url: "https://qhsconsultant.com",
     telephone: "+1-252-691-4076",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "57B, Hibiscus Street, M.K.O Abiola Gardens, C.B.D",
+      addressLocality: "Ikeja",
+      addressCountry: "NG",
+    },
     areaServed: { "@type": "Country", name: "Nigeria" },
     serviceArea: [
       { "@type": "Country", name: "Nigeria" },
       { "@type": "Place", name: "West Africa" },
     ],
     knowsAbout: [
-      "JCI accreditation",
-      "SQH accreditation",
-      "Hospital operations",
-      "Healthcare management Nigeria",
-      "Healthcare consultancy",
+      "Healthcare strategy",
+      "Clinical strategy",
+      "Medical training",
+      "Healthcare quality",
+      "Accreditation",
+      "Clinical risk and governance",
+      "Medical equipment sourcing",
     ],
   }
 

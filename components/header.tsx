@@ -4,29 +4,15 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Phone, Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
-const services = [
-  "Accreditation & Quality Management",
-  "Hospital Operations & Management",
-  "Strategic Planning & Development",
-  "Clinical Governance & Medical Staff",
-  "Orthopedic Service Line Consulting",
-  "Financial & Revenue Cycle",
-  "Human Resource Management",
-  "Compliance & Risk Management",
-  "Technology & Information Systems",
-  "Corporate Healthcare Advisory",
-  "Investment & Due Diligence",
-  "Training & Capacity Building",
-  "Interim Management Services",
-]
+import { SERVICES } from "@/lib/services-data"
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/#about" },
+  { label: "About", href: "/about" },
   { label: "Services", href: "/services", hasDropdown: true },
+  { label: "Board", href: "/board" },
   { label: "Resources", href: "/#insights" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ]
 
 export function Header() {
@@ -52,10 +38,10 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex flex-col">
           <span className="text-xl font-bold tracking-tight text-primary">
-            QHSConsultant
+            Q.H.S Consultants Ltd.
           </span>
           <span className="text-[11px] font-medium tracking-widest text-muted-foreground uppercase">
-            Healthcare Excellence
+            Quality Healthcare Services
           </span>
         </Link>
 
@@ -74,13 +60,13 @@ export function Header() {
               </Link>
               {link.hasDropdown && (
                 <div className="invisible absolute left-0 top-full z-50 w-72 rounded-lg border bg-card p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
-                  {services.map((s) => (
+                  {SERVICES.map((s) => (
                     <Link
-                      key={s}
-                      href="/services"
+                      key={s.id}
+                      href={`/services/${s.id}`}
                       className="block rounded-md px-3 py-2 text-sm text-card-foreground transition-colors hover:bg-muted hover:text-primary"
                     >
-                      {s}
+                      {s.title}
                     </Link>
                   ))}
                 </div>
@@ -98,8 +84,8 @@ export function Header() {
             <Phone className="h-4 w-4 text-primary" />
             +1 (252) 691 4076
           </a>
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-            Free Consultation
+          <Button className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+            <a href="/#contact">Free Consultation</a>
           </Button>
         </div>
 
@@ -131,14 +117,14 @@ export function Header() {
                   </button>
                   {servicesOpen && (
                     <div className="mb-2 ml-4 space-y-1">
-                      {services.map((s) => (
+                      {SERVICES.map((s) => (
                         <Link
-                          key={s}
-                          href="/services"
+                          key={s.id}
+                          href={`/services/${s.id}`}
                           className="block py-1.5 text-sm text-muted-foreground hover:text-primary"
                           onClick={() => setMobileOpen(false)}
                         >
-                          {s}
+                          {s.title}
                         </Link>
                       ))}
                     </div>
@@ -163,8 +149,10 @@ export function Header() {
               <Phone className="h-4 w-4 text-primary" />
               +1 (252) 691 4076
             </a>
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-              Free Consultation
+            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+              <a href="/#contact" onClick={() => setMobileOpen(false)}>
+                Free Consultation
+              </a>
             </Button>
           </div>
         </div>

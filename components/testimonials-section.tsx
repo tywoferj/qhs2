@@ -6,21 +6,21 @@ import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react"
 const testimonials = [
   {
     quote:
-      "QHSConsultant's expertise was instrumental in our JCI accreditation success. Their methodical approach and deep understanding of international healthcare standards set them apart from any other consultancy we've worked with.",
+      "Q.H.S Consultants Ltd.'s expertise was instrumental in our JCI accreditation success. Their methodical approach and deep understanding of international healthcare standards set them apart from any other consultancy we've worked with.",
     name: "Dr. Adeyemi Johnson",
     title: "Medical Director",
     org: "Premier Hospital Lagos",
   },
   {
     quote:
-      "We achieved a 40% improvement in operational efficiency within six months of engaging QHSConsultant. Their team brought transformative insights that have permanently changed how we deliver care to our patients.",
+      "We achieved a 40% improvement in operational efficiency within six months of engaging Q.H.S Consultants Ltd. Their team brought transformative insights that have permanently changed how we deliver care to our patients.",
     name: "Mrs. Folake Adebayo",
     title: "CEO",
     org: "Multi-Specialty Medical Center",
   },
   {
     quote:
-      "Their due diligence expertise was invaluable for our healthcare investment portfolio. QHSConsultant's thorough analysis and strategic recommendations gave us the confidence to make informed decisions.",
+      "Their strategic and clinical advisory was invaluable for our healthcare portfolio. Q.H.S Consultants Ltd.'s thorough analysis and recommendations gave us the confidence to make informed decisions.",
     name: "Mr. Chidi Okonkwo",
     title: "Managing Partner",
     org: "HealthVest Capital",

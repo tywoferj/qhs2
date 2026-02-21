@@ -8,11 +8,11 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
   title: {
-    default: "QHSConsultant | Healthcare Consultancy Nigeria – JCI & SQH Accreditation Experts",
-    template: "%s | QHSConsultant",
+    default: "Quality Healthcare Services (Q.H.S) Consultants Ltd. | Healthcare Consultancy Nigeria",
+    template: "%s | Q.H.S Consultants Ltd.",
   },
   description:
-    "QHSConsultant delivers healthcare consultancy in Nigeria: JCI & SQH accreditation, hospital operations, strategic planning & revenue cycle. Call +1 (252) 691 4076 or +1 (573) 264 7695 for Dr Onakoya.",
+    "Q.H.S Consultants Ltd. delivers consultancy and advisory in healthcare strategy, clinical strategy, medical training, healthcare quality, accreditation, clinical risk and governance, and medical equipment sourcing. Call +1 (252) 691 4076 or +1 (573) 264 7695.",
   keywords: [
     "healthcare consultancy Nigeria",
     "JCI accreditation Nigeria",
