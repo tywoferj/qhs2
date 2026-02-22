@@ -16,10 +16,12 @@ Place images here so they load correctly. Paths are referenced from `lib/images.
 |------|--------------|
 | **medical-staff-discussing-diagnostic-results.jpg** | Clinical Strategy |
 | **doctor-standing-corridor.jpg** | Healthcare Quality |
+| **medical-students-outdoor.jpg** | Medical Training |
 | **medical-students-standing.jpg** | Accreditation |
+| **clinical-risk-governance.png** | Clinical Risk and Governance |
 | **sandro-outsourcing.jpg** | Medical Equipment Sourcing |
 
-Other services use remote images (Unsplash).
+Healthcare Strategy uses a remote image (Unsplash).
 
 ## Other
 

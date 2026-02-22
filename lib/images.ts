@@ -38,9 +38,9 @@ export const IMAGES = {
   // Services – local files in public/images/ (must exist; see public/images/README.md)
   serviceHealthcareStrategy: u("1579684385127-1ef15d508118"),
   serviceClinicalStrategy: "/images/medical-staff-discussing-diagnostic-results.jpg",
-  serviceMedicalTraining: u("1559757148-5c350d0d3c56"),
+  serviceMedicalTraining: "/images/medical-students-outdoor.jpg",
   serviceHealthcareQuality: "/images/doctor-standing-corridor.jpg",
   serviceAccreditation: "/images/medical-students-standing.jpg",
-  serviceClinicalRiskGovernance: u("1450101499163-c8848c66ca85"),
+  serviceClinicalRiskGovernance: "/images/clinical-risk-governance.png",
   serviceMedicalEquipmentSourcing: "/images/sandro-outsourcing.jpg",
 } as const
