@@ -30,6 +30,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = `${service.title} | Q.H.S Consultants Ltd.`
   const description =
     service.shortDescription + " Call +1 (252) 691 4076 to discuss."
+  const ogImage =
+    typeof service.image === "string" && service.image.startsWith("/")
+      ? `${BASE_URL}${service.image}`
+      : service.image
+
   return {
     title,
     description,
@@ -37,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       url: `${BASE_URL}/services/${slug}`,
-      images: [service.image],
+      images: [ogImage],
     },
     alternates: { canonical: `${BASE_URL}/services/${slug}` },
   }
@@ -123,6 +128,7 @@ export default async function ServiceSlugPage({ params }: Props) {
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
+                  unoptimized={typeof service.image === "string" && service.image.startsWith("/")}
                 />
               </div>
             </div>

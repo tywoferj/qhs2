@@ -12,14 +12,14 @@ const u = (id: string, w = 800, q = 85) =>
 const p = (id: number, w = 800) =>
   `${PEXELS}/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`
 
-/** Hero slider: 1 = medical team, 2 = modern clinic interior, 3 = modern clinic. Add your images to public/images/ */
+/** Hero slider: 1 = surgeon in theater (restored), 2 = operating room interior, 3 = modern clinic. Images in public/images/ */
 const HERO_SLIDE_FALLBACK_TEAM = u("1519494026892-80bbd2d6fd0d")
 const HERO_SLIDE_FALLBACK_CLINIC = u("1582750433449-648ed127bb54")
 const HERO_SLIDE_3_MODERN_CLINIC = u("1579684385127-1ef15d508118")
 export const HERO_SLIDER_IMAGES = [
-  "/images/hero-slide-1.png",   // Diverse medical team in hospital hallway
-  "/images/hero-slide-2.png",   // Modern clinic interior (reception, etc.)
-  HERO_SLIDE_3_MODERN_CLINIC,  // Modern clinic (third slide – always loads)
+  "/images/happy-african-american-surgeon-theater.jpg",  // Slide 1: surgeon in theater (restored)
+  "/images/interior-view-operating-room.jpg",            // Slide 2: operating room interior
+  HERO_SLIDE_3_MODERN_CLINIC,                            // Slide 3: modern clinic
 ] as const
 export { HERO_SLIDE_FALLBACK_TEAM, HERO_SLIDE_FALLBACK_CLINIC }
 
@@ -35,12 +35,12 @@ export const IMAGES = {
   // Contact Us – welcoming healthcare
   contactPage: u("1582750433449-648ed127bb54"),
 
-  // Services – local images in public/images/services/ where set
+  // Services – local files in public/images/ (must exist; see public/images/README.md)
   serviceHealthcareStrategy: u("1579684385127-1ef15d508118"),
-  serviceClinicalStrategy: "/images/services/clinical-strategy.png",
+  serviceClinicalStrategy: "/images/medical-staff-discussing-diagnostic-results.jpg",
   serviceMedicalTraining: u("1559757148-5c350d0d3c56"),
-  serviceHealthcareQuality: "/images/services/healthcare-quality.png",
-  serviceAccreditation: "/images/services/accreditation.png",
+  serviceHealthcareQuality: "/images/doctor-standing-corridor.jpg",
+  serviceAccreditation: "/images/medical-students-standing.jpg",
   serviceClinicalRiskGovernance: u("1450101499163-c8848c66ca85"),
-  serviceMedicalEquipmentSourcing: "/images/services/medical-equipment-sourcing.png",
+  serviceMedicalEquipmentSourcing: "/images/sandro-outsourcing.jpg",
 } as const

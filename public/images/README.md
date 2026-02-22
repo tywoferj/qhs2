@@ -1,19 +1,27 @@
 # Images
 
-Place your images here so they load correctly:
+Place images here so they load correctly. Paths are referenced from `lib/images.ts`.
 
 ## Hero slider (homepage)
 
-- **hero-slide-1.png** – Slide 1: Diverse medical team (doctors and nurses in hospital hallway). Add your image here.
-- **hero-slide-2.png** – Slide 2: Modern clinic interior (reception desk, waiting area). Add your image here.
-- Slide 3 uses a built-in modern clinic image (no file needed).
+| File | Use |
+|------|-----|
+| **happy-african-american-surgeon-theater.jpg** | Slide 1 – surgeon in theater |
+| **interior-view-operating-room.jpg** | Slide 2 – operating room interior |
+| Slide 3 | Built-in (Unsplash), no file needed |
 
-If hero-slide-1 or hero-slide-2 are missing, the slider will show a fallback image for that slide.
+## Service pages (must exist for images to show)
+
+| File | Service page |
+|------|--------------|
+| **medical-staff-discussing-diagnostic-results.jpg** | Clinical Strategy |
+| **doctor-standing-corridor.jpg** | Healthcare Quality |
+| **medical-students-standing.jpg** | Accreditation |
+| **sandro-outsourcing.jpg** | Medical Equipment Sourcing |
+
+Other services use remote images (Unsplash).
 
 ## Other
 
-- **blog-accreditation.jpg** – Blog card (recommended: 600×375 or similar 16:10)
-- **blog-management.jpg** – Blog card
-- **blog-revenue.jpg** – Blog card
-
-Use JPG or WebP for photos. Next.js will optimize and serve AVIF/WebP when supported.
+- **blog-accreditation.jpg**, **blog-management.jpg**, **blog-revenue.jpg** – Blog cards (e.g. 600×375).
+- Use JPG or WebP for photos. Keep file sizes reasonable for page load and SEO.
