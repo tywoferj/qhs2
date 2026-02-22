@@ -35,12 +35,12 @@ export const IMAGES = {
   // Contact Us – welcoming healthcare
   contactPage: u("1582750433449-648ed127bb54"),
 
-  // Services – Unsplash numeric-hash format so images load
+  // Services – local images in public/images/services/ where set
   serviceHealthcareStrategy: u("1579684385127-1ef15d508118"),
-  serviceClinicalStrategy: u("1576091160399-112ba8d25d1d"),
+  serviceClinicalStrategy: "/images/services/clinical-strategy.png",
   serviceMedicalTraining: u("1559757148-5c350d0d3c56"),
-  serviceHealthcareQuality: u("1519494026892-80bbd2d6fd0d"),
-  serviceAccreditation: u("1582750433449-648ed127bb54"),
+  serviceHealthcareQuality: "/images/services/healthcare-quality.png",
+  serviceAccreditation: "/images/services/accreditation.png",
   serviceClinicalRiskGovernance: u("1450101499163-c8848c66ca85"),
-  serviceMedicalEquipmentSourcing: u("1552664730-d307ca884978"),
+  serviceMedicalEquipmentSourcing: "/images/services/medical-equipment-sourcing.png",
 } as const

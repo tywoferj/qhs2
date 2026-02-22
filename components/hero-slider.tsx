@@ -11,8 +11,8 @@ import {
 const INTERVAL_MS = 5000
 
 const altTexts = [
-  "Diverse medical team – doctors and nurses in hospital, Nigeria healthcare consultancy",
-  "Modern clinic interior – reception and waiting area, healthcare facility",
+  "Surgeon in operating theater – healthcare professional, Q.H.S Consultants Ltd.",
+  "Modern operating room interior – surgical suite, healthcare facility",
   "Modern clinic – contemporary healthcare facility, Q.H.S Consultants Ltd.",
 ]
 

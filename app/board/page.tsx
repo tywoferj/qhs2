@@ -1,6 +1,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Mail } from "lucide-react"
+import { Mail, User } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -84,28 +84,38 @@ export default function BoardPage() {
               {directors.map((director) => (
                 <li
                   key={director.email}
-                  className="rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md md:p-8"
+                  className="flex gap-6 rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md md:gap-8 md:p-8"
                 >
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h2 className="text-xl font-bold text-foreground md:text-2xl">
-                        {director.name}
-                      </h2>
-                      <p className="mt-1 text-sm font-semibold uppercase tracking-wider text-primary">
-                        {director.role}
-                      </p>
+                  <div
+                    className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-xl bg-muted shadow-inner ring-1 ring-border/50 shadow-sm md:h-24 md:w-24"
+                    aria-hidden
+                  >
+                    <div className="flex h-full w-full items-center justify-center text-muted-foreground/40">
+                      <User className="h-10 w-10 md:h-12 md:w-12" strokeWidth={1.25} />
                     </div>
-                    <a
-                      href={`mailto:${director.email}`}
-                      className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
-                    >
-                      <Mail className="h-4 w-4" />
-                      {director.email}
-                    </a>
                   </div>
-                  <p className="mt-4 leading-relaxed text-muted-foreground">
-                    {director.summary}
-                  </p>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                      <div>
+                        <h2 className="text-xl font-bold text-foreground md:text-2xl">
+                          {director.name}
+                        </h2>
+                        <p className="mt-1 text-sm font-semibold uppercase tracking-wider text-primary">
+                          {director.role}
+                        </p>
+                      </div>
+                      <a
+                        href={`mailto:${director.email}`}
+                        className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+                      >
+                        <Mail className="h-4 w-4" />
+                        {director.email}
+                      </a>
+                    </div>
+                    <p className="mt-4 leading-relaxed text-muted-foreground">
+                      {director.summary}
+                    </p>
+                  </div>
                 </li>
               ))}
             </ul>
