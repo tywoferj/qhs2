@@ -1,11 +1,11 @@
-# Board of Directors profile photos
+# Board of Directors profile photos (WebP)
 
-Profile images are stored in the **parent folder** (`public/images/`) with names that reference each director:
+Optimized WebP images in this folder:
 
 | Filename | Director |
 |----------|----------|
-| **Dr. Onakoya.jpeg** | Dr. Olakunle Onakoya (CEO) |
-| **Prof. (Mrs) Adeola Onakoya.jpeg** | Professor Adeola Onakoya |
-| **Engr. Aramide Onakoya.jpeg** | Engr. Aramide Onakoya |
+| **Dr._Onakoya.webp** | Dr. Olakunle Onakoya (CEO) |
+| **Prof.__Mrs__Adeola_Onakoya.webp** | Professor Adeola Onakoya |
+| **Engr._Aramide_Onakoya.webp** | Engr. Aramide Onakoya |
 
 Other directors use a placeholder until photos are added.

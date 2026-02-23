@@ -30,7 +30,7 @@ const directors = [
     summary:
       "Dr. Olakunle Onakoya qualified as a Medical Doctor from the College of Medicine, University of Lagos, and trained as an Orthopaedic and Trauma Surgeon both in Nigeria and in the United Kingdom. He has more than 30 years of experience as a Consultant Surgeon and has held various leadership positions in healthcare management, quality improvement, and clinical governance. He served as Chief Medical Director of the Lagoon Hospitals and as Chief Executive Officer of Cedarcrest Hospital, Lagos. He is currently the Board Chairman of the Redeemer's Health Village, a 300-bed hospital promoted by the Redeemed Christian Church of God (RCCG). Dr. Onakoya is among the few doctors in Nigeria with direct experience in healthcare quality accreditation and has led hospitals through the Joint Commission International (JCI) accreditation process. He serves on the boards of various organisations.",
     email: "kunle.onakoya@qhsconsultant.com",
-    image: "/images/Dr. Onakoya.jpeg",
+    image: "/images/board/Dr._Onakoya.webp",
   },
   {
     name: "Professor Adeola Onakoya",
@@ -38,7 +38,7 @@ const directors = [
     summary:
       "Professor Adeola Onakoya qualified as a Medical Doctor from the College of Medicine, University of Lagos, and trained as an Ophthalmologist in Nigeria and in the United Kingdom. She has extensive experience as an Ophthalmic Surgeon and as a Glaucoma specialist. She is a Professor and past Head of the Department of Ophthalmology at the College of Medicine, University of Lagos. She has been involved in medical education at the highest levels and in both specialty and sub-specialty training in Ophthalmology. She is a past President of the Faculty of Ophthalmology of the National Postgraduate Medical College of Nigeria.",
     email: "adeola_onakoya@outlook.com",
-    image: "/images/Prof. (Mrs) Adeola Onakoya.jpeg",
+    image: "/images/board/Prof.__Mrs__Adeola_Onakoya.webp",
   },
   {
     name: "Dr. Folasade Smith",
@@ -54,7 +54,7 @@ const directors = [
     summary:
       "Engr. Aramide Onakoya is a Mechanical Engineer who qualified from the University of Portsmouth, United Kingdom, and holds postgraduate qualifications from King's College London. She has experience in financial advisory, manufacturing, corporate strategy, and consulting services.",
     email: "ara_onakoya@hotmail.com",
-    image: "/images/Engr. Aramide Onakoya.jpeg",
+    image: "/images/board/Engr._Aramide_Onakoya.webp",
   },
   {
     name: "Mr. Olumide B. Onakoya",
@@ -99,7 +99,7 @@ export default function BoardPage() {
                   >
                     {director.image ? (
                       <Image
-                        src={encodeURI(director.image)}
+                        src={director.image}
                         alt=""
                         fill
                         className="object-cover"
