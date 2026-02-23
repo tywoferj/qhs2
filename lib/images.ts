@@ -12,14 +12,13 @@ const u = (id: string, w = 800, q = 85) =>
 const p = (id: number, w = 800) =>
   `${PEXELS}/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`
 
-/** Hero slider: 1 = surgeon in theater (restored), 2 = operating room interior, 3 = modern clinic. Images in public/images/ */
+/** Hero slider: hero-slide-1.webp, hero-slide-2.webp, hero-slide-3.webp for faster load. Images in public/images/ */
 const HERO_SLIDE_FALLBACK_TEAM = u("1519494026892-80bbd2d6fd0d")
 const HERO_SLIDE_FALLBACK_CLINIC = u("1582750433449-648ed127bb54")
-const HERO_SLIDE_3_MODERN_CLINIC = u("1579684385127-1ef15d508118")
 export const HERO_SLIDER_IMAGES = [
-  "/images/happy-african-american-surgeon-theater.jpg",  // Slide 1: surgeon in theater (restored)
-  "/images/interior-view-operating-room.jpg",            // Slide 2: operating room interior
-  HERO_SLIDE_3_MODERN_CLINIC,                            // Slide 3: modern clinic
+  "/images/hero-slide-1.webp",
+  "/images/hero-slide-2.webp",
+  "/images/hero-slide-3.webp",
 ] as const
 export { HERO_SLIDE_FALLBACK_TEAM, HERO_SLIDE_FALLBACK_CLINIC }
 
@@ -35,12 +34,12 @@ export const IMAGES = {
   // Contact Us – welcoming healthcare
   contactPage: u("1582750433449-648ed127bb54"),
 
-  // Services – local files in public/images/ (must exist; see public/images/README.md)
+  // Services – local .webp in public/images/ for faster load (see public/images/README.md)
   serviceHealthcareStrategy: u("1579684385127-1ef15d508118"),
-  serviceClinicalStrategy: "/images/medical-staff-discussing-diagnostic-results.jpg",
-  serviceMedicalTraining: "/images/medical-students-outdoor.jpg",
-  serviceHealthcareQuality: "/images/doctor-standing-corridor.jpg",
-  serviceAccreditation: "/images/medical-students-standing.jpg",
-  serviceClinicalRiskGovernance: "/images/clinical-risk-governance.png",
-  serviceMedicalEquipmentSourcing: "/images/sandro-outsourcing.jpg",
+  serviceClinicalStrategy: "/images/medical-staff-discussing-diagnostic-results.webp",
+  serviceMedicalTraining: "/images/medical-students-outdoor.webp",
+  serviceHealthcareQuality: "/images/doctor-standing-corridor.webp",
+  serviceAccreditation: "/images/medical-students-standing.webp",
+  serviceClinicalRiskGovernance: "/images/clinical-risk-governance.webp",
+  serviceMedicalEquipmentSourcing: "/images/sandro-outsourcing.webp",
 } as const
