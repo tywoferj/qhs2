@@ -14,20 +14,20 @@ const quickLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-foreground text-background">
+    <footer className="bg-secondary text-secondary-foreground">
       <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
             <Link href="/" className="inline-block">
-              <span className="text-xl font-bold text-primary-foreground">
+              <span className="text-xl font-bold text-secondary-foreground">
                 Q.H.S Consultants Ltd.
               </span>
-              <span className="mt-0.5 block text-xs font-medium tracking-widest text-background/50 uppercase">
+              <span className="mt-0.5 block text-xs font-medium tracking-widest text-secondary-foreground/70 uppercase">
                 Quality Healthcare Services
               </span>
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-background/60">
+            <p className="mt-4 text-sm leading-relaxed text-secondary-foreground/80">
               Consultancy and advisory in healthcare strategy, clinical strategy,
               medical training, healthcare quality, accreditation, clinical risk
               and governance, and medical equipment sourcing.
@@ -38,7 +38,7 @@ export function Footer() {
                 <a
                   key={social}
                   href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-background/10 text-xs font-bold text-background/70 transition-colors hover:bg-primary hover:text-primary-foreground"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary-foreground/10 text-xs font-bold text-secondary-foreground/90 transition-colors hover:bg-primary hover:text-primary-foreground"
                   aria-label={social}
                 >
                   {social[0]}
@@ -49,7 +49,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-background/80">
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-secondary-foreground/90">
               Quick Links
             </h4>
             <ul className="space-y-3">
@@ -57,7 +57,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-background/60 transition-colors hover:text-background"
+                    className="text-sm text-secondary-foreground/80 transition-colors hover:text-secondary-foreground"
                   >
                     {link.label}
                   </Link>
@@ -68,7 +68,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-background/80">
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-secondary-foreground/90">
               Services
             </h4>
             <ul className="space-y-3">
@@ -76,7 +76,7 @@ export function Footer() {
                 <li key={s.id}>
                   <Link
                     href={`/services/${s.id}`}
-                    className="text-sm text-background/60 transition-colors hover:text-background"
+                    className="text-sm text-secondary-foreground/80 transition-colors hover:text-secondary-foreground"
                   >
                     {s.title}
                   </Link>
@@ -85,7 +85,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="text-sm text-background/60 transition-colors hover:text-background"
+                  className="text-sm text-secondary-foreground/80 transition-colors hover:text-secondary-foreground"
                 >
                   All services →
                 </Link>
@@ -95,31 +95,31 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-background/80">
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-secondary-foreground/90">
               Contact Us
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                <span className="text-sm text-background/60">
+                <span className="text-sm text-secondary-foreground/80">
                   57B, Hibiscus Street, M.K.O Abiola Gardens, C.B.D, Ikeja
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                <span className="text-sm text-background/60">
+                <span className="text-sm text-secondary-foreground/80">
                   Discuss services:{" "}
-                  <a href="tel:+12526914076" className="hover:text-background">+1 (252) 691 4076</a>
+                  <a href="tel:+12526914076" className="hover:text-secondary-foreground">+1 (252) 691 4076</a>
                   <br />
                   Book with Dr Onakoya:{" "}
-                  <a href="tel:+15732647695" className="hover:text-background">+1 (573) 264 7695</a>
+                  <a href="tel:+15732647695" className="hover:text-secondary-foreground">+1 (573) 264 7695</a>
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
                 <a
                   href="mailto:contact@qhsconsultant.com"
-                  className="text-sm text-background/60 hover:text-background"
+                  className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground"
                 >
                   contact@qhsconsultant.com
                 </a>
@@ -130,21 +130,21 @@ export function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-background/10">
+      <div className="border-t border-secondary-foreground/20">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 sm:flex-row lg:px-8">
-          <p className="text-xs text-background/40">
+          <p className="text-xs text-secondary-foreground/70">
             {"© 2026 Quality Healthcare Services (Q.H.S) Consultants Ltd. All rights reserved."}
           </p>
           <div className="flex gap-6">
             <Link
               href="/privacy-policy"
-              className="text-xs text-background/40 transition-colors hover:text-background/70"
+              className="text-xs text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms-of-service"
-              className="text-xs text-background/40 transition-colors hover:text-background/70"
+              className="text-xs text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
             >
               Terms of Service
             </Link>

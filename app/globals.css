@@ -10,39 +10,40 @@
 
 @layer base {
   :root {
+    /* Logo-inspired: green (QHS text/ring) as primary, purple (hands) as secondary */
     --background: 0 0% 100%;
     --foreground: 220 13% 18%;
     --card: 0 0% 100%;
     --card-foreground: 220 13% 18%;
     --popover: 0 0% 100%;
     --popover-foreground: 220 13% 18%;
-    --primary: 210 60% 45%;
+    --primary: 152 48% 38%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 172 42% 35%;
+    --secondary: 262 50% 36%;
     --secondary-foreground: 0 0% 100%;
     --muted: 220 14% 96%;
     --muted-foreground: 220 9% 46%;
-    --accent: 43 72% 53%;
-    --accent-foreground: 220 13% 18%;
+    --accent: 262 40% 48%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 210 60% 45%;
-    --chart-1: 210 60% 45%;
-    --chart-2: 172 42% 35%;
-    --chart-3: 43 72% 53%;
+    --ring: 152 48% 38%;
+    --chart-1: 152 48% 38%;
+    --chart-2: 262 50% 36%;
+    --chart-3: 152 40% 50%;
     --chart-4: 220 13% 18%;
-    --chart-5: 210 40% 60%;
+    --chart-5: 262 35% 55%;
     --radius: 0.5rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 210 60% 45%;
+    --sidebar-primary: 152 48% 38%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-accent: 262 30% 95%;
+    --sidebar-accent-foreground: 262 50% 30%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 210 60% 45%;
+    --sidebar-ring: 152 48% 38%;
   }
 }
 

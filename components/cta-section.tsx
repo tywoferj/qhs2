@@ -41,7 +41,7 @@ export function CtaSection() {
           </p>
           <p className="flex flex-wrap items-center justify-center gap-2">
             <Phone className="h-4 w-4" />
-            <span>Book appointment with Dr Onakoya:</span>
+            <span>Book a specialist consultation:</span>
             <a
               href={`tel:${PHONE_APPOINTMENT}`}
               className="font-medium text-background/80 underline underline-offset-4 hover:text-background"

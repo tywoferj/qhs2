@@ -10,7 +10,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Contact Us | Healthcare Consultancy Nigeria | Q.H.S Consultants Ltd.",
   description:
-    "Contact Quality Healthcare Services (Q.H.S) Consultants Ltd. for consultancy and advisory. Discuss services +1 (252) 691 4076 or book with Dr Onakoya +1 (573) 264 7695.",
+    "Contact Quality Healthcare Services (Q.H.S) Consultants Ltd. for consultancy and advisory. Discuss services on +1 (252) 691 4076 or schedule a specialist consultation on +1 (573) 264 7695.",
   openGraph: {
     title: "Contact Q.H.S Consultants Ltd. | Healthcare Consultancy Nigeria",
     description:
@@ -33,7 +33,7 @@ export default function ContactPage() {
               Let’s Transform Your Healthcare Facility Together
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-              Get in touch to discuss our services, request a consultation, or book an appointment with Dr Onakoya. We serve healthcare institutions across Nigeria and West Africa.
+              Get in touch to discuss our services, request a consultation, or schedule a specialist appointment. We serve healthcare institutions across Nigeria and West Africa.
             </p>
           </div>
         </section>
@@ -68,7 +68,7 @@ export default function ContactPage() {
                   <li className="flex items-start gap-4">
                     <Phone className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
                     <div>
-                      <p className="font-medium text-foreground">Book appointment with Dr Onakoya</p>
+                      <p className="font-medium text-foreground">Book a specialist consultation</p>
                       <a href="tel:+15732647695" className="text-muted-foreground hover:text-primary">
                         +1 (573) 264 7695
                       </a>
@@ -98,7 +98,7 @@ export default function ContactPage() {
                     <a href="tel:+12526914076">Call to discuss services</a>
                   </Button>
                   <Button size="lg" variant="outline" asChild>
-                    <a href="tel:+15732647695">Book with Dr Onakoya</a>
+                    <a href="tel:+15732647695">Book a consultation</a>
                   </Button>
                 </div>
               </div>

@@ -26,15 +26,15 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/android-chrome-192x192.png",
-    shortcut: "/android-chrome-192x192.png",
-    apple: "/android-chrome-192x192.png",
+    icon: "/images/favicon/favicon-32x32.png",
+    shortcut: "/images/favicon/favicon-16x16.png",
+    apple: "/images/favicon/apple-touch-icon.png",
   },
   manifest: "/images/favicon/site.webmanifest",
 }
 
 export const viewport: Viewport = {
-  themeColor: '#2E75B6',
+  themeColor: '#1B8E4A',
 }
 
 export default function RootLayout({

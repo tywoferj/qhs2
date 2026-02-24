@@ -31,11 +31,11 @@ export const IMAGES = {
   // About Us – healthcare team / facility
   aboutPage: u("1519494026892-80bbd2d6fd0d"),
 
-  // Contact Us – welcoming healthcare
-  contactPage: u("1582750433449-648ed127bb54"),
+  // Contact Us – local .webp hero
+  contactPage: "/images/Contact_us.webp",
 
   // Services – local .webp in public/images/ for faster load (see public/images/README.md)
-  serviceHealthcareStrategy: u("1579684385127-1ef15d508118"),
+  serviceHealthcareStrategy: "/images/healthcare-strategy.webp",
   serviceClinicalStrategy: "/images/medical-staff-discussing-diagnostic-results.webp",
   serviceMedicalTraining: "/images/medical-students-outdoor.webp",
   serviceHealthcareQuality: "/images/doctor-standing-corridor.webp",
