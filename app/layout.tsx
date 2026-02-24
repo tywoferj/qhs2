@@ -25,6 +25,12 @@ export const metadata: Metadata = {
     locale: "en_NG",
     type: "website",
   },
+  icons: {
+    icon: "/android-chrome-192x192.png",
+    shortcut: "/android-chrome-192x192.png",
+    apple: "/android-chrome-192x192.png",
+  },
+  manifest: "/images/favicon/site.webmanifest",
 }
 
 export const viewport: Viewport = {

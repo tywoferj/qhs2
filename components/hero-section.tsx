@@ -11,7 +11,7 @@ const trustBadges = [
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-muted">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 py-16 md:py-24 lg:flex-row lg:gap-12 lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-7 px-4 py-14 md:py-20 lg:flex-row lg:gap-10 lg:px-8">
         {/* Left content */}
         <div className="flex-1 lg:max-w-[60%]">
           <p className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
@@ -30,7 +30,7 @@ export function HeroSection() {
             and medical centers.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Button
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90"
@@ -49,7 +49,7 @@ export function HeroSection() {
           </div>
 
           {/* Trust badges */}
-          <div className="mt-10 flex flex-wrap gap-6">
+          <div className="mt-8 flex flex-wrap gap-6">
             {trustBadges.map((badge) => (
               <div key={badge.label} className="flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">

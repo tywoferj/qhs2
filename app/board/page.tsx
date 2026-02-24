@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import Image from "next/image"
@@ -46,7 +49,7 @@ const directors = [
     summary:
       "Dr. Folasade Smith qualified as a Medical Doctor from Imperial College, United Kingdom. She has practised both in Nigeria and in the United Kingdom. She is currently a Senior Registrar in Emergency Medicine with the National Health Service (NHS) in the United Kingdom.",
     email: "onaxxy@hotmail.com",
-    image: null,
+    image: "/images/board/Dr. Folasade Smith.webp",
   },
   {
     name: "Engr. Aramide Onakoya",
@@ -67,11 +70,16 @@ const directors = [
 ]
 
 export default function BoardPage() {
+  const [selectedDirectorEmail, setSelectedDirectorEmail] = useState<string | null>(
+    directors[0]?.email ?? null,
+  )
+  const selectedDirector = directors.find((d) => d.email === selectedDirectorEmail) ?? null
+
   return (
     <>
       <Header />
       <main className="min-h-screen bg-background">
-        <section className="relative overflow-hidden bg-muted px-4 py-16 md:py-24 lg:px-8">
+        <section className="relative overflow-hidden bg-muted px-4 py-14 md:py-20 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
               Governance
@@ -85,58 +93,106 @@ export default function BoardPage() {
           </div>
         </section>
 
-        <section className="px-4 py-16 lg:px-8">
-          <div className="mx-auto max-w-4xl">
-            <ul className="space-y-12">
+        <section className="px-4 py-14 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {directors.map((director) => (
                 <li
                   key={director.email}
-                  className="flex gap-6 rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md md:gap-8 md:p-8"
+                  className="list-none"
                 >
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setSelectedDirectorEmail((current) =>
+                        current === director.email ? director.email : director.email,
+                      )
+                    }
+                    className={`flex w-full flex-col items-center gap-3 rounded-2xl border bg-card p-5 text-center shadow-sm transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-md md:p-6 ${
+                      selectedDirectorEmail === director.email
+                        ? "border-primary/60 ring-1 ring-primary/10 bg-primary/5"
+                        : "border-border"
+                    }`}
+                  >
+                    <div
+                      className="relative h-20 w-20 overflow-hidden rounded-xl bg-muted shadow-inner ring-1 ring-border/50 shadow-sm md:h-24 md:w-24"
+                      aria-hidden
+                    >
+                      {director.image ? (
+                        <Image
+                          src={director.image}
+                          alt={director.name}
+                          fill
+                          className="object-cover"
+                          sizes="96px"
+                          unoptimized
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center text-muted-foreground/40">
+                          <User className="h-10 w-10 md:h-12 md:w-12" strokeWidth={1.25} />
+                        </div>
+                      )}
+                    </div>
+                    <div>
+                      <h2 className="text-base font-semibold text-foreground md:text-lg">
+                        {director.name}
+                      </h2>
+                      <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-primary">
+                        {director.role}
+                      </p>
+                    </div>
+                  </button>
+                </li>
+              ))}
+            </ul>
+
+            {selectedDirector && (
+              <div className="mt-10 rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-200 md:p-8">
+                <div className="flex flex-col gap-6 md:flex-row md:items-start">
                   <div
-                    className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-xl bg-muted shadow-inner ring-1 ring-border/50 shadow-sm md:h-24 md:w-24"
+                    className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-2xl bg-muted shadow-inner ring-1 ring-border/60 shadow-sm md:h-28 md:w-28"
                     aria-hidden
                   >
-                    {director.image ? (
+                    {selectedDirector.image ? (
                       <Image
-                        src={director.image}
-                        alt=""
+                        src={selectedDirector.image}
+                        alt={selectedDirector.name}
                         fill
                         className="object-cover"
-                        sizes="96px"
+                        sizes="112px"
                         unoptimized
                       />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center text-muted-foreground/40">
-                        <User className="h-10 w-10 md:h-12 md:w-12" strokeWidth={1.25} />
+                        <User className="h-12 w-12 md:h-14 md:w-14" strokeWidth={1.25} />
                       </div>
                     )}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                       <div>
                         <h2 className="text-xl font-bold text-foreground md:text-2xl">
-                          {director.name}
+                          {selectedDirector.name}
                         </h2>
                         <p className="mt-1 text-sm font-semibold uppercase tracking-wider text-primary">
-                          {director.role}
+                          {selectedDirector.role}
                         </p>
                       </div>
                       <a
-                        href={`mailto:${director.email}`}
+                        href={`mailto:${selectedDirector.email}`}
                         className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
                       >
                         <Mail className="h-4 w-4" />
-                        {director.email}
+                        {selectedDirector.email}
                       </a>
                     </div>
                     <p className="mt-4 leading-relaxed text-muted-foreground">
-                      {director.summary}
+                      {selectedDirector.summary}
                     </p>
                   </div>
-                </li>
-              ))}
-            </ul>
+                </div>
+              </div>
+            )}
           </div>
         </section>
       </main>

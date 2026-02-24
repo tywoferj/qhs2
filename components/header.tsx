@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SERVICES } from "@/lib/services-data"
@@ -34,15 +35,27 @@ export function Header() {
           : "bg-background"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex flex-col">
-          <span className="text-xl font-bold tracking-tight text-primary">
-            Q.H.S Consultants Ltd.
-          </span>
-          <span className="text-[11px] font-medium tracking-widest text-muted-foreground uppercase">
-            Quality Healthcare Services
-          </span>
+        <Link href="/" className="flex items-center gap-2">
+          <div className="relative h-8 w-8 flex-shrink-0">
+            <Image
+              src="/android-chrome-192x192.png"
+              alt="Q.H.S Consultants Ltd. logo"
+              fill
+              sizes="32px"
+              className="rounded-md"
+              priority
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-xl font-bold tracking-tight text-primary">
+              Q.H.S Consultants Ltd.
+            </span>
+            <span className="text-[11px] font-medium tracking-widest text-muted-foreground uppercase">
+              Quality Healthcare Services
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
