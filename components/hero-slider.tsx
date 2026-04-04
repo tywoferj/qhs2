@@ -11,9 +11,9 @@ import {
 const INTERVAL_MS = 5000
 
 const altTexts = [
-  "Surgeon in operating theater – healthcare professional, Q.H.S Consultants Ltd.",
+  "Surgeon in operating theater – healthcare professional, QHS Consultants Ltd",
   "Operating room interior – surgical suite, healthcare facility",
-  "Modern clinic – contemporary healthcare facility, Q.H.S Consultants Ltd.",
+  "Modern clinic – contemporary healthcare facility, QHS Consultants Ltd",
 ]
 
 export function HeroSlider() {

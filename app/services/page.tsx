@@ -8,11 +8,11 @@ import { CheckCircle2, Phone } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Consultancy & Advisory Services | Q.H.S Consultants Ltd.",
+  title: "Consultancy & Advisory Services | QHS Consultants Ltd",
   description:
-    "Quality Healthcare Services (Q.H.S) Consultants Ltd.: healthcare strategy, clinical strategy, medical training, healthcare quality, accreditation, clinical risk and governance, medical equipment sourcing. Call +1 (252) 691 4076.",
+    "Quality Healthcare Services (QHS) Consultants Ltd: healthcare strategy, clinical strategy, medical training, healthcare quality, accreditation, clinical risk and governance, medical equipment sourcing. Call +1 (252) 691 4076.",
   openGraph: {
-    title: "Consultancy & Advisory Services | Q.H.S Consultants Ltd.",
+    title: "Consultancy & Advisory Services | QHS Consultants Ltd",
     description:
       "Healthcare strategy, clinical strategy, medical training, healthcare quality, accreditation, clinical risk and governance, medical equipment sourcing.",
   },

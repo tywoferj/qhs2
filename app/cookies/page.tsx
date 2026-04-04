@@ -5,9 +5,9 @@ import type { Metadata } from "next"
 import { CookiePreferencesPanel } from "@/components/cookie-preferences-panel"
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | Q.H.S Consultants Ltd.",
+  title: "Cookie Policy | QHS Consultants Ltd",
   description:
-    "How Quality Healthcare Services (Q.H.S) Consultants Ltd. uses cookies and similar technologies, and how you can manage preferences (NDPA 2023 and GDPR-aligned).",
+    "How Quality Healthcare Services (QHS) Consultants Ltd uses cookies and similar technologies, and how you can manage preferences (NDPA 2023 and GDPR-aligned).",
 }
 
 export default function CookiesPage() {

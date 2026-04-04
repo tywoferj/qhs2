@@ -6,7 +6,7 @@ export function SeoJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Quality Healthcare Services (Q.H.S) Consultants Ltd.",
+    name: "Quality Healthcare Services (QHS) Consultants Ltd",
     description:
       "Consultancy and advisory in healthcare strategy, clinical strategy, medical training, healthcare quality, accreditation, clinical risk and governance, and medical equipment sourcing in Nigeria and West Africa.",
     url: "https://qhsconsultant.com",

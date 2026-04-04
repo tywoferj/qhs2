@@ -8,11 +8,11 @@ import { CheckCircle2, Phone, Award, Building2, Users } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "About Us | Healthcare Consultancy Nigeria | Q.H.S Consultants Ltd.",
+  title: "About Us | Healthcare Consultancy Nigeria | QHS Consultants Ltd",
   description:
-    "Quality Healthcare Services (Q.H.S) Consultants Ltd.: consultancy and advisory in healthcare strategy, clinical strategy, medical training, healthcare quality, accreditation, clinical risk and governance, and medical equipment sourcing. Call +1 (252) 691 4076.",
+    "Quality Healthcare Services (QHS) Consultants Ltd: consultancy and advisory in healthcare strategy, clinical strategy, medical training, healthcare quality, accreditation, clinical risk and governance, and medical equipment sourcing. Call +1 (252) 691 4076.",
   openGraph: {
-    title: "About Q.H.S Consultants Ltd. | Healthcare Consultancy Nigeria",
+    title: "About QHS Consultants Ltd | Healthcare Consultancy Nigeria",
     description:
       "Consultancy and advisory in healthcare strategy, clinical strategy, medical training, healthcare quality, accreditation, clinical risk and governance, and medical equipment sourcing.",
   },

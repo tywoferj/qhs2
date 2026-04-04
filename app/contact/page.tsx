@@ -9,11 +9,11 @@ import { Phone, Mail, MapPin } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Contact Us | Healthcare Consultancy Nigeria | Q.H.S Consultants Ltd.",
+  title: "Contact Us | Healthcare Consultancy Nigeria | QHS Consultants Ltd",
   description:
-    "Contact Quality Healthcare Services (Q.H.S) Consultants Ltd. Discuss services on +1 (252) 691 4076 or book a specialist or advisory appointment on +1 (573) 264 7695. Ikeja, Lagos.",
+    "Contact Quality Healthcare Services (QHS) Consultants Ltd. Discuss services on +1 (252) 691 4076 or book a specialist or advisory appointment on +1 (573) 264 7695. Ikeja, Lagos.",
   openGraph: {
-    title: "Contact Q.H.S Consultants Ltd. | Healthcare Consultancy Nigeria",
+    title: "Contact QHS Consultants Ltd | Healthcare Consultancy Nigeria",
     description:
       "Get in touch for JCI accreditation, hospital operations, and healthcare consulting. Lagos, Nigeria.",
   },
@@ -46,7 +46,7 @@ export default function ContactPage() {
               <Reveal className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted shadow-md">
                 <Image
                   src={IMAGES.contactPage}
-                  alt="Healthcare professional using mobile technology; contact Q.H.S Consultants Ltd. for hospital consultancy in Nigeria and West Africa"
+                  alt="Healthcare professional using mobile technology; contact QHS Consultants Ltd for hospital consultancy in Nigeria and West Africa"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"

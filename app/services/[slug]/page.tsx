@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const service = getServiceBySlug(slug)
   if (!service) return { title: "Service Not Found" }
-  const title = `${service.title} | Q.H.S Consultants Ltd.`
+  const title = `${service.title} | QHS Consultants Ltd`
   const description =
     service.shortDescription + " Call +1 (252) 691 4076 to discuss."
   const ogImage =
@@ -67,7 +67,7 @@ function ServiceJsonLd({ service }: { service: ServiceItem }) {
     url: `${BASE_URL}/services/${service.id}`,
     provider: {
       "@type": "Organization",
-      name: "Quality Healthcare Services (Q.H.S) Consultants Ltd.",
+      name: "Quality Healthcare Services (QHS) Consultants Ltd",
       url: BASE_URL,
       telephone: "+1-252-691-4076",
     },

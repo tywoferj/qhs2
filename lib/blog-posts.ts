@@ -36,10 +36,10 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "9 min read",
     image: BLOG_IMAGES.jciAccreditation,
     imageAlt:
-      "Hospital team preparing for JCI accreditation and quality standards in Nigeria – Q.H.S Consultants Ltd.",
+      "Hospital team preparing for JCI accreditation and quality standards in Nigeria – QHS Consultants Ltd",
     publishedAt: "2025-01-15",
-    author: "QHS Consultant Team",
-    seoTitle: "JCI Accreditation in Nigeria: 5 Steps to Prepare Your Hospital | QHS Consultant",
+    author: "QHS Consultants Team",
+    seoTitle: "JCI Accreditation in Nigeria: 5 Steps to Prepare Your Hospital | QHS Consultants Ltd",
     seoDescription:
       "Expert guide to JCI accreditation for Nigerian healthcare facilities: gap analysis, mock surveys, documentation, and continuous improvement.",
     cta: "Get a free readiness assessment for your facility. Call +1 (252) 691 4076 to discuss JCI accreditation support.",
@@ -80,10 +80,10 @@ Pursuing JCI accreditation in Nigeria is a strategic investment in patient safet
     readTime: "8 min read",
     image: BLOG_IMAGES.management,
     imageAlt:
-      "Healthcare leadership and hospital management strategy in West Africa – Q.H.S Consultants Ltd.",
+      "Healthcare leadership and hospital management strategy in West Africa – QHS Consultants Ltd",
     publishedAt: "2025-01-10",
-    author: "QHS Consultant Team",
-    seoTitle: "Future of Healthcare Management in West Africa | Trends & Strategy | QHS Consultant",
+    author: "QHS Consultants Team",
+    seoTitle: "Future of Healthcare Management in West Africa | Trends & Strategy | QHS Consultants Ltd",
     seoDescription:
       "Healthcare management trends in West Africa: digital health, governance, operational excellence, and sustainable hospital strategy for Nigeria.",
     cta: "Explore how we can support your leadership and operations. Call +1 (252) 691 4076 for a consultation.",
@@ -120,10 +120,10 @@ The future of healthcare management in West Africa is collaborative, data-inform
     readTime: "11 min read",
     image: BLOG_IMAGES.revenueCycle,
     imageAlt:
-      "Hospital finance, billing, and revenue cycle improvement in Nigerian healthcare – Q.H.S Consultants Ltd.",
+      "Hospital finance, billing, and revenue cycle improvement in Nigerian healthcare – QHS Consultants Ltd",
     publishedAt: "2025-01-05",
-    author: "QHS Consultant Team",
-    seoTitle: "Hospital Revenue Cycle Improvement in Nigeria | Billing & Claims | QHS Consultant",
+    author: "QHS Consultants Team",
+    seoTitle: "Hospital Revenue Cycle Improvement in Nigeria | Billing & Claims | QHS Consultants Ltd",
     seoDescription:
       "Improve your hospital revenue cycle in Nigeria: reduce denials, strengthen front-end processes, coding, and collections with a practical framework.",
     cta: "Discuss revenue cycle and financial improvement for your hospital. Call +1 (252) 691 4076 to speak with our team.",
@@ -164,10 +164,10 @@ Improving the hospital revenue cycle in Nigeria is achievable with a structured 
     readTime: "12 min read",
     image: BLOG_IMAGES.patientSafety,
     imageAlt:
-      "Patient safety, clinical teamwork, and quality improvement in a Nigerian hospital setting – Q.H.S Consultants Ltd.",
+      "Patient safety, clinical teamwork, and quality improvement in a Nigerian hospital setting – QHS Consultants Ltd",
     publishedAt: "2026-01-22",
-    author: "QHS Consultant Team",
-    seoTitle: "Patient Safety Culture in Nigerian Hospitals | Leadership & Quality | QHS Consultant",
+    author: "QHS Consultants Team",
+    seoTitle: "Patient Safety Culture in Nigerian Hospitals | Leadership & Quality | QHS Consultants Ltd",
     seoDescription:
       "Build a stronger patient safety culture in Nigeria: incident systems, just culture, metrics, and leadership behaviours that reduce harm and improve trust.",
     cta: "Discuss patient safety, quality improvement, and governance support for your hospital. Call +1 (252) 691 4076.",
@@ -196,7 +196,7 @@ Many adverse events involve breakdowns in communication—handoffs, unclear orde
 
 ---
 
-A strong patient safety culture is not built in a single workshop. It is built through consistent leadership messaging, fair processes, and visible improvements after feedback. If your organisation wants support designing governance structures, training programmes, or measurement systems aligned with international quality frameworks and Nigerian realities, Q.H.S Consultants Ltd. can work alongside your team.
+A strong patient safety culture is not built in a single workshop. It is built through consistent leadership messaging, fair processes, and visible improvements after feedback. If your organisation wants support designing governance structures, training programmes, or measurement systems aligned with international quality frameworks and Nigerian realities, QHS Consultants Ltd can work alongside your team.
     `,
   },
   {
@@ -208,10 +208,10 @@ A strong patient safety culture is not built in a single workshop. It is built t
     readTime: "13 min read",
     image: BLOG_IMAGES.infectionPrevention,
     imageAlt:
-      "Infection prevention, hand hygiene, and IPC standards in Nigerian hospitals – Q.H.S Consultants Ltd.",
+      "Infection prevention, hand hygiene, and IPC standards in Nigerian hospitals – QHS Consultants Ltd",
     publishedAt: "2026-02-04",
-    author: "QHS Consultant Team",
-    seoTitle: "Infection Prevention & Control Nigeria | Hospital IPC Guide | QHS Consultant",
+    author: "QHS Consultants Team",
+    seoTitle: "Infection Prevention & Control Nigeria | Hospital IPC Guide | QHS Consultants Ltd",
     seoDescription:
       "Strengthen infection prevention and control in Nigerian hospitals: IPC structure, bundles, surveillance, water and supply challenges, and accreditation alignment.",
     cta: "Strengthen IPC, quality, and accreditation readiness at your facility. Call +1 (252) 691 4076.",
@@ -244,7 +244,7 @@ Power, water, waste management, and linen processing directly affect IPC outcome
 
 ---
 
-Strong IPC supports patient outcomes, accreditation surveys, and staff pride in their workplace. If you want external support for gap assessments, policy development, training, or mock tracer exercises, Q.H.S Consultants Ltd. brings experience across Nigerian and international healthcare standards.
+Strong IPC supports patient outcomes, accreditation surveys, and staff pride in their workplace. If you want external support for gap assessments, policy development, training, or mock tracer exercises, QHS Consultants Ltd brings experience across Nigerian and international healthcare standards.
     `,
   },
   {
@@ -256,10 +256,10 @@ Strong IPC supports patient outcomes, accreditation surveys, and staff pride in 
     readTime: "14 min read",
     image: BLOG_IMAGES.digitalHealth,
     imageAlt:
-      "Electronic medical records and digital health systems in Nigerian hospitals – Q.H.S Consultants Ltd.",
+      "Electronic medical records and digital health systems in Nigerian hospitals – QHS Consultants Ltd",
     publishedAt: "2026-02-18",
-    author: "QHS Consultant Team",
-    seoTitle: "EMR & Digital Health Records Nigeria | Implementation Guide | QHS Consultant",
+    author: "QHS Consultants Team",
+    seoTitle: "EMR & Digital Health Records Nigeria | Implementation Guide | QHS Consultants Ltd",
     seoDescription:
       "Plan EMR adoption in Nigeria: vendor fit, phased rollout, change management, NDPA-compliant data practices, and integration with quality improvement.",
     cta: "Discuss digital strategy, quality systems, and hospital operations. Call +1 (252) 691 4076.",
@@ -292,7 +292,7 @@ Configure the system to support tracer readiness: audit trails, approved order s
 
 ---
 
-Moving from paper to digital records is a multi-year journey, but each phase can deliver value if scoped realistically. Q.H.S Consultants Ltd. supports hospitals with strategy, vendor-neutral advisory, workflow design, and alignment with accreditation and clinical governance goals. Contact us to explore a structured assessment for your organisation.
+Moving from paper to digital records is a multi-year journey, but each phase can deliver value if scoped realistically. QHS Consultants Ltd supports hospitals with strategy, vendor-neutral advisory, workflow design, and alignment with accreditation and clinical governance goals. Contact us to explore a structured assessment for your organisation.
     `,
   },
 ]

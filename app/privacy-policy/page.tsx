@@ -4,12 +4,12 @@ import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Q.H.S Consultants Ltd. – Healthcare Consultancy Nigeria",
+  title: "Privacy Policy | QHS Consultants Ltd – Healthcare Consultancy Nigeria",
   description:
-    "Privacy policy for Quality Healthcare Services (Q.H.S) Consultants Ltd.: NDPA 2023, GDPR, data rights, retention, international transfers, and how we protect personal data.",
+    "Privacy policy for Quality Healthcare Services (QHS) Consultants Ltd: NDPA 2023, GDPR, data rights, retention, international transfers, and how we protect personal data.",
 }
 
-const COMPANY = "Quality Healthcare Services (Q.H.S) Consultants Ltd."
+const COMPANY = "Quality Healthcare Services (QHS) Consultants Ltd"
 const EMAIL_PRIVACY = "contact@qhsconsultant.com"
 const PHONE = "+1 (252) 691 4076"
 const ADDRESS = {

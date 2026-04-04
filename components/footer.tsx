@@ -21,7 +21,7 @@ export function Footer() {
           <div>
             <Link href="/" className="inline-block">
               <span className="text-xl font-bold text-secondary-foreground">
-                Q.H.S Consultants Ltd.
+                QHS Consultants Ltd
               </span>
               <span className="mt-0.5 block text-xs font-medium tracking-widest text-secondary-foreground/70 uppercase">
                 Quality Healthcare Services
@@ -133,7 +133,7 @@ export function Footer() {
       <div className="border-t border-secondary-foreground/20">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 sm:flex-row lg:px-8">
           <p className="text-xs text-secondary-foreground/70">
-            {"© 2026 Quality Healthcare Services (Q.H.S) Consultants Ltd. All rights reserved."}
+            {"© 2026 Quality Healthcare Services (QHS) Consultants Ltd. All rights reserved."}
           </p>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             <Link

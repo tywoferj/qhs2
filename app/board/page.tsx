@@ -4,13 +4,13 @@ import type { Metadata } from "next"
 import { BoardClient } from "@/components/board-client"
 
 export const metadata: Metadata = {
-  title: "Board of Directors | Q.H.S Consultants Ltd.",
+  title: "Board of Directors | QHS Consultants Ltd",
   description:
-    "Meet the Board of Directors of Quality Healthcare Services (Q.H.S) Consultants Ltd. Experienced leaders in healthcare, engineering, and business.",
+    "Meet the Board of Directors of Quality Healthcare Services (QHS) Consultants Ltd. Experienced leaders in healthcare, engineering, and business.",
   openGraph: {
-    title: "Board of Directors | Q.H.S Consultants Ltd.",
+    title: "Board of Directors | QHS Consultants Ltd",
     description:
-      "Leadership team of Q.H.S Consultants Ltd. – healthcare strategy, clinical governance, and consultancy excellence.",
+      "Leadership team of QHS Consultants Ltd – healthcare strategy, clinical governance, and consultancy excellence.",
   },
 }
 
@@ -79,7 +79,7 @@ export default function BoardPage() {
               Board of Directors
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-              The Board of Quality Healthcare Services (Q.H.S) Consultants Ltd. brings together senior experience in healthcare, engineering, and business to guide our consultancy and advisory services.
+              The Board of Quality Healthcare Services (QHS) Consultants Ltd brings together senior experience in healthcare, engineering, and business to guide our consultancy and advisory services.
             </p>
           </div>
         </section>

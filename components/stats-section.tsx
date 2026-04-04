@@ -5,7 +5,7 @@ import { Building2, Award, Clock, ThumbsUp } from "lucide-react"
 
 const stats = [
   { icon: Building2, value: 12, suffix: "+", label: "Healthcare Transformed" },
-  { icon: Award, value: 15, suffix: "+", label: "JCI/SQH Accreditations" },
+  { icon: Award, value: 20, suffix: " years +", label: "Hospital Accreditation Experts" },
   { icon: Clock, value: 30, suffix: "+", label: "Years Experience" },
   { icon: ThumbsUp, value: 100, suffix: "%", label: "Client Satisfaction" },
 ]

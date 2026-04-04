@@ -33,7 +33,7 @@ export const SERVICES: ServiceItem[] = [
     longDescription:
       "We guide healthcare facilities through JCI (Joint Commission International) and SafeCare Quality of Healthcare (SQH) accreditation. We deliver gap analysis, mock surveys, policy development, and staff training so your facility is survey-ready and sustains improvement long after certification.",
     image: IMAGES.serviceAccreditation,
-    imageAlt: "JCI and SQH accreditation support, Q.H.S Consultants Ltd.",
+    imageAlt: "JCI and SQH accreditation support, QHS Consultants Ltd",
     bullets: [
       "Gap analysis and readiness assessment",
       "Mock surveys and tracer methodology",
@@ -59,7 +59,7 @@ export const SERVICES: ServiceItem[] = [
     heroParagraph2:
       "We also provide advisory services on clinical risk management, clinical risk identification, and management.",
     image: IMAGES.serviceClinicalRiskGovernance,
-    imageAlt: "Clinical risk and governance, Q.H.S Consultants Ltd.",
+    imageAlt: "Clinical risk and governance, QHS Consultants Ltd",
     bullets: [
       "Regulatory and standards mapping",
       "Incident reporting and root cause analysis",
@@ -84,7 +84,7 @@ export const SERVICES: ServiceItem[] = [
     heroParagraph2:
       "We also provide advisory services on clinical risk management, clinical risk identification, and management.",
     image: IMAGES.serviceClinicalStrategy,
-    imageAlt: "Clinical strategy and governance, Q.H.S Consultants Ltd.",
+    imageAlt: "Clinical strategy and governance, QHS Consultants Ltd",
     bullets: [
       "Credentialing and privileging",
       "M&M and quality review processes",
@@ -107,7 +107,7 @@ export const SERVICES: ServiceItem[] = [
     longDescription:
       "We support healthcare institutions to embed quality and patient safety in daily practice through quality improvement frameworks, measurement, audit, and staff engagement. The aim is consistently high standards of care across your facility.",
     image: IMAGES.serviceHealthcareQuality,
-    imageAlt: "Healthcare quality and patient safety, Q.H.S Consultants Ltd.",
+    imageAlt: "Healthcare quality and patient safety, QHS Consultants Ltd",
     bullets: [
       "Quality improvement and patient safety frameworks",
       "Measurement, audit and dashboards",
@@ -133,7 +133,7 @@ export const SERVICES: ServiceItem[] = [
     heroParagraph2:
       "We also provide advisory services on industry volatility and disruption.",
     image: IMAGES.serviceHealthcareStrategy,
-    imageAlt: "Healthcare strategy and advisory, Quality Healthcare Services (Q.H.S) Consultants Ltd.",
+    imageAlt: "Healthcare strategy and advisory, Quality Healthcare Services (QHS) Consultants Ltd",
     bullets: [
       "Market and competitive analysis",
       "Service line and growth strategy",
@@ -158,7 +158,7 @@ export const SERVICES: ServiceItem[] = [
       "We advise on medical equipment sourcing, procurement strategy, vendor selection, and lifecycle management. We also provide guidance on return on investment (ROI) analysis to support capital planning, business case development, and prioritisation of purchases. You acquire the right equipment at the right cost, with appropriate support and maintenance.",
     image: IMAGES.serviceMedicalEquipmentSourcing,
     imageAlt:
-      "Medical equipment sourcing and procurement advisory with ROI analysis support, Q.H.S Consultants Ltd., Nigeria",
+      "Medical equipment sourcing and procurement advisory with ROI analysis support, QHS Consultants Ltd, Nigeria",
     bullets: [
       "Procurement strategy and specification",
       "Vendor selection and evaluation",
@@ -183,7 +183,7 @@ export const SERVICES: ServiceItem[] = [
     longDescription:
       "We design and deliver medical and clinical training programmes in quality, patient safety, leadership, and operations. Content combines international best practices with Nigerian context so your team can perform at a higher level.",
     image: IMAGES.serviceMedicalTraining,
-    imageAlt: "Medical training and capacity building, Q.H.S Consultants Ltd.",
+    imageAlt: "Medical training and capacity building, QHS Consultants Ltd",
     bullets: [
       "Quality and patient safety training",
       "Leadership and management development",

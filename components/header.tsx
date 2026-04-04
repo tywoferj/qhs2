@@ -41,7 +41,7 @@ export function Header() {
           <div className="relative h-14 w-14 flex-shrink-0 self-center">
             <Image
               src="/images/favicon/QHS_logo.png"
-              alt="Q.H.S Consultants Ltd. logo"
+              alt="QHS Consultants Ltd logo"
               fill
               sizes="56px"
               className="rounded-full object-contain"
@@ -50,7 +50,7 @@ export function Header() {
           </div>
           <div className="flex flex-col">
             <span className="text-xl font-bold tracking-tight text-primary">
-              Q.H.S Consultants Ltd.
+              QHS Consultants Ltd
             </span>
             <span className="text-[11px] font-medium tracking-widest text-muted-foreground uppercase">
               Quality Healthcare Services
