@@ -15,6 +15,7 @@ import {
   type LucideIcon,
 } from "lucide-react"
 import Link from "next/link"
+import { Reveal } from "@/components/reveal"
 import { SERVICES } from "@/lib/services-data"
 
 const iconMap: Record<string, LucideIcon> = {
@@ -37,7 +38,7 @@ export function ServicesGrid() {
   return (
     <section id="services" className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="mb-14 text-center">
+        <Reveal className="mb-14 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
             What We Do
           </p>
@@ -49,16 +50,16 @@ export function ServicesGrid() {
             consulting services tailored to the unique needs of healthcare
             facilities across Nigeria and West Africa.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((service) => {
+          {SERVICES.map((service, idx) => {
             const Icon = iconMap[service.id] ?? Award
             return (
+              <Reveal key={service.id} delayMs={idx * 55}>
               <Link
-                key={service.id}
                 href={`/services#${service.id}`}
-                className="group rounded-xl border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group flex h-full flex-col rounded-xl border bg-card p-6 transition-all duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg"
               >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
                   <Icon className="h-6 w-6 text-primary" />
@@ -69,10 +70,11 @@ export function ServicesGrid() {
                 <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
                   {service.shortDescription}
                 </p>
-                <span className="inline-flex items-center text-sm font-medium text-primary transition-colors group-hover:underline">
+                <span className="mt-auto inline-flex items-center text-sm font-medium text-primary transition-colors group-hover:underline">
                   {"Learn More \u2192"}
                 </span>
               </Link>
+              </Reveal>
             )
           })}
         </div>

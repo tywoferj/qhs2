@@ -1,13 +1,14 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Clock } from "lucide-react"
+import { Reveal } from "@/components/reveal"
 import { BLOG_POSTS } from "@/lib/blog-posts"
 
 export function BlogSection() {
   return (
     <section id="insights" className="bg-muted py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="mb-14 text-center">
+        <Reveal className="mb-14 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
             Insights
           </p>
@@ -18,14 +19,14 @@ export function BlogSection() {
             Stay informed with the latest trends, strategies, and best practices
             in healthcare management and quality improvement.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {BLOG_POSTS.map((post) => (
+          {BLOG_POSTS.map((post, idx) => (
+            <Reveal key={post.slug} delayMs={idx * 70}>
             <Link
-              key={post.title}
               href={`/blog/${post.slug}`}
-              className="group overflow-hidden rounded-xl border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="group flex h-full flex-col overflow-hidden rounded-xl border bg-card transition-all duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
@@ -33,8 +34,10 @@ export function BlogSection() {
                   alt={post.imageAlt}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  quality={80}
+                  className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-105"
+                  quality={75}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="p-6">
@@ -58,6 +61,7 @@ export function BlogSection() {
                 </div>
               </div>
             </Link>
+            </Reveal>
           ))}
         </div>
       </div>

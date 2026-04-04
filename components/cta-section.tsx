@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { Reveal } from "@/components/reveal"
 import { Phone } from "lucide-react"
 import Link from "next/link"
 
@@ -12,44 +13,50 @@ export function CtaSection() {
       <div className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-secondary/10" />
 
       <div className="relative mx-auto max-w-3xl px-4 text-center lg:px-8">
-        <h2 className="text-balance text-3xl font-bold tracking-tight text-background md:text-4xl lg:text-5xl">
-          Ready to Transform Your Healthcare Facility?
-        </h2>
-        <p className="mx-auto mt-4 max-w-xl text-lg text-background/70">
-          Schedule a complimentary consultation with our expert team and discover
-          how we can help you achieve operational excellence.
-        </p>
-        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <Button
-            size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90"
-            asChild
-          >
-            <Link href="/services">Explore Our Services</Link>
-          </Button>
-        </div>
-        <div className="mt-6 space-y-2 text-sm text-background/60">
-          <p className="flex flex-wrap items-center justify-center gap-2">
-            <Phone className="h-4 w-4" />
-            <span>Discuss our services:</span>
-            <a
-              href={`tel:${PHONE_SERVICES}`}
-              className="font-medium text-background/80 underline underline-offset-4 hover:text-background"
-            >
-              +1 (252) 691 4076
-            </a>
+        <Reveal>
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-background md:text-4xl lg:text-5xl">
+            Ready to Transform Your Healthcare Facility?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-background/70">
+            Schedule a complimentary consultation with our expert team and discover
+            how we can help you achieve operational excellence.
           </p>
-          <p className="flex flex-wrap items-center justify-center gap-2">
-            <Phone className="h-4 w-4" />
-            <span>Book a specialist consultation:</span>
-            <a
-              href={`tel:${PHONE_APPOINTMENT}`}
-              className="font-medium text-background/80 underline underline-offset-4 hover:text-background"
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Button
+              size="lg"
+              className="bg-primary text-primary-foreground shadow-md transition-all duration-200 hover:bg-primary/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-lg"
+              asChild
             >
-              +1 (573) 264 7695
-            </a>
-          </p>
-        </div>
+              <Link href="/services">Explore Our Services</Link>
+            </Button>
+          </div>
+          <div className="mt-6 space-y-3 text-sm text-background/60">
+            <p className="flex flex-col items-center gap-1 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-2">
+              <span className="inline-flex items-center gap-2">
+                <Phone className="h-4 w-4 shrink-0" />
+                <span>Discuss our services:</span>
+              </span>
+              <a
+                href={`tel:${PHONE_SERVICES}`}
+                className="font-medium text-background/80 underline underline-offset-4 transition-colors hover:text-background"
+              >
+                +1 (252) 691 4076
+              </a>
+            </p>
+            <p className="flex flex-col items-center gap-1 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-2">
+              <span className="inline-flex items-center gap-2 text-center sm:text-left">
+                <Phone className="h-4 w-4 shrink-0" />
+                <span>Book specialist / Advisory Appointment:</span>
+              </span>
+              <a
+                href={`tel:${PHONE_APPOINTMENT}`}
+                className="font-medium text-background/80 underline underline-offset-4 transition-colors hover:text-background"
+              >
+                +1 (573) 264 7695
+              </a>
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

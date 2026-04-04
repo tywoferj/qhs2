@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { Reveal } from "@/components/reveal"
 import { Award, Building2, Clock } from "lucide-react"
 import { HeroSlider } from "@/components/hero-slider"
 
@@ -13,7 +14,7 @@ export function HeroSection() {
     <section className="relative overflow-hidden bg-muted">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-7 px-4 py-14 md:py-20 lg:flex-row lg:gap-10 lg:px-8">
         {/* Left content */}
-        <div className="flex-1 lg:max-w-[60%]">
+        <Reveal className="flex-1 lg:max-w-[60%]">
           <p className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             Nigeria{"'"}s Leading Healthcare Consultancy
           </p>
@@ -33,7 +34,7 @@ export function HeroSection() {
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Button
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="bg-primary text-primary-foreground shadow-sm transition-all duration-200 hover:bg-primary/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md"
               asChild
             >
               <a href="tel:+15732647695">Book with Dr Onakoya</a>
@@ -41,7 +42,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary text-primary hover:bg-primary/5"
+              className="border-primary text-primary transition-all duration-200 hover:bg-primary/5 motion-safe:hover:-translate-y-0.5"
               asChild
             >
               <a href="/services">Explore Services</a>
@@ -51,7 +52,10 @@ export function HeroSection() {
           {/* Trust badges */}
           <div className="mt-8 flex flex-wrap gap-6">
             {trustBadges.map((badge) => (
-              <div key={badge.label} className="flex items-center gap-3">
+              <div
+                key={badge.label}
+                className="flex items-center gap-3 rounded-xl transition-shadow duration-300 motion-safe:hover:bg-muted/60 motion-safe:hover:shadow-sm"
+              >
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                   <badge.icon className="h-6 w-6 text-primary" />
                 </div>
@@ -62,17 +66,17 @@ export function HeroSection() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
 
         {/* Right image – slider, slightly larger */}
-        <div className="relative flex-1 lg:max-w-[48%] lg:min-h-[380px]">
+        <Reveal className="relative flex-1 lg:max-w-[48%] lg:min-h-[380px]" delayMs={100}>
           <HeroSlider />
           {/* Floating stat card */}
-          <div className="absolute -bottom-4 -left-4 z-10 rounded-xl bg-card p-4 shadow-lg md:-bottom-6 md:-left-6">
+          <div className="absolute -bottom-4 -left-4 z-10 rounded-xl border border-border/50 bg-card p-4 shadow-lg motion-safe:animate-in motion-safe:fade-in motion-safe:zoom-in-95 motion-safe:duration-500 md:-bottom-6 md:-left-6">
             <p className="text-2xl font-bold text-primary">98%</p>
             <p className="text-xs text-muted-foreground">Success Rate</p>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

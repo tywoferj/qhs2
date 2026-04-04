@@ -97,7 +97,7 @@ function TestimonialCard({
   testimonial: (typeof testimonials)[number]
 }) {
   return (
-    <div className="flex flex-col rounded-xl border bg-card p-8 shadow-sm">
+    <div className="flex flex-col rounded-xl border bg-card p-8 shadow-sm transition-all duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-md">
       <Quote className="mb-4 h-8 w-8 text-primary/20" />
       <div className="mb-4 flex gap-1">
         {Array.from({ length: 5 }).map((_, i) => (

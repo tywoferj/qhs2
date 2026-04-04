@@ -1,5 +1,6 @@
 import { CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Reveal } from "@/components/reveal"
 
 const features = [
   {
@@ -32,20 +33,20 @@ export function FeaturedServices() {
   return (
     <section className="bg-muted py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="mb-14 text-center">
+        <Reveal className="mb-14 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
             Featured Expertise
           </p>
           <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             Our Flagship Services
           </h2>
-        </div>
+        </Reveal>
 
         <div className="grid gap-8 lg:grid-cols-2">
           {features.map((feature, idx) => (
+            <Reveal key={feature.title} delayMs={idx * 90}>
             <div
-              key={feature.title}
-              className={`relative overflow-hidden rounded-2xl p-8 md:p-10 ${
+              className={`relative overflow-hidden rounded-2xl p-8 shadow-sm transition-all duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-xl md:p-10 ${
                 idx === 0
                   ? "bg-primary text-primary-foreground"
                   : "bg-foreground text-background"
@@ -88,17 +89,18 @@ export function FeaturedServices() {
                   size="lg"
                   className={
                     idx === 0
-                      ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90"
-                      : "bg-background text-foreground hover:bg-background/90"
+                      ? "bg-primary-foreground text-primary transition-all duration-200 hover:bg-primary-foreground/90 motion-safe:hover:-translate-y-0.5"
+                      : "bg-background text-foreground transition-all duration-200 hover:bg-background/90 motion-safe:hover:-translate-y-0.5"
                   }
                   asChild
                 >
-                  <a href={idx === 0 ? "tel:+12526914076" : "/services#operations"}>
+                  <a href={idx === 0 ? "tel:+12526914076" : "/services"}>
                     {feature.cta}
                   </a>
                 </Button>
               </div>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -152,14 +152,17 @@ export const SERVICES: ServiceItem[] = [
   {
     id: "medical-equipment-sourcing",
     title: "Medical Equipment Sourcing",
-    shortDescription: "Advisory and support on sourcing and procurement of medical equipment.",
+    shortDescription:
+      "Advisory on medical equipment sourcing, procurement, lifecycle management, and return on investment (ROI) analysis.",
     longDescription:
-      "We advise on medical equipment sourcing, procurement strategy, vendor selection, and lifecycle management. You acquire the right equipment at the right cost, with appropriate support and maintenance.",
+      "We advise on medical equipment sourcing, procurement strategy, vendor selection, and lifecycle management. We also provide guidance on return on investment (ROI) analysis to support capital planning, business case development, and prioritisation of purchases. You acquire the right equipment at the right cost, with appropriate support and maintenance.",
     image: IMAGES.serviceMedicalEquipmentSourcing,
-    imageAlt: "Medical equipment sourcing, Q.H.S Consultants Ltd.",
+    imageAlt:
+      "Medical equipment sourcing and procurement advisory with ROI analysis support, Q.H.S Consultants Ltd., Nigeria",
     bullets: [
       "Procurement strategy and specification",
       "Vendor selection and evaluation",
+      "ROI analysis and capital planning support",
       "Lifecycle and maintenance planning",
       "Cost and value optimisation",
     ],
@@ -168,6 +171,7 @@ export const SERVICES: ServiceItem[] = [
     phoneLabel: "Call +1 (252) 691 4076 to discuss medical equipment sourcing",
     outcomes: [
       "Right equipment aligned to clinical needs",
+      "Stronger investment decisions supported by ROI insight",
       "Value for money and sustainable support",
       "Clear procurement and maintenance processes",
     ],

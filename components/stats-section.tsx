@@ -23,6 +23,10 @@ function AnimatedNumber({
 
   useEffect(() => {
     if (!inView) return
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setCount(target)
+      return
+    }
     let start = 0
     const duration = 2000
     const step = Math.ceil(target / (duration / 16))

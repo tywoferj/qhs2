@@ -16,17 +16,32 @@ export async function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }))
 }
 
+const SITE_ORIGIN = "https://qhsconsultant.com"
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = getPostBySlug(slug)
   if (!post) return { title: "Post Not Found" }
+  const ogImage =
+    post.image.startsWith("/") ? `${SITE_ORIGIN}${post.image}` : post.image
+  const canonical = `${SITE_ORIGIN}/blog/${slug}`
   return {
     title: post.seoTitle,
     description: post.seoDescription,
+    alternates: { canonical },
     openGraph: {
+      type: "article",
+      url: canonical,
       title: post.seoTitle,
       description: post.seoDescription,
-      images: [post.image],
+      publishedTime: `${post.publishedAt}T12:00:00.000Z`,
+      images: [{ url: ogImage, alt: post.imageAlt }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.seoTitle,
+      description: post.seoDescription,
+      images: [ogImage],
     },
   }
 }
@@ -36,7 +51,7 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPostBySlug(slug)
   if (!post) notFound()
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://qhsconsultant.com"
+  const baseUrl = SITE_ORIGIN
 
   return (
     <>
@@ -76,26 +91,32 @@ export default async function BlogPostPage({ params }: Props) {
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 896px"
               priority
+              fetchPriority="high"
+              decoding="async"
             />
           </div>
 
           <div className="prose prose-neutral dark:prose-invert max-w-none">
-            {post.content.trim().split("\n").map((para, i) => {
-              if (para.startsWith("**") && para.endsWith("**")) {
+            {post.content
+              .trim()
+              .split("\n")
+              .map((para, i) => para.trim())
+              .filter(Boolean)
+              .map((para, i) => {
+                if (para.startsWith("**") && para.endsWith("**")) {
+                  return (
+                    <h2 key={i} className="mt-8 text-xl font-semibold text-foreground">
+                      {para.replace(/\*\*/g, "")}
+                    </h2>
+                  )
+                }
+                if (para === "---") return <hr key={i} className="my-8 border-border" />
                 return (
-                  <h2 key={i} className="mt-8 text-xl font-semibold text-foreground">
-                    {para.replace(/\*\*/g, "")}
-                  </h2>
+                  <p key={i} className="mb-4 leading-relaxed text-muted-foreground">
+                    {para}
+                  </p>
                 )
-              }
-              if (para === "---")
-                return <hr key={i} className="my-8 border-border" />
-              return (
-                <p key={i} className="mb-4 leading-relaxed text-muted-foreground">
-                  {para}
-                </p>
-              )
-            })}
+              })}
           </div>
 
           <div className="mt-10 rounded-xl border bg-muted/50 p-6">
@@ -112,7 +133,7 @@ export default async function BlogPostPage({ params }: Props) {
                 href="tel:+15732647695"
                 className="text-sm font-semibold text-primary underline underline-offset-4 hover:no-underline"
               >
-                +1 (573) 264 7695 — Book with Dr Onakoya
+                +1 (573) 264 7695 — Book specialist / Advisory Appointment
               </a>
             </div>
           </div>

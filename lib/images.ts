@@ -7,7 +7,7 @@
 const UNSPLASH = "https://images.unsplash.com"
 const PEXELS = "https://images.pexels.com/photos"
 
-const u = (id: string, w = 800, q = 85) =>
+const u = (id: string, w = 800, q = 75) =>
   `${UNSPLASH}/photo-${id}?w=${w}&q=${q}`
 const p = (id: number, w = 800) =>
   `${PEXELS}/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`
@@ -24,9 +24,6 @@ export { HERO_SLIDE_FALLBACK_TEAM, HERO_SLIDE_FALLBACK_CLINIC }
 
 export const IMAGES = {
   hero: u("1519494026892-80bbd2d6fd0d"),
-  blogAccreditation: u("1519494026892-80bbd2d6fd0d", 600),
-  blogManagement: u("1582750433449-648ed127bb54", 600),
-  blogRevenue: u("1579684385127-1ef15d508118", 600),
 
   // About Us – healthcare team / facility
   aboutPage: u("1519494026892-80bbd2d6fd0d"),
