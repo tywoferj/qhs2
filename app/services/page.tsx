@@ -36,15 +36,23 @@ export default function ServicesPage() {
               From JCI and SQH accreditation to operational excellence and strategic growth, we deliver end-to-end consulting tailored to healthcare facilities across Nigeria and West Africa. Trusted by 10+ hospitals.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-                <a href="tel:+12526914076">
-                  <Phone className="mr-2 h-4 w-4" />
-                  Discuss Services — +1 (252) 691 4076
+              <Button
+                size="lg"
+                className="h-auto min-h-12 bg-primary py-3 text-primary-foreground hover:bg-primary/90"
+                asChild
+              >
+                <a href="tel:+12526914076" className="inline-flex items-start gap-2.5">
+                  <Phone className="mt-0.5 h-4 w-4 shrink-0" />
+                  <span className="flex flex-col items-start gap-0.5 text-left leading-snug">
+                    <span>Discuss Services</span>
+                    <span className="text-sm font-normal opacity-90">+1 (252) 691 4076</span>
+                  </span>
                 </a>
               </Button>
-              <Button size="lg" variant="outline" asChild>
-                <a href="tel:+15732647695">
-                  Book with Dr Onakoya — +1 (573) 264 7695
+              <Button size="lg" variant="outline" className="h-auto min-h-12 py-3" asChild>
+                <a href="tel:+15732647695" className="inline-flex flex-col items-start gap-0.5 text-left leading-snug">
+                  <span>Book with Dr Onakoya</span>
+                  <span className="text-sm font-normal opacity-90">+1 (573) 264 7695</span>
                 </a>
               </Button>
             </div>
@@ -83,9 +91,14 @@ export default function ServicesPage() {
                       {service.title}
                     </h2>
                   </Link>
-                  <p className="mt-4 text-muted-foreground">
+                  <p className="mt-4 max-w-prose leading-relaxed text-muted-foreground">
                     {service.longDescription}
                   </p>
+                  {service.heroParagraph2 ? (
+                    <p className="mt-4 max-w-prose leading-relaxed text-muted-foreground">
+                      {service.heroParagraph2}
+                    </p>
+                  ) : null}
                   <ul className="mt-6 space-y-3">
                     {service.bullets.map((bullet) => (
                       <li key={bullet} className="flex items-start gap-3">
@@ -126,15 +139,17 @@ export default function ServicesPage() {
             <div className="mt-6 flex flex-wrap justify-center gap-4">
               <a
                 href="tel:+12526914076"
-                className="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90"
+                className="inline-flex flex-col items-center gap-1 rounded-lg bg-primary px-6 py-3 text-center text-sm font-semibold text-primary-foreground hover:bg-primary/90"
               >
-                +1 (252) 691 4076 — Discuss services
+                <span>Discuss services</span>
+                <span className="text-base font-bold tracking-tight">+1 (252) 691 4076</span>
               </a>
               <a
                 href="tel:+15732647695"
-                className="inline-flex items-center rounded-lg border border-background/30 px-6 py-3 text-sm font-semibold text-background hover:bg-background/10"
+                className="inline-flex flex-col items-center gap-1 rounded-lg border border-background/30 px-6 py-3 text-center text-sm font-semibold text-background hover:bg-background/10"
               >
-                +1 (573) 264 7695 — Book with Dr Onakoya
+                <span>Book with Dr Onakoya</span>
+                <span className="text-base font-bold tracking-tight">+1 (573) 264 7695</span>
               </a>
             </div>
             <p className="mt-6">

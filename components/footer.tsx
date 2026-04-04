@@ -135,12 +135,18 @@ export function Footer() {
           <p className="text-xs text-secondary-foreground/70">
             {"© 2026 Quality Healthcare Services (Q.H.S) Consultants Ltd. All rights reserved."}
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             <Link
               href="/privacy-policy"
               className="text-xs text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
             >
               Privacy Policy
+            </Link>
+            <Link
+              href="/cookies"
+              className="text-xs text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
+            >
+              Cookie Policy
             </Link>
             <Link
               href="/terms-of-service"

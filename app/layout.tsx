@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 
 import './globals.css'
 import { SeoJsonLd } from '@/components/seo-jsonld'
+import { CookieConsentBanner } from '@/components/cookie-consent-banner'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -47,6 +48,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <SeoJsonLd />
         {children}
+        <CookieConsentBanner />
       </body>
     </html>
   )

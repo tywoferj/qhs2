@@ -43,9 +43,45 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       url: `${BASE_URL}/services/${slug}`,
       images: [ogImage],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
     },
     alternates: { canonical: `${BASE_URL}/services/${slug}` },
   }
+}
+
+function ServiceJsonLd({ service }: { service: ServiceItem }) {
+  const description = [service.longDescription, service.heroParagraph2].filter(Boolean).join(" ")
+  const name = service.title.replace(/\.\s*$/, "")
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    serviceType: name,
+    url: `${BASE_URL}/services/${service.id}`,
+    provider: {
+      "@type": "Organization",
+      name: "Quality Healthcare Services (Q.H.S) Consultants Ltd.",
+      url: BASE_URL,
+      telephone: "+1-252-691-4076",
+    },
+    areaServed: [
+      { "@type": "Country", name: "Nigeria" },
+      { "@type": "Place", name: "West Africa" },
+    ],
+  }
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
 }
 
 function RelatedServices({ currentId }: { currentId: string }) {
@@ -82,6 +118,7 @@ export default async function ServiceSlugPage({ params }: Props) {
 
   return (
     <>
+      <ServiceJsonLd service={service} />
       <Header />
       <main className="min-h-screen bg-background">
         {/* Breadcrumb */}
@@ -105,9 +142,14 @@ export default async function ServiceSlugPage({ params }: Props) {
                 <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
                   {service.title}
                 </h1>
-                <p className="mt-4 text-lg text-muted-foreground">
+                <p className="mt-4 max-w-prose text-lg leading-relaxed text-muted-foreground">
                   {service.longDescription}
                 </p>
+                {service.heroParagraph2 ? (
+                  <p className="mt-4 max-w-prose text-lg leading-relaxed text-muted-foreground">
+                    {service.heroParagraph2}
+                  </p>
+                ) : null}
                 <div className="mt-6 flex flex-wrap gap-4">
                   <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
                     <a href={phoneHref}>
@@ -141,8 +183,8 @@ export default async function ServiceSlugPage({ params }: Props) {
             <h2 className="text-2xl font-bold text-foreground md:text-3xl">
               What We Deliver
             </h2>
-            <p className="mt-2 text-muted-foreground">
-              Our engagement is tailored to your facility and goals. Here’s what you can expect.
+            <p className="mt-2 max-w-prose leading-relaxed text-muted-foreground">
+              Our engagement is tailored to your facility and goals. Here is what you can expect.
             </p>
             <ul className="mt-8 grid gap-4 sm:grid-cols-2">
               {service.bullets.map((bullet) => (

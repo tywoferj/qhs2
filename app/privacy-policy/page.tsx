@@ -197,8 +197,13 @@ export default function PrivacyPolicyPage() {
                 Our website may use cookies or similar technologies that are strictly necessary for operation and
                 security. Where we introduce analytics or marketing technologies that are not strictly necessary,
                 we will obtain consent where required by law (including NDPA and ePrivacy-style expectations) and
-                provide granular choices where feasible. You can control cookies through your browser settings;
-                disabling some cookies may affect site functionality.
+                provide granular choices where feasible. For details and to manage optional cookies on this site,
+                see our{" "}
+                <Link href="/cookies" className="text-primary hover:underline">
+                  Cookie Policy
+                </Link>
+                . You can control cookies through your browser settings; disabling some cookies may affect site
+                functionality.
               </p>
             </section>
 

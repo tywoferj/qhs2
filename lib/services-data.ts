@@ -5,6 +5,8 @@ export interface ServiceItem {
   title: string
   shortDescription: string
   longDescription: string
+  /** Optional second hero paragraph (detail + listing pages). */
+  heroParagraph2?: string
   image: string
   imageAlt: string
   bullets: string[]
@@ -29,9 +31,9 @@ export const SERVICES: ServiceItem[] = [
     title: "Hospital Accreditation Support.",
     shortDescription: "Expert guidance through JCI and SQH accreditation and related standards.",
     longDescription:
-      "We guide healthcare facilities through JCI (Joint Commission International) and SafeCare Quality of Healthcare (SQH) accreditation—delivering gap analysis, mock surveys, policy development, and staff training so your facility is survey-ready and sustains improvement long after certification.",
+      "We guide healthcare facilities through JCI (Joint Commission International) and SafeCare Quality of Healthcare (SQH) accreditation. We deliver gap analysis, mock surveys, policy development, and staff training so your facility is survey-ready and sustains improvement long after certification.",
     image: IMAGES.serviceAccreditation,
-    imageAlt: "JCI and SQH accreditation support – Q.H.S Consultants Ltd.",
+    imageAlt: "JCI and SQH accreditation support, Q.H.S Consultants Ltd.",
     bullets: [
       "Gap analysis and readiness assessment",
       "Mock surveys and tracer methodology",
@@ -50,11 +52,14 @@ export const SERVICES: ServiceItem[] = [
   {
     id: "clinical-risk-governance",
     title: "Clinical Risk and Governance",
-    shortDescription: "Advisory on clinical risk, governance, compliance and incident management.",
+    shortDescription:
+      "Clinical governance and risk: frameworks, compliance, incidents, risk identification, clinical risk management. Nigeria.",
     longDescription:
-      "We help you implement clinical risk and governance frameworks—including incident reporting, root cause analysis, risk registers, and compliance with regulatory requirements—so your facility meets standards and responds effectively when issues arise.",
+      "We help you implement clinical risk and governance frameworks that cover incident reporting, root cause analysis, risk registers, and compliance with regulatory requirements. Your facility can meet standards and respond effectively when issues arise.",
+    heroParagraph2:
+      "We also provide advisory services on clinical risk management, clinical risk identification, and management.",
     image: IMAGES.serviceClinicalRiskGovernance,
-    imageAlt: "Clinical risk and governance – Q.H.S Consultants Ltd.",
+    imageAlt: "Clinical risk and governance, Q.H.S Consultants Ltd.",
     bullets: [
       "Regulatory and standards mapping",
       "Incident reporting and root cause analysis",
@@ -75,9 +80,11 @@ export const SERVICES: ServiceItem[] = [
     title: "Clinical Strategy",
     shortDescription: "Advisory on clinical service design, governance and performance.",
     longDescription:
-      "We help you define and implement clinical strategy—including clinical governance frameworks, credentialing and privileging, morbidity and mortality review, and medical staff engagement—aligned with international standards and local regulations.",
+      "We help you define and implement clinical strategy across clinical governance frameworks, credentialing and privileging, morbidity and mortality review, and medical staff engagement. Our support is aligned with international standards and local regulations.",
+    heroParagraph2:
+      "We also provide advisory services on clinical risk management, clinical risk identification, and management.",
     image: IMAGES.serviceClinicalStrategy,
-    imageAlt: "Clinical strategy and governance – Q.H.S Consultants Ltd.",
+    imageAlt: "Clinical strategy and governance, Q.H.S Consultants Ltd.",
     bullets: [
       "Credentialing and privileging",
       "M&M and quality review processes",
@@ -98,9 +105,9 @@ export const SERVICES: ServiceItem[] = [
     title: "Quality Improvement and Patient Safety.",
     shortDescription: "Advisory on quality improvement, patient safety and operational excellence.",
     longDescription:
-      "We support healthcare institutions to embed quality and patient safety in daily practice through quality improvement frameworks, measurement, audit, and staff engagement—so your facility delivers consistently high standards of care.",
+      "We support healthcare institutions to embed quality and patient safety in daily practice through quality improvement frameworks, measurement, audit, and staff engagement. The aim is consistently high standards of care across your facility.",
     image: IMAGES.serviceHealthcareQuality,
-    imageAlt: "Healthcare quality and patient safety – Q.H.S Consultants Ltd.",
+    imageAlt: "Healthcare quality and patient safety, Q.H.S Consultants Ltd.",
     bullets: [
       "Quality improvement and patient safety frameworks",
       "Measurement, audit and dashboards",
@@ -119,11 +126,14 @@ export const SERVICES: ServiceItem[] = [
   {
     id: "healthcare-strategy",
     title: "Healthcare Strategy",
-    shortDescription: "Consultancy and advisory on organisational and market strategy for healthcare institutions.",
+    shortDescription:
+      "Healthcare strategy: market analysis, service lines, roadmaps, industry volatility, disruption. Nigeria and West Africa.",
     longDescription:
       "We support boards and executives with healthcare strategy development, market analysis, scenario planning, service line strategy, and implementation roadmaps so your institution can grow sustainably in Nigeria and the wider region.",
+    heroParagraph2:
+      "We also provide advisory services on industry volatility and disruption.",
     image: IMAGES.serviceHealthcareStrategy,
-    imageAlt: "Healthcare strategy and advisory – Quality Healthcare Services (Q.H.S) Consultants Ltd.",
+    imageAlt: "Healthcare strategy and advisory, Quality Healthcare Services (Q.H.S) Consultants Ltd.",
     bullets: [
       "Market and competitive analysis",
       "Service line and growth strategy",
@@ -144,9 +154,9 @@ export const SERVICES: ServiceItem[] = [
     title: "Medical Equipment Sourcing",
     shortDescription: "Advisory and support on sourcing and procurement of medical equipment.",
     longDescription:
-      "We advise on medical equipment sourcing, procurement strategy, vendor selection, and lifecycle management—so your facility acquires the right equipment, at the right cost, with appropriate support and maintenance.",
+      "We advise on medical equipment sourcing, procurement strategy, vendor selection, and lifecycle management. You acquire the right equipment at the right cost, with appropriate support and maintenance.",
     image: IMAGES.serviceMedicalEquipmentSourcing,
-    imageAlt: "Medical equipment sourcing – Q.H.S Consultants Ltd.",
+    imageAlt: "Medical equipment sourcing, Q.H.S Consultants Ltd.",
     bullets: [
       "Procurement strategy and specification",
       "Vendor selection and evaluation",
@@ -167,9 +177,9 @@ export const SERVICES: ServiceItem[] = [
     title: "Medical Training",
     shortDescription: "Design and delivery of medical and clinical training programmes.",
     longDescription:
-      "We design and deliver medical and clinical training programmes in quality, patient safety, leadership, and operations—combining international best practices with Nigerian context so your team can perform at a higher level.",
+      "We design and deliver medical and clinical training programmes in quality, patient safety, leadership, and operations. Content combines international best practices with Nigerian context so your team can perform at a higher level.",
     image: IMAGES.serviceMedicalTraining,
-    imageAlt: "Medical training and capacity building – Q.H.S Consultants Ltd.",
+    imageAlt: "Medical training and capacity building, Q.H.S Consultants Ltd.",
     bullets: [
       "Quality and patient safety training",
       "Leadership and management development",
