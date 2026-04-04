@@ -11,10 +11,10 @@ const trustBadges = [
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-muted">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-7 px-4 py-14 md:py-20 lg:flex-row lg:gap-10 lg:px-8">
+    <section className="relative overflow-x-hidden bg-muted">
+      <div className="mx-auto flex max-w-7xl min-w-0 flex-col items-center gap-8 px-4 py-12 sm:px-5 sm:py-14 md:py-20 lg:flex-row lg:items-start lg:gap-10 lg:px-8">
         {/* Left content */}
-        <Reveal className="flex-1 lg:max-w-[60%]">
+        <Reveal className="min-w-0 w-full flex-1 lg:max-w-[58%]">
           <p className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             Nigeria{"'"}s Leading Healthcare Consultancy
           </p>
@@ -31,10 +31,10 @@ export function HeroSection() {
             and medical centers.
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-7 flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button
               size="lg"
-              className="bg-primary text-primary-foreground shadow-sm transition-all duration-200 hover:bg-primary/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md"
+              className="w-full bg-primary text-primary-foreground shadow-sm transition-all duration-200 hover:bg-primary/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md sm:w-auto"
               asChild
             >
               <a href="tel:+15732647695">Book with Dr Onakoya</a>
@@ -42,7 +42,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary text-primary transition-all duration-200 hover:bg-primary/5 motion-safe:hover:-translate-y-0.5"
+              className="w-full border-primary/40 text-primary transition-all duration-200 hover:bg-primary/5 motion-safe:hover:-translate-y-0.5 sm:w-auto"
               asChild
             >
               <a href="/services">Explore Services</a>
@@ -69,10 +69,13 @@ export function HeroSection() {
         </Reveal>
 
         {/* Right image – slider, slightly larger */}
-        <Reveal className="relative flex-1 lg:max-w-[48%] lg:min-h-[380px]" delayMs={100}>
+        <Reveal
+          className="relative w-full min-w-0 max-w-full flex-1 lg:max-w-[42%] lg:min-h-0"
+          delayMs={100}
+        >
           <HeroSlider />
-          {/* Floating stat card */}
-          <div className="absolute -bottom-4 -left-4 z-10 rounded-xl border border-border/50 bg-card p-4 shadow-lg motion-safe:animate-in motion-safe:fade-in motion-safe:zoom-in-95 motion-safe:duration-500 md:-bottom-6 md:-left-6">
+          {/* Floating stat card — hidden on very narrow screens to avoid overlap */}
+          <div className="absolute bottom-3 left-3 z-10 rounded-xl border border-border/50 bg-card p-3 shadow-lg motion-safe:animate-in motion-safe:fade-in motion-safe:zoom-in-95 motion-safe:duration-500 sm:bottom-4 sm:left-4 sm:p-4 lg:-bottom-6 lg:-left-6">
             <p className="text-2xl font-bold text-primary">98%</p>
             <p className="text-xs text-muted-foreground">Success Rate</p>
           </div>

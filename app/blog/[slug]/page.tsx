@@ -25,6 +25,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const ogImage =
     post.image.startsWith("/") ? `${SITE_ORIGIN}${post.image}` : post.image
   const canonical = `${SITE_ORIGIN}/blog/${slug}`
+  const publishedTime = `${post.publishedAt}T12:00:00.000Z`
+  const modifiedTime = post.updatedAt ? `${post.updatedAt}T12:00:00.000Z` : publishedTime
+
   return {
     title: post.seoTitle,
     description: post.seoDescription,
@@ -34,7 +37,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: canonical,
       title: post.seoTitle,
       description: post.seoDescription,
-      publishedTime: `${post.publishedAt}T12:00:00.000Z`,
+      publishedTime,
+      modifiedTime,
       images: [{ url: ogImage, alt: post.imageAlt }],
     },
     twitter: {
@@ -59,11 +63,11 @@ export default async function BlogPostPage({ params }: Props) {
       <main className="min-h-screen bg-background">
         <article className="mx-auto max-w-3xl px-4 pb-20 pt-8 lg:px-8">
           <Link
-            href="/#insights"
+            href="/blog"
             className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to Insights
+            Back to blog
           </Link>
 
           <header className="mb-8">
@@ -144,11 +148,8 @@ export default async function BlogPostPage({ params }: Props) {
               title={post.title}
               description={post.excerpt}
             />
-            <Link
-              href="/#insights"
-              className="text-sm font-medium text-primary hover:underline"
-            >
-              More insights →
+            <Link href="/blog" className="text-sm font-medium text-primary hover:underline">
+              More articles →
             </Link>
           </footer>
         </article>

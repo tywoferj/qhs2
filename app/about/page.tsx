@@ -52,19 +52,19 @@ export default function AboutPage() {
         </section>
 
         {/* Story + image */}
-        <section className="px-4 py-16 lg:px-8">
+        <section className="px-4 py-12 sm:px-5 sm:py-16 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted">
+            <div className="grid gap-10 sm:gap-12 lg:grid-cols-2 lg:items-start">
+              <div className="relative aspect-[4/3] w-full min-w-0 max-w-full overflow-hidden rounded-2xl bg-muted shadow-sm ring-1 ring-border/30">
                 <Image
                   src={IMAGES.aboutPage}
                   alt="Healthcare consultancy team and hospital partnership in Nigeria – diverse medical professionals"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
-              <div>
+              <div className="min-w-0">
                 <h2 className="text-2xl font-bold text-foreground md:text-3xl">
                   Our Mission
                 </h2>

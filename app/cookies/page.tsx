@@ -7,7 +7,7 @@ import { CookiePreferencesPanel } from "@/components/cookie-preferences-panel"
 export const metadata: Metadata = {
   title: "Cookie Policy | QHS Consultants Ltd",
   description:
-    "How Quality Healthcare Services (QHS) Consultants Ltd uses cookies and similar technologies, and how you can manage preferences (NDPA 2023 and GDPR-aligned).",
+    "Cookie policy for Quality Healthcare Services (QHS) Consultants Ltd (Lagos State, Nigeria): essential and optional cookies, NDPA 2023, and applicable Nigerian and Lagos State law.",
 }
 
 export default function CookiesPage() {
@@ -26,6 +26,17 @@ export default function CookiesPage() {
             Cookie Policy
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">Last updated: 4 April 2026</p>
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            Quality Healthcare Services (QHS) Consultants Ltd is registered and principally located in{" "}
+            <strong className="text-foreground">Lagos State, Nigeria</strong>. This Cookie Policy should be read
+            together with our{" "}
+            <Link href="/privacy-policy" className="text-primary hover:underline">
+              Privacy Policy
+            </Link>
+            , which sets out how we handle personal data—including security and breach-related obligations—under{" "}
+            <strong className="text-foreground">Nigerian law and the laws of Lagos State</strong> where applicable,
+            alongside NDPA 2023 and, where relevant, GDPR-aligned expectations for optional technologies.
+          </p>
 
           <div className="prose prose-neutral dark:prose-invert mt-10 max-w-none space-y-8">
             <section>
@@ -74,7 +85,23 @@ export default function CookiesPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-foreground">5. Contact</h2>
+              <h2 className="text-xl font-semibold text-foreground">5. Applicable law (Lagos State, Nigeria)</h2>
+              <p className="text-muted-foreground">
+                This Cookie Policy is governed by the laws of the <strong className="text-foreground">Federal Republic
+                of Nigeria</strong>, with particular reference to our <strong className="text-foreground">registration
+                and operations in Lagos State</strong>. Interpretation of our use of cookies and similar technologies,
+                and any dispute arising from this policy to the extent it does not fall within the{" "}
+                <Link href="/terms-of-service" className="text-primary hover:underline">
+                  Terms of Service
+                </Link>
+                , shall be consistent with <strong className="text-foreground">Nigerian and Lagos State law</strong>{" "}
+                (including NDPA 2023 and NDPC guidance), without prejudice to mandatory consumer or data-subject
+                protections elsewhere.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-foreground">6. Contact</h2>
               <p className="text-muted-foreground">
                 Questions about cookies or this policy:{" "}
                 <a href="mailto:contact@qhsconsultant.com" className="text-primary hover:underline">

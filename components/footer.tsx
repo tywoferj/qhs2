@@ -8,8 +8,13 @@ const quickLinks = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Board", href: "/board" },
-  { label: "Resources", href: "/#insights" },
   { label: "Contact", href: "/contact" },
+]
+
+const resourceLinks = [
+  { label: "Accreditation checklist", href: "/accreditation-checklist" },
+  { label: "Blog", href: "/blog" },
+  { label: "Brochures", href: "/brochures" },
 ]
 
 export function Footer() {
@@ -55,6 +60,21 @@ export function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-secondary-foreground/80 transition-colors hover:text-secondary-foreground"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h4 className="mb-4 mt-8 text-sm font-semibold uppercase tracking-wider text-secondary-foreground/90">
+              Resources
+            </h4>
+            <ul className="space-y-3">
+              {resourceLinks.map((link) => (
+                <li key={link.href}>
                   <Link
                     href={link.href}
                     className="text-sm text-secondary-foreground/80 transition-colors hover:text-secondary-foreground"

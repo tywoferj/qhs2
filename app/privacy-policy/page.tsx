@@ -6,7 +6,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Privacy Policy | QHS Consultants Ltd – Healthcare Consultancy Nigeria",
   description:
-    "Privacy policy for Quality Healthcare Services (QHS) Consultants Ltd: NDPA 2023, GDPR, data rights, retention, international transfers, and how we protect personal data.",
+    "Privacy policy for Quality Healthcare Services (QHS) Consultants Ltd (Lagos State, Nigeria): NDPA 2023, NDPC, data breach handling under Nigerian and Lagos State law, GDPR where applicable, and your rights.",
 }
 
 const COMPANY = "Quality Healthcare Services (QHS) Consultants Ltd"
@@ -15,6 +15,7 @@ const PHONE = "+1 (252) 691 4076"
 const ADDRESS = {
   street: "57B, Hibiscus Street, M.K.O Abiola Gardens, C.B.D",
   city: "Ikeja",
+  state: "Lagos State",
   country: "Nigeria",
 }
 
@@ -39,10 +40,12 @@ export default function PrivacyPolicyPage() {
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             This Privacy Policy describes how {COMPANY} (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;)
             processes personal data in connection with our website, marketing, and consultancy and advisory
-            services. It is designed to align with the{" "}
-            <strong className="text-foreground">Nigeria Data Protection Act 2023 (NDPA)</strong>, regulations
+            services. {COMPANY} is registered and principally located in{" "}
+            <strong className="text-foreground">Lagos State, Nigeria</strong>. This policy is designed to align
+            with the <strong className="text-foreground">Nigeria Data Protection Act 2023 (NDPA)</strong>, regulations
             and guidance issued by the{" "}
-            <strong className="text-foreground">Nigeria Data Protection Commission (NDPC)</strong>, and, where
+            <strong className="text-foreground">Nigeria Data Protection Commission (NDPC)</strong>, and other
+            applicable laws of <strong className="text-foreground">Nigeria and Lagos State</strong>, and, where
             applicable, the <strong className="text-foreground">EU General Data Protection Regulation (GDPR)</strong>{" "}
             and the <strong className="text-foreground">UK GDPR</strong> (as retained in United Kingdom law).
           </p>
@@ -58,7 +61,7 @@ export default function PrivacyPolicyPage() {
               <ul className="mt-3 list-disc space-y-1 pl-5 text-muted-foreground">
                 <li>
                   <strong className="text-foreground">Registered / business address:</strong>{" "}
-                  {ADDRESS.street}, {ADDRESS.city}, {ADDRESS.country}
+                  {ADDRESS.street}, {ADDRESS.city}, {ADDRESS.state}, {ADDRESS.country}
                 </li>
                 <li>
                   <strong className="text-foreground">Website:</strong>{" "}
@@ -223,8 +226,9 @@ export default function PrivacyPolicyPage() {
                   insurers, where necessary and subject to professional obligations.
                 </li>
                 <li>
-                  <strong className="text-foreground">Authorities:</strong> where required by applicable law or to
-                  protect rights, safety, or the security of our business and clients.
+                  <strong className="text-foreground">Authorities:</strong> where required by applicable law of
+                  Nigeria, Lagos State, or another competent jurisdiction, or to protect rights, safety, or the
+                  security of our business and clients.
                 </li>
                 <li>
                   <strong className="text-foreground">Business transfers:</strong> in connection with a merger,
@@ -302,9 +306,16 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-xl font-semibold text-foreground">13. Data breach notification</h2>
               <p className="text-muted-foreground">
                 In the event of a personal data breach likely to result in risk to data subjects, we will assess
-                the incident and, where required by NDPA 2023, GDPR, UK GDPR, or other applicable law, notify the
-                relevant supervisory authority and affected individuals without undue delay, in line with statutory
-                requirements.
+                the incident and comply with notification, remediation, record-keeping, and co-operation
+                obligations under the <strong className="text-foreground">NDPA 2023</strong>, regulations and
+                guidance issued by the <strong className="text-foreground">NDPC</strong>, and other{" "}
+                <strong className="text-foreground">applicable laws in force in Nigeria and Lagos State</strong>{" "}
+                (including requirements relevant to data controllers operating from Lagos State). Where affected
+                individuals benefit from <strong className="text-foreground">GDPR</strong>,{" "}
+                <strong className="text-foreground">UK GDPR</strong>, or other non-Nigerian frameworks, we will also
+                meet any additional requirements those laws impose. Notifications to supervisory authorities and
+                affected individuals will be made without undue delay, in line with the applicable statutory and
+                regulatory timelines.
               </p>
             </section>
 
@@ -313,7 +324,8 @@ export default function PrivacyPolicyPage() {
               <p className="text-muted-foreground">
                 Our website and services are directed at organisations and professionals in healthcare and related
                 sectors. We do not knowingly collect personal data from children under the age of 16 (or higher age
-                where local law requires) without appropriate parental or guardian authority. If you believe we
+                where the laws of Nigeria or Lagos State require) without appropriate parental or guardian authority.
+                If you believe we
                 have collected such data, contact us and we will take steps to delete it.
               </p>
             </section>
@@ -338,7 +350,20 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-foreground">17. Contact</h2>
+              <h2 className="text-xl font-semibold text-foreground">17. Applicable law (Lagos State, Nigeria)</h2>
+              <p className="text-muted-foreground">
+                This Privacy Policy and our processing practices described here are governed primarily by{" "}
+                <strong className="text-foreground">Nigerian law</strong>, including the NDPA 2023 and NDPC
+                requirements, with particular reference to our{" "}
+                <strong className="text-foreground">registration and principal operations in Lagos State, Nigeria</strong>
+                . Where state or local rules in Lagos State apply to our activities, we will comply with them
+                alongside federal requirements. This section does not limit mandatory protections for data subjects
+                in other countries (for example, EEA or UK rights described elsewhere in this policy).
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-foreground">18. Contact</h2>
               <p className="text-muted-foreground">
                 For privacy questions or requests:{" "}
                 <a href={`mailto:${EMAIL_PRIVACY}`} className="text-primary hover:underline">

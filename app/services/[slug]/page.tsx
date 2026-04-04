@@ -4,13 +4,15 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { ServiceConsultationCta } from "@/components/service-consultation-cta"
+import { ResponsiveMediaFrame } from "@/components/responsive-media-frame"
 import {
   SERVICES,
   getServiceBySlug,
   getAllServiceSlugs,
   type ServiceItem,
 } from "@/lib/services-data"
-import { CheckCircle2, Phone, ArrowRight, ArrowLeft } from "lucide-react"
+import { CheckCircle2, ArrowRight, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 interface Props {
@@ -115,6 +117,7 @@ export default async function ServiceSlugPage({ params }: Props) {
   if (!service) notFound()
 
   const phoneHref = service.phoneAppointment ? "tel:+15732647695" : "tel:+12526914076"
+  const phoneDisplay = service.phoneAppointment ? "+1 (573) 264 7695" : "+1 (252) 691 4076"
 
   return (
     <>
@@ -123,62 +126,73 @@ export default async function ServiceSlugPage({ params }: Props) {
       <main className="min-h-screen bg-background">
         {/* Breadcrumb */}
         <div className="border-b bg-muted/30">
-          <div className="mx-auto max-w-7xl px-4 py-3 lg:px-8">
-            <nav className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="mx-auto max-w-7xl px-4 py-3 sm:px-5 lg:px-8">
+            <nav className="flex min-w-0 flex-wrap items-center gap-2 text-sm text-muted-foreground">
               <Link href="/" className="hover:text-primary">Home</Link>
               <span>/</span>
               <Link href="/services" className="hover:text-primary">Services</Link>
               <span>/</span>
-              <span className="font-medium text-foreground">{service.title}</span>
+              <span className="min-w-0 break-words font-medium text-foreground">{service.title}</span>
             </nav>
           </div>
         </div>
 
         {/* Hero */}
-        <section className="relative overflow-hidden px-4 py-12 md:py-16 lg:px-8">
+        <section className="relative overflow-x-hidden px-4 py-8 sm:py-12 md:py-16 sm:px-5 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-              <div>
+            <div className="grid gap-8 md:gap-10 lg:grid-cols-2 lg:items-start lg:gap-12">
+              <div className="min-w-0">
                 <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
                   {service.title}
                 </h1>
-                <p className="mt-4 max-w-prose text-lg leading-relaxed text-muted-foreground">
+                <p className="mt-4 max-w-prose text-base leading-relaxed text-muted-foreground sm:text-lg">
                   {service.longDescription}
                 </p>
                 {service.heroParagraph2 ? (
-                  <p className="mt-4 max-w-prose text-lg leading-relaxed text-muted-foreground">
+                  <p className="mt-4 max-w-prose text-base leading-relaxed text-muted-foreground sm:text-lg">
                     {service.heroParagraph2}
                   </p>
                 ) : null}
-                <div className="mt-6 flex flex-wrap gap-4">
-                  <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-                    <a href={phoneHref}>
-                      <Phone className="mr-2 h-4 w-4" />
-                      {service.cta}
-                    </a>
-                  </Button>
-                  <Button size="lg" variant="outline" asChild>
-                    <Link href="/services">View All Services</Link>
+                <div className="mt-6 flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  <ServiceConsultationCta serviceId={service.id} className="w-full sm:w-auto">
+                    {service.cta}
+                  </ServiceConsultationCta>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full border-primary/25 bg-background transition-all duration-200 hover:bg-primary/5 motion-safe:hover:-translate-y-0.5 sm:w-auto"
+                    asChild
+                  >
+                    <Link href="/services">View all services</Link>
                   </Button>
                 </div>
+                <p className="mt-4 text-sm text-muted-foreground">
+                  Prefer to call?{" "}
+                  <a href={phoneHref} className="font-medium text-primary underline-offset-4 hover:underline">
+                    {phoneDisplay}
+                  </a>
+                  <span className="hidden sm:inline"> — {service.phoneLabel}</span>
+                </p>
               </div>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted">
-                <Image
-                  src={service.image}
-                  alt={service.imageAlt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority
-                  unoptimized={typeof service.image === "string" && service.image.startsWith("/")}
-                />
+              <div className="min-w-0 w-full max-w-full">
+                <ResponsiveMediaFrame>
+                  <Image
+                    src={service.image}
+                    alt={service.imageAlt}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 50vw"
+                    priority
+                    unoptimized={typeof service.image === "string" && service.image.startsWith("/")}
+                  />
+                </ResponsiveMediaFrame>
               </div>
             </div>
           </div>
         </section>
 
         {/* What we deliver */}
-        <section className="border-t bg-muted/20 px-4 py-14 lg:px-8">
+        <section className="border-t bg-muted/20 px-4 py-10 sm:px-5 sm:py-14 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <h2 className="text-2xl font-bold text-foreground md:text-3xl">
               What We Deliver
@@ -199,7 +213,7 @@ export default async function ServiceSlugPage({ params }: Props) {
 
         {/* Outcomes */}
         {service.outcomes && service.outcomes.length > 0 && (
-          <section className="px-4 py-14 lg:px-8">
+          <section className="px-4 py-10 sm:px-5 sm:py-14 lg:px-8">
             <div className="mx-auto max-w-7xl">
               <h2 className="text-2xl font-bold text-foreground md:text-3xl">
                 What You Gain
@@ -223,31 +237,29 @@ export default async function ServiceSlugPage({ params }: Props) {
         )}
 
         {/* CTA box */}
-        <section className="border-t bg-foreground px-4 py-14 text-background lg:px-8">
+        <section className="border-t bg-foreground px-4 py-12 text-background sm:px-5 sm:py-14 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-2xl font-bold md:text-3xl">
               Ready to Get Started?
             </h2>
-            <p className="mt-3 text-background/80">
+            <p className="mt-3 text-balance text-background/80">
               {service.ctaSubtext}
             </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-4">
-              <a
-                href={phoneHref}
-                className="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90"
-              >
-                <Phone className="mr-2 h-4 w-4" />
+            <div className="mt-8 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+              <ServiceConsultationCta serviceId={service.id} tone="onDark" className="w-full sm:w-auto">
                 {service.cta}
-              </a>
-              <span className="flex items-center text-sm text-background/70">
-                {service.phoneLabel}
-              </span>
+              </ServiceConsultationCta>
             </div>
+            <p className="mt-6 text-sm text-background/65">
+              <a href={phoneHref} className="font-medium text-background underline-offset-4 hover:underline">
+                {service.phoneLabel}
+              </a>
+            </p>
           </div>
         </section>
 
         {/* Related services */}
-        <section className="px-4 py-14 lg:px-8">
+        <section className="px-4 py-10 sm:px-5 sm:py-14 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <h2 className="text-2xl font-bold text-foreground md:text-3xl">
               Explore More Services

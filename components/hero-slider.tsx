@@ -35,7 +35,7 @@ export function HeroSlider() {
   }
 
   return (
-    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-2xl">
+    <div className="relative aspect-[4/3] w-full min-w-0 max-w-full overflow-hidden rounded-2xl shadow-2xl">
       {HERO_SLIDER_IMAGES.map((src, i) => (
         <div
           key={i}
@@ -49,7 +49,7 @@ export function HeroSlider() {
             src={getSrc(i)}
             alt={altTexts[i] ?? "Healthcare facility"}
             fill
-            className="object-cover"
+            className="object-cover object-center"
             sizes="(max-width: 1024px) 100vw, 50vw"
             priority={i === 0}
             fetchPriority={i === 0 ? "high" : "low"}
@@ -61,7 +61,7 @@ export function HeroSlider() {
           />
         </div>
       ))}
-      <div className="absolute inset-0 bg-primary/20 z-[1]" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-primary/20" />
       {/* Dots */}
       <div className="absolute bottom-3 left-1/2 z-[2] flex -translate-x-1/2 gap-2">
         {HERO_SLIDER_IMAGES.map((_, i) => (

@@ -36,7 +36,7 @@ export const IMAGES = {
   serviceClinicalStrategy: "/images/medical-staff-discussing-diagnostic-results.webp",
   serviceMedicalTraining: "/images/medical-students-outdoor.webp",
   serviceHealthcareQuality: "/images/doctor-standing-corridor.webp",
-  serviceAccreditation: "/images/medical-students-standing.webp",
+  serviceAccreditation: "/images/JCI Accredition 2.webp",
   serviceClinicalRiskGovernance: "/images/clinical-risk-governance.webp",
   serviceMedicalEquipmentSourcing: "/images/sandro-outsourcing.webp",
 } as const

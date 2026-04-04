@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Reveal } from "@/components/reveal"
 import { IMAGES } from "@/lib/images"
 import { Phone, Mail, MapPin } from "lucide-react"
+import { RequestProposalDialog } from "@/components/request-proposal-dialog"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -112,6 +113,7 @@ export default function ContactPage() {
                   >
                     <a href="tel:+15732647695">Book specialist / Advisory Appointment</a>
                   </Button>
+                  <RequestProposalDialog />
                 </div>
               </Reveal>
             </div>

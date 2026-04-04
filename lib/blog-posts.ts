@@ -19,6 +19,8 @@ export interface BlogPost {
   image: string
   imageAlt: string
   publishedAt: string
+  /** Set when a post is materially revised; listing sorts by the later of `publishedAt` and `updatedAt`. */
+  updatedAt?: string
   author: string
   content: string
   cta: string
@@ -303,4 +305,16 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
 
 export function getAllSlugs(): string[] {
   return BLOG_POSTS.map((p) => p.slug)
+}
+
+/** Latest activity timestamp: max(publishedAt, updatedAt). */
+export function getPostSortTime(post: BlogPost): number {
+  const published = new Date(post.publishedAt).getTime()
+  const updated = post.updatedAt ? new Date(post.updatedAt).getTime() : published
+  return Math.max(published, updated)
+}
+
+/** Newest first: by latest publish or update. */
+export function getBlogPostsSortedNewestFirst(): BlogPost[] {
+  return [...BLOG_POSTS].sort((a, b) => getPostSortTime(b) - getPostSortTime(a))
 }

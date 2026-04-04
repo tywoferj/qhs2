@@ -1,9 +1,12 @@
 import { CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Reveal } from "@/components/reveal"
+import Link from "next/link"
+import { consultationHref } from "@/lib/consultation-routes"
 
 const features = [
   {
+    serviceId: "accreditation" as const,
     title: "JCI & SQH Accreditation Excellence",
     description:
       "Our team has guided over 15 healthcare institutions through successful JCI and SafeCare Quality of Healthcare accreditation, establishing them as leaders in patient safety and quality care.",
@@ -16,6 +19,7 @@ const features = [
     cta: "Start Your Accreditation Journey",
   },
   {
+    serviceId: "healthcare-strategy" as const,
     title: "Hospital Operations & Turnaround",
     description:
       "We specialize in turning underperforming facilities into efficient, patient-centered organizations. Our operational frameworks have delivered measurable improvements across 10+ hospitals.",
@@ -89,14 +93,14 @@ export function FeaturedServices() {
                   size="lg"
                   className={
                     idx === 0
-                      ? "bg-primary-foreground text-primary transition-all duration-200 hover:bg-primary-foreground/90 motion-safe:hover:-translate-y-0.5"
-                      : "bg-background text-foreground transition-all duration-200 hover:bg-background/90 motion-safe:hover:-translate-y-0.5"
+                      ? "bg-primary-foreground text-primary shadow-sm transition-all duration-200 hover:bg-primary-foreground/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md"
+                      : "bg-background text-foreground shadow-sm transition-all duration-200 hover:bg-background/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md"
                   }
                   asChild
                 >
-                  <a href={idx === 0 ? "tel:+12526914076" : "/services"}>
+                  <Link href={consultationHref(feature.serviceId)} prefetch={false}>
                     {feature.cta}
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>

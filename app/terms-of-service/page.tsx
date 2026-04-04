@@ -6,7 +6,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Terms of Service | QHS Consultants Ltd – Healthcare Consultancy Nigeria",
   description:
-    "Terms of service for Quality Healthcare Services (QHS) Consultants Ltd: website use, consultancy engagements, liability, IP, confidentiality, governing law, and dispute resolution.",
+    "Terms of service for Quality Healthcare Services (QHS) Consultants Ltd (Lagos State, Nigeria): website use, consultancy engagements, liability, governing law and courts of Lagos State, and dispute resolution.",
 }
 
 const COMPANY = "Quality Healthcare Services (QHS) Consultants Ltd"
@@ -37,7 +37,8 @@ export default function TermsOfServicePage() {
             {COMPANY} (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) and set out the general framework for
             our consultancy and advisory relationship. Specific engagements are also governed by separate written
             agreements (including statements of work, proposals accepted in writing, and engagement letters),
-            which prevail over these Terms to the extent of any conflict.
+            which prevail over these Terms to the extent of any conflict. {COMPANY} is registered and principally
+            located in <strong className="text-foreground">Lagos State, Nigeria</strong>.
           </p>
 
           <div className="prose prose-neutral dark:prose-invert mt-10 max-w-none space-y-10">
@@ -123,7 +124,8 @@ export default function TermsOfServicePage() {
                 Services; (b) designate appropriate points of contact and decision-makers; (c) obtain all internal
                 approvals and third-party consents necessary for us to perform (including data protection
                 authorisations where we process personal data on your behalf); (d) implement recommendations at your
-                sole discretion and risk; and (e) comply with all applicable laws, including NDPA 2023, GDPR/UK GDPR
+                sole discretion and risk; and (e) comply with all applicable laws, including NDPA 2023, laws
+                applicable in <strong className="text-foreground">Lagos State and Nigeria</strong>, GDPR/UK GDPR
                 where relevant, and healthcare regulations.
               </p>
             </section>
@@ -157,7 +159,8 @@ export default function TermsOfServicePage() {
                 Each party will protect the other&apos;s confidential information using at least reasonable care
                 and use it only for the purpose of the engagement. Exceptions include information that is public
                 through no fault of the recipient, independently developed, rightfully received from a third party,
-                or required to be disclosed by law (with notice where legally permitted). Additional confidentiality
+                or required to be disclosed by law of Nigeria, Lagos State, or another competent jurisdiction (with
+                notice where legally permitted). Additional confidentiality
                 terms may apply under a separate non-disclosure agreement or engagement letter.
               </p>
             </section>
@@ -171,7 +174,10 @@ export default function TermsOfServicePage() {
                 </Link>
                 . Where we process personal data as a processor for a Client, the data processing terms in the
                 applicable agreement (or our standard data processing addendum, if provided) apply. You warrant that
-                you have lawful grounds to share any personal data with us.
+                you have lawful grounds to share any personal data with us. Personal data security incidents,
+                including suspected breaches, are handled in line with that Privacy Policy and with{" "}
+                <strong className="text-foreground">Nigerian law and the laws of Lagos State</strong> applicable to
+                our operations, in addition to any contractual data processing terms.
               </p>
             </section>
 
@@ -280,12 +286,13 @@ export default function TermsOfServicePage() {
               <p className="text-muted-foreground">
                 These Terms and any dispute or claim arising out of or in connection with them or the website
                 (including non-contractual disputes) shall be governed by the laws of the{" "}
-                <strong className="text-foreground">Federal Republic of Nigeria</strong>, without regard to
-                conflict-of-law rules that would apply another jurisdiction&apos;s law. Subject to mandatory
-                provisions of law elsewhere that cannot be waived, you agree that the courts of{" "}
-                <strong className="text-foreground">Nigeria</strong> shall have exclusive jurisdiction, and you
-                submit to that jurisdiction. We may seek injunctive or equitable relief in any court of competent
-                jurisdiction to protect intellectual property or confidential information.
+                <strong className="text-foreground">Federal Republic of Nigeria</strong>, as applied in{" "}
+                <strong className="text-foreground">Lagos State</strong>, where {COMPANY} is registered and principally
+                located, without regard to conflict-of-law rules that would apply another jurisdiction&apos;s law.
+                Subject to mandatory provisions of law elsewhere that cannot be waived, you agree that the courts of{" "}
+                <strong className="text-foreground">Lagos State, Nigeria</strong> shall have exclusive jurisdiction,
+                and you submit to that jurisdiction. We may seek injunctive or equitable relief in any court of
+                competent jurisdiction to protect intellectual property or confidential information.
               </p>
               <p className="mt-3 text-muted-foreground">
                 Nothing in this section limits a data subject&apos;s right to lodge a complaint with the NDPC or,

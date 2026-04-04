@@ -87,10 +87,37 @@ const config: Config = {
             height: '0',
           },
         },
+        'consultation-success-in': {
+          from: {
+            opacity: '0',
+            transform: 'scale(0.94) translateY(14px)',
+          },
+          to: {
+            opacity: '1',
+            transform: 'scale(1) translateY(0)',
+          },
+        },
+        'consultation-check-pop': {
+          '0%': { transform: 'scale(0)', opacity: '0' },
+          '55%': { transform: 'scale(1.08)', opacity: '1' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        'consultation-progress-shrink': {
+          from: { transform: 'scaleX(1)' },
+          to: { transform: 'scaleX(0)' },
+        },
+        'consultation-backdrop-in': {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'consultation-success-in': 'consultation-success-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'consultation-check-pop': 'consultation-check-pop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) 0.12s both',
+        'consultation-progress-shrink': 'consultation-progress-shrink 45s linear forwards',
+        'consultation-backdrop-in': 'consultation-backdrop-in 0.35s ease-out forwards',
       },
     },
   },

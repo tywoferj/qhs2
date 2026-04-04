@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next"
 import { getAllServiceSlugs } from "@/lib/services-data"
-import { BLOG_POSTS } from "@/lib/blog-posts"
+import { BLOG_POSTS, getPostSortTime } from "@/lib/blog-posts"
 
 const BASE_URL = "https://qhsconsultant.com"
 
@@ -19,6 +19,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/about`, lastModified: SITE_REFRESH, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/board`, lastModified: SITE_REFRESH, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/contact`, lastModified: SITE_REFRESH, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/blog`, lastModified: SITE_REFRESH, changeFrequency: "weekly", priority: 0.85 },
+    {
+      url: `${BASE_URL}/accreditation-checklist`,
+      lastModified: SITE_REFRESH,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    { url: `${BASE_URL}/brochures`, lastModified: SITE_REFRESH, changeFrequency: "monthly", priority: 0.75 },
+    {
+      url: `${BASE_URL}/consultation-request`,
+      lastModified: SITE_REFRESH,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
     { url: `${BASE_URL}/services`, lastModified: SITE_REFRESH, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE_URL}/privacy-policy`, lastModified: SITE_REFRESH, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE_URL}/cookies`, lastModified: SITE_REFRESH, changeFrequency: "yearly", priority: 0.3 },
@@ -34,7 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogPages: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
-    lastModified: new Date(`${post.publishedAt}T12:00:00.000Z`),
+    lastModified: new Date(getPostSortTime(post)),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }))

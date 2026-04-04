@@ -8,6 +8,15 @@
   }
 }
 
+@keyframes notice-progress-shrink {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
 @layer base {
   :root {
     /* Logo-inspired: green (QHS text/ring) as primary, purple (hands) as secondary */
