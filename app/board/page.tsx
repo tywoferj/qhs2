@@ -21,7 +21,7 @@ const directors = [
     summary:
       "Engr. Olu Onakoya is a Chemical Engineer trained at the University of Leeds, United Kingdom. He brings close to 45 years of experience in the oil and gas sector at managerial, executive, chief executive, and advisory levels. He served as Chairman and Managing Director of Exxon Mobil Nigeria Plc., and was the first Nigerian to hold that position. He is currently a consultant in the oil and gas sector and provides training to corporations and executives on strategy and leadership. Engr. Onakoya serves on the boards of various organisations.",
     email: "olu.onakoya@yahoo.com",
-    image: null,
+    image: "/images/board/Engr._Olu_Onakoya.webp",
   },
   {
     name: "Dr. Olakunle Onakoya",
@@ -61,7 +61,7 @@ const directors = [
     summary:
       "Mr. Olumide B. Onakoya qualified from the University of Sheffield, United Kingdom, with a degree in Business Management and Economics, and completed postgraduate training in business management at the University of Sussex, Brighton, United Kingdom. He has experience in business strategy and in providing technology support for start-ups.",
     email: "lumsyonakoya@hotmail.com",
-    image: null,
+    image: "/images/board/Mr._Olumide B_Onakoya.webp",
   },
 ]
 

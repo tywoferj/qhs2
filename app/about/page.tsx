@@ -26,8 +26,8 @@ const values = [
 ]
 
 const highlights = [
-  { icon: Award, label: "JCI & SQH Experts", sub: "Accreditation leadership" },
-  { icon: Building2, label: "10+ Hospitals", sub: "Transformed across Nigeria" },
+  { icon: Award, label: "Hospital Accreditation Experts", sub: "Accreditation leadership" },
+  { icon: Building2, label: "Hospitals", sub: "Transformed across Nigeria" },
   { icon: Users, label: "30+ Years", sub: "Proven experience" },
 ]
 
@@ -72,7 +72,7 @@ export default function AboutPage() {
                   We exist to elevate the quality, safety, and sustainability of healthcare delivery in Nigeria and West Africa. Through hands-on consulting, accreditation readiness, and operational excellence, we help hospitals and health systems deliver better outcomes for patients and communities.
                 </p>
                 <p className="mt-4 leading-relaxed text-muted-foreground">
-                  Our team brings deep experience in JCI and SafeCare Quality of Healthcare (SQH) accreditation, hospital operations, strategic planning, and clinical governance. We combine international best practices with a sharp understanding of the Nigerian context—regulation, workforce, and market realities—so our recommendations are both ambitious and achievable.
+                  Our team brings deep experience in hospital accreditation ( e.g JCI. SQH e.t.c), hospital operations, strategic planning, and clinical governance. We combine international best practices with a sharp understanding of the Nigerian context—regulation, workforce, and market realities—so our recommendations are both ambitious and achievable.
                 </p>
               </div>
             </div>

@@ -26,7 +26,7 @@ export function getAllServiceSlugs(): string[] {
 export const SERVICES: ServiceItem[] = [
   {
     id: "accreditation",
-    title: "Accreditation",
+    title: "Hospital Accreditation Support.",
     shortDescription: "Expert guidance through JCI and SQH accreditation and related standards.",
     longDescription:
       "We guide healthcare facilities through JCI (Joint Commission International) and SafeCare Quality of Healthcare (SQH) accreditation—delivering gap analysis, mock surveys, policy development, and staff training so your facility is survey-ready and sustains improvement long after certification.",
@@ -95,7 +95,7 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: "healthcare-quality",
-    title: "Healthcare Quality",
+    title: "Quality Improvement and Patient Safety.",
     shortDescription: "Advisory on quality improvement, patient safety and operational excellence.",
     longDescription:
       "We support healthcare institutions to embed quality and patient safety in daily practice through quality improvement frameworks, measurement, audit, and staff engagement—so your facility delivers consistently high standards of care.",

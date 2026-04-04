@@ -4,8 +4,8 @@ import { HeroSlider } from "@/components/hero-slider"
 
 const trustBadges = [
   { icon: Clock, label: "30+ Years", sub: "Experience" },
-  { icon: Award, label: "JCI Certified", sub: "Experts" },
-  { icon: Building2, label: "10+ Hospitals", sub: "Transformed" },
+  { icon: Award, label: "Hospital Accreditation Experts", sub: "Accreditation leadership" },
+  { icon: Building2, label: "Hospitals", sub: "Transformed" },
 ]
 
 export function HeroSection() {
@@ -21,7 +21,7 @@ export function HeroSection() {
             Transforming Healthcare Excellence Across Nigeria
           </h1>
           <p className="mt-4 text-lg font-medium text-primary">
-            30+ Years of Proven Leadership | JCI & SQH Accreditation Experts
+            30+ Years of Proven Leadership | Hospital Accreditation Experts
           </p>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
             We partner with healthcare institutions to achieve world-class
