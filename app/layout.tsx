@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   keywords: [
     "healthcare consultancy Nigeria",
     "JCI accreditation Nigeria",
-    "SQH accreditation",
+    "Society for Quality in Healthcare in Nigeria (SQHN) accreditation",
     "hospital operations Nigeria",
     "healthcare consulting West Africa",
     "accreditation support Nigeria",

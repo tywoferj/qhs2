@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 }
 
 const brochureTopics = [
-  "Accreditation & survey readiness (JCI, SQH)",
+  "Accreditation & survey readiness (JCI, Society for Quality in Healthcare in Nigeria (SQHN))",
   "Quality improvement & patient safety",
   "Clinical risk, governance, and strategy",
   "Medical training & leadership development",

@@ -7,7 +7,7 @@ import { consultationHref } from "@/lib/consultation-routes"
 const features = [
   {
     serviceId: "accreditation" as const,
-    title: "JCI & SQH Accreditation Excellence",
+    title: "JCI & Society for Quality in Healthcare in Nigeria (SQHN) Accreditation Excellence",
     description:
       "Our team has guided over 15 healthcare institutions through successful JCI and SafeCare Quality of Healthcare accreditation, establishing them as leaders in patient safety and quality care.",
     bullets: [

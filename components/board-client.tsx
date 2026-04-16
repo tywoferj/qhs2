@@ -73,27 +73,45 @@ export function BoardClient({ directors }: BoardClientProps) {
             <ArrowLeft className="h-4 w-4" />
             Back to all directors
           </button>
-          <div className="min-w-0">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-              <div>
-                <h2 className="text-xl font-bold text-foreground md:text-2xl">
-                  {selectedDirector.name}
-                </h2>
-                <p className="mt-1 text-sm font-semibold uppercase tracking-wider text-primary">
-                  {selectedDirector.role}
-                </p>
-              </div>
-              <a
-                href={`mailto:${selectedDirector.email}`}
-                className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
-              >
-                <Mail className="h-4 w-4" />
-                {selectedDirector.email}
-              </a>
+          <div className="grid gap-6 md:grid-cols-[220px_minmax(0,1fr)] md:gap-8">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-muted ring-1 ring-border/50 shadow-sm">
+              {selectedDirector.image ? (
+                <Image
+                  src={selectedDirector.image}
+                  alt={selectedDirector.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 220px"
+                  unoptimized
+                />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center text-muted-foreground/40">
+                  <User className="h-14 w-14" strokeWidth={1.25} />
+                </div>
+              )}
             </div>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
-              {selectedDirector.summary}
-            </p>
+            <div className="min-w-0">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h2 className="text-xl font-bold text-foreground md:text-2xl">
+                    {selectedDirector.name}
+                  </h2>
+                  <p className="mt-1 text-sm font-semibold uppercase tracking-wider text-primary">
+                    {selectedDirector.role}
+                  </p>
+                </div>
+                <a
+                  href={`mailto:${selectedDirector.email}`}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+                >
+                  <Mail className="h-4 w-4" />
+                  {selectedDirector.email}
+                </a>
+              </div>
+              <p className="mt-4 leading-relaxed text-muted-foreground">
+                {selectedDirector.summary}
+              </p>
+            </div>
           </div>
         </div>
       )}

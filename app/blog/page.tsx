@@ -7,7 +7,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Healthcare Insights and Blog | QHS Consultants Ltd",
   description:
-    "Articles on JCI and SQH accreditation, hospital quality, patient safety, revenue cycle, and healthcare management in Nigeria and West Africa.",
+    "Articles on JCI and Society for Quality in Healthcare in Nigeria (SQHN) accreditation, hospital quality, patient safety, revenue cycle, and healthcare management in Nigeria and West Africa.",
   keywords: [
     "healthcare blog Nigeria",
     "JCI accreditation Nigeria",

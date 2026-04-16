@@ -29,11 +29,11 @@ export const SERVICES: ServiceItem[] = [
   {
     id: "accreditation",
     title: "Hospital Accreditation Support.",
-    shortDescription: "Expert guidance through JCI and SQH accreditation and related standards.",
+    shortDescription: "Expert guidance through JCI and Society for Quality in Healthcare in Nigeria (SQHN) accreditation and related standards.",
     longDescription:
-      "We guide healthcare facilities through JCI (Joint Commission International) and SafeCare Quality of Healthcare (SQH) accreditation. We deliver gap analysis, mock surveys, policy development, and staff training so your facility is survey-ready and sustains improvement long after certification.",
+      "We guide healthcare facilities through JCI (Joint Commission International) and SafeCare Quality of Healthcare (Society for Quality in Healthcare in Nigeria (SQHN)) accreditation. We deliver gap analysis, mock surveys, policy development, and staff training so your facility is survey-ready and sustains improvement long after certification.",
     image: IMAGES.serviceAccreditation,
-    imageAlt: "JCI and SQH accreditation support, QHS Consultants Ltd",
+    imageAlt: "JCI and Society for Quality in Healthcare in Nigeria (SQHN) accreditation support, QHS Consultants Ltd",
     bullets: [
       "Gap analysis and readiness assessment",
       "Mock surveys and tracer methodology",

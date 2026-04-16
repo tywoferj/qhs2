@@ -11,14 +11,14 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title:
-    "Healthcare Consulting Nigeria | JCI & SQH Accreditation, Quality, Clinical Governance | QHS Consultants Ltd",
+    "Healthcare Consulting Nigeria | JCI & Society for Quality in Healthcare in Nigeria (SQHN) Accreditation, Quality, Clinical Governance | QHS Consultants Ltd",
   description:
-    "Hospital and healthcare consulting in Nigeria and West Africa: JCI accreditation support, SQH readiness, clinical risk and governance, quality improvement and patient safety, healthcare strategy, medical training, and medical equipment sourcing with ROI advisory. Lagos-based. Call +1 (252) 691 4076.",
+    "Hospital and healthcare consulting in Nigeria and West Africa: JCI accreditation support, Society for Quality in Healthcare in Nigeria (SQHN) readiness, clinical risk and governance, quality improvement and patient safety, healthcare strategy, medical training, and medical equipment sourcing with ROI advisory. Lagos-based. Call +1 (252) 691 4076.",
   keywords: [
     "healthcare consulting Nigeria",
     "hospital consulting Lagos",
     "JCI accreditation Nigeria",
-    "SQH accreditation support",
+    "Society for Quality in Healthcare in Nigeria (SQHN) accreditation support",
     "clinical governance consulting",
     "clinical risk management Nigeria",
     "healthcare quality improvement",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Healthcare Consulting Services | QHS Consultants Ltd",
     description:
-      "JCI and SQH accreditation, quality and patient safety, clinical governance, healthcare strategy, medical training, and equipment sourcing for hospitals in Nigeria and West Africa.",
+      "JCI and Society for Quality in Healthcare in Nigeria (SQHN) accreditation, quality and patient safety, clinical governance, healthcare strategy, medical training, and equipment sourcing for hospitals in Nigeria and West Africa.",
   },
 }
 
@@ -50,7 +50,7 @@ export default function ServicesPage() {
               Healthcare consulting services for hospitals and health systems
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-              JCI and SQH accreditation support, clinical strategy and governance, quality improvement and
+              JCI and Society for Quality in Healthcare in Nigeria (SQHN) accreditation support, clinical strategy and governance, quality improvement and
               patient safety, healthcare strategy, medical training, and medical equipment sourcing—delivered
               for hospitals, diagnostic networks, and investors across Nigeria and West Africa.
             </p>

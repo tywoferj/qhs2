@@ -6,12 +6,12 @@ import { CheckCircle2, Phone } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Hospital Accreditation Checklist | JCI & SQH Readiness | QHS Consultants Ltd",
+  title: "Hospital Accreditation Checklist | JCI & Society for Quality in Healthcare in Nigeria (SQHN) Readiness | QHS Consultants Ltd",
   description:
-    "A practical accreditation readiness checklist for Nigerian hospitals: governance, documentation, mock surveys, tracer readiness, and continuous improvement for JCI and SQH.",
+    "A practical accreditation readiness checklist for Nigerian hospitals: governance, documentation, mock surveys, tracer readiness, and continuous improvement for JCI and Society for Quality in Healthcare in Nigeria (SQHN).",
   keywords: [
     "JCI accreditation checklist",
-    "SQH accreditation Nigeria",
+    "Society for Quality in Healthcare in Nigeria (SQHN) accreditation Nigeria",
     "hospital accreditation readiness",
     "mock survey preparation",
     "healthcare documentation standards",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Accreditation Readiness Checklist | QHS Consultants Ltd",
     description:
-      "High-level checklist to prepare your hospital for JCI, SQH, and related quality surveys.",
+      "High-level checklist to prepare your hospital for JCI, Society for Quality in Healthcare in Nigeria (SQHN), and related quality surveys.",
   },
 }
 
@@ -37,7 +37,7 @@ const checklistSections: { title: string; items: string[] }[] = [
     items: [
       "Master index of required policies, procedures, and clinical guidelines",
       "Version control, approval dates, and owners for each document",
-      "Alignment with selected standard (e.g. JCI / SQH) and local regulation",
+      "Alignment with selected standard (e.g. JCI / Society for Quality in Healthcare in Nigeria (SQHN)) and local regulation",
     ],
   },
   {
@@ -72,7 +72,7 @@ export default function AccreditationChecklistPage() {
               Accreditation readiness checklist
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Use this high-level checklist to align your hospital before JCI, SQH, or similar surveys.
+              Use this high-level checklist to align your hospital before JCI, Society for Quality in Healthcare in Nigeria (SQHN), or similar surveys.
               It complements—not replaces—your standard-specific requirements and local regulations.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">

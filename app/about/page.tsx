@@ -72,7 +72,7 @@ export default function AboutPage() {
                   We exist to elevate the quality, safety, and sustainability of healthcare delivery in Nigeria and West Africa. Through hands-on consulting, accreditation readiness, and operational excellence, we help hospitals and health systems deliver better outcomes for patients and communities.
                 </p>
                 <p className="mt-4 leading-relaxed text-muted-foreground">
-                  Our team brings deep experience in hospital accreditation (e.g. JCI, SQH, etc.), hospital operations, strategic planning, and clinical governance. We combine international best practices with a sharp understanding of the Nigerian context—regulation, workforce, and market realities—so our recommendations are both ambitious and achievable.
+                  Our team brings deep experience in hospital accreditation (e.g. JCI, Society for Quality in Healthcare in Nigeria (SQHN), etc.), hospital operations, strategic planning, and clinical governance. We combine international best practices with a sharp understanding of the Nigerian context—regulation, workforce, and market realities—so our recommendations are both ambitious and achievable.
                 </p>
               </div>
             </div>

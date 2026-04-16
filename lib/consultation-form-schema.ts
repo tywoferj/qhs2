@@ -44,7 +44,7 @@ export const FACILITY_TYPE_OPTIONS = [
 
 export const COMPLIANCE_STATUS_OPTIONS = [
   "Not yet assessed",
-  "Working toward accreditation (JCI / SQH / other)",
+  "Working toward accreditation (JCI / Society for Quality in Healthcare in Nigeria (SQHN) / other)",
   "Partially compliant",
   "Accredited (details in description above)",
   "Not applicable",
