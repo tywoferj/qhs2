@@ -3,8 +3,8 @@
  */
 export const BLOG_IMAGES = {
   jciAccreditation: "/images/blog/jci-accreditation-nigeria.webp",
-  management: "/images/blog/healthcare-management-west-africa.webp",
-  revenueCycle: "/images/blog/hospital-revenue-cycle.webp",
+  management: "/images/doctor-standing-corridor.webp",
+  revenueCycle: "/images/hero-slide-2.webp",
   patientSafety: "/images/blog/patient-safety-culture-nigeria.webp",
   infectionPrevention: "/images/blog/infection-prevention-control-nigeria.webp",
   digitalHealth: "/images/blog/digital-health-records-nigeria.webp",
@@ -31,34 +31,34 @@ export interface BlogPost {
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "jci-accreditation-nigeria",
-    title: "5 Steps to Prepare for JCI Accreditation in Nigeria",
+    title: "5 Steps to Prepare for Quality Accreditation in Nigeria",
     excerpt:
       "A practical roadmap for healthcare facilities looking to achieve international accreditation standards and elevate patient care quality.",
     category: "Accreditation",
     readTime: "9 min read",
     image: BLOG_IMAGES.jciAccreditation,
     imageAlt:
-      "Hospital team preparing for JCI accreditation and quality standards in Nigeria – QHS Consultants Ltd",
+      "Hospital team preparing for quality accreditation standards in Nigeria – QHS Consultants Ltd",
     publishedAt: "2025-01-15",
     author: "QHS Consultants Team",
-    seoTitle: "JCI Accreditation in Nigeria: 5 Steps to Prepare Your Hospital | QHS Consultants Ltd",
+    seoTitle: "Quality Accreditation in Nigeria: 5 Steps to Prepare Your Hospital | QHS Consultants Ltd",
     seoDescription:
-      "Expert guide to JCI accreditation for Nigerian healthcare facilities: gap analysis, mock surveys, documentation, and continuous improvement.",
-    cta: "Get a free readiness assessment for your facility. Call +1 (252) 691 4076 to discuss JCI accreditation support.",
+      "Expert guide to quality accreditation for Nigerian healthcare facilities: gap analysis, mock surveys, documentation, and continuous improvement.",
+    cta: "Get a free readiness assessment for your facility. Call +1 (252) 691 4076 to discuss quality accreditation support.",
     content: `
-Healthcare facilities across Nigeria are increasingly pursuing Joint Commission International (JCI) accreditation to signal commitment to patient safety and world-class care. The journey is demanding but achievable with the right preparation. Here is a practical roadmap that has helped Nigerian hospitals move from intention to accreditation.
+Healthcare facilities across Nigeria are increasingly pursuing quality accreditation to signal commitment to patient safety and world-class care. The journey is demanding but achievable with the right preparation. Here is a practical roadmap that has helped Nigerian hospitals move from intention to accreditation.
 
 **1. Conduct a gap analysis and readiness assessment**
 
-Before committing resources, understand where you stand. A structured gap analysis compares your current policies, processes, and outcomes against JCI standards. Many hospitals discover that 60–70% of requirements are already in place; the rest need targeted work. Engaging a consultant with JCI experience in West Africa can sharpen this assessment and set realistic timelines. This step alone can save months of misdirected effort.
+Before committing resources, understand where you stand. A structured gap analysis compares your current policies, processes, and outcomes against accreditation standards. Many hospitals discover that less than 50% of requirements are already in place; the rest need targeted work. Engaging a consultant with accreditation experience in West Africa can sharpen this assessment and set realistic timelines. This step alone can save months of misdirected effort.
 
 **2. Build a dedicated accreditation team and governance**
 
 Accreditation cannot be a side responsibility. Assign a small, cross-functional team with clear roles: project lead, clinical lead, and documentation lead. Secure executive sponsorship so decisions are made quickly. Establish a simple governance rhythm with weekly huddles and monthly steering committee meetings to track progress and remove blockers. Hospitals that treat accreditation as a strategic priority consistently perform better in surveys.
 
-**3. Align policies and documentation with JCI standards**
+**3. Align policies and documentation with accreditation standards**
 
-JCI surveyors will sample policies, procedures, and clinical guidelines. Inconsistent or outdated documents are a common finding. Create a master list of required documents, assign owners, and set deadlines. Focus first on high-impact areas: medication management, infection prevention, patient rights, and quality improvement. Use templates and examples from accredited facilities where appropriate, but tailor every document to your setting. Nigerian context (regulations, workforce, and patient populations) must be reflected, not copied.
+Surveyors will sample policies, procedures, and clinical guidelines. Inconsistent or outdated documents are a common finding. Create a master list of required documents, assign owners, and set deadlines. Focus first on high-impact areas: medication management, infection prevention, patient rights, and quality improvement. Use templates and examples from accredited facilities where appropriate, but tailor every document to your setting. Nigerian context (regulations, workforce, and patient populations) must be reflected, not copied.
 
 **4. Run mock surveys and tracer methodology**
 
@@ -70,7 +70,7 @@ Accreditation is a milestone, not an endpoint. Sustainable results come from emb
 
 ---
 
-Pursuing JCI accreditation in Nigeria is a strategic investment in patient safety and reputation. With a clear roadmap, dedicated team, and expert support, your facility can join the growing list of internationally accredited hospitals in West Africa. Ready to assess your readiness? Our team offers structured gap analyses and mock surveys tailored to Nigerian facilities. Reach out to start the conversation.
+Pursuing quality accreditation in Nigeria is a strategic investment in patient safety and reputation. With a clear roadmap, dedicated team, and expert support, your facility can join the growing list of internationally accredited hospitals in West Africa. Ready to assess your readiness? Our team offers structured gap analyses and mock surveys tailored to Nigerian facilities. Reach out to start the conversation.
     `,
   },
   {
@@ -82,7 +82,7 @@ Pursuing JCI accreditation in Nigeria is a strategic investment in patient safet
     readTime: "8 min read",
     image: BLOG_IMAGES.management,
     imageAlt:
-      "Healthcare leadership and hospital management strategy in West Africa – QHS Consultants Ltd",
+      "Nigerian doctor and healthcare leadership strategy in West Africa – QHS Consultants Ltd",
     publishedAt: "2025-01-10",
     author: "QHS Consultants Team",
     seoTitle: "Future of Healthcare Management in West Africa | Trends & Strategy | QHS Consultants Ltd",
@@ -102,7 +102,7 @@ Strong governance (clear accountability, board engagement in quality and strateg
 
 **Operational excellence and patient experience**
 
-Patients and families judge hospitals by cleanliness, waiting times, communication, and outcomes. Operational excellence ties these together: lean processes, clear pathways, and staff who are trained and empowered to solve problems. In West Africa, context matters: workforce mix, power and water, and supply chain realities shape what excellent looks like. Consultants who have worked in similar settings can help design systems that are both ambitious and achievable.
+Patients and families judge hospitals by cleanliness, waiting times, communication, and outcomes. Operational excellence ties these together: lean processes, clear pathways, and staff who are trained and empowered to solve problems. In West Africa, context matters: workforce mix, power and water, and supply chain realities shape what excellence looks like. Consultants who have worked in similar settings can help design systems that are both ambitious and achievable.
 
 **Sustainability and partnerships**
 
@@ -122,7 +122,7 @@ The future of healthcare management in West Africa is collaborative, data-inform
     readTime: "11 min read",
     image: BLOG_IMAGES.revenueCycle,
     imageAlt:
-      "Hospital finance, billing, and revenue cycle improvement in Nigerian healthcare – QHS Consultants Ltd",
+      "Nigerian doctor in a modern hospital setting with revenue cycle improvement focus – QHS Consultants Ltd",
     publishedAt: "2025-01-05",
     author: "QHS Consultants Team",
     seoTitle: "Hospital Revenue Cycle Improvement in Nigeria | Billing & Claims | QHS Consultants Ltd",
@@ -235,6 +235,22 @@ Central line, surgical site, urinary catheter, and ventilator bundles reduce har
 **Build a simple surveillance system**
 
 You do not need a perfect electronic system to start. Track surgical site infection rates for selected procedures, device-related infections, and organism trends from the lab. Review data in a monthly IPC committee meeting and share anonymised lessons with clinical departments. When data show a cluster, act early: investigate environmental and procedural causes before the problem spreads.
+
+**Quality Dashboard**
+
+Global best practice requires that the Infection Prevention and Control (IPC) dashboard tracks the following as a minimum:
+
+i) Central Line Associated Blood Stream Infection (CLABSI)
+
+ii) Ventilator Associated Pneumonia (VAP).
+
+iii) Catheter Associated Urinary Tract Infection (CAUTI).
+
+iv) Surgical Site Infection (SSI).
+
+v) Multi Drug Resistance Organisms (MDRO)
+
+vi) Clostridiodes Difficile Infection (CDI).
 
 **Antibiotic stewardship and the lab partnership**
 

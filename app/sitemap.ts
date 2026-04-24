@@ -5,7 +5,7 @@ import { BLOG_POSTS, getPostSortTime } from "@/lib/blog-posts"
 const BASE_URL = "https://qhsconsultant.com"
 
 /** Use for site pages that do not have a content-derived modified date. */
-const SITE_REFRESH = new Date("2026-04-04T00:00:00.000Z")
+const SITE_REFRESH = new Date("2026-04-24T00:00:00.000Z")
 
 /**
  * Dynamic sitemap at /sitemap.xml — submit this URL in Google Search Console.
@@ -32,6 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: SITE_REFRESH,
       changeFrequency: "monthly",
       priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/consultation-request/thank-you`,
+      lastModified: SITE_REFRESH,
+      changeFrequency: "monthly",
+      priority: 0.5,
     },
     { url: `${BASE_URL}/services`, lastModified: SITE_REFRESH, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE_URL}/privacy-policy`, lastModified: SITE_REFRESH, changeFrequency: "yearly", priority: 0.3 },
