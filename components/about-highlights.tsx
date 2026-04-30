@@ -46,14 +46,22 @@ export function AboutHighlights() {
             </p>
           </div>
 
-          <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-3 w-[min(34rem,90vw)] -translate-x-1/2 rounded-2xl border border-primary/25 bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-5 text-left opacity-0 shadow-xl ring-1 ring-primary/10 transition-all duration-300 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 dark:from-emerald-950/40 dark:via-background dark:to-teal-950/40 sm:w-[min(38rem,88vw)]">
+          <div
+            className={`pointer-events-none absolute top-full z-20 mt-3 w-[min(42rem,94vw)] rounded-2xl border p-5 text-left opacity-0 shadow-2xl ring-1 transition-all duration-300 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 sm:w-[min(40rem,92vw)] ${
+              index === 0
+                ? "left-0 translate-y-2"
+                : index === 1
+                  ? "left-1/2 -translate-x-1/2 translate-y-2"
+                  : "right-0 translate-y-2"
+            } border-emerald-200/70 bg-gradient-to-br from-emerald-50 via-white to-teal-100/80 ring-emerald-200/60 dark:border-emerald-800/60 dark:from-emerald-950/55 dark:via-background dark:to-teal-950/45 dark:ring-emerald-800/50`}
+          >
             <div className="mb-2 flex items-center gap-2 text-foreground">
               <h.icon className="h-5 w-5 text-primary" />
               <p className="font-semibold">{h.label}</p>
             </div>
-            <p className="text-sm leading-relaxed text-muted-foreground">{h.story}</p>
+            <p className="text-sm leading-relaxed text-foreground/80">{h.story}</p>
             <div
-              className="mt-3 h-1 w-full rounded-full bg-gradient-to-r from-primary via-emerald-400 to-transparent"
+              className="mt-3 h-1 w-full rounded-full bg-gradient-to-r from-primary via-emerald-500 to-cyan-400/80"
               style={{ animationDelay: `${index * 80}ms` }}
             />
           </div>
