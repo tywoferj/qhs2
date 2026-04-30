@@ -29,9 +29,10 @@ export const SERVICES: ServiceItem[] = [
   {
     id: "accreditation",
     title: "Hospital Accreditation Support.",
-    shortDescription: "Expert guidance through JCI and Society for Quality in Healthcare in Nigeria (SQHN) accreditation and related standards.",
+    shortDescription:
+      "End-to-end accreditation support for JCI, Society for Quality in Healthcare in Nigeria (SQHN), and other recognised quality frameworks.",
     longDescription:
-      "We guide healthcare facilities through JCI (Joint Commission International) and SafeCare Quality of Healthcare (Society for Quality in Healthcare in Nigeria (SQHN)) accreditation. We deliver gap analysis, mock surveys, policy development, and staff training so your facility is survey-ready and sustains improvement long after certification.",
+      "We guide healthcare facilities through JCI (Joint Commission International), Society for Quality in Healthcare in Nigeria (SQHN), and other relevant quality accreditation programmes. Our support covers baseline diagnostics, detailed gap analysis, mock surveys, tracer readiness, policy and documentation development, governance strengthening, and practical staff coaching. The result is a confident, survey-ready organisation that not only achieves accreditation milestones but also sustains measurable quality, safety, and operational improvement long after certification.",
     image: IMAGES.serviceAccreditation,
     imageAlt: "JCI and Society for Quality in Healthcare in Nigeria (SQHN) accreditation support, QHS Consultants Ltd",
     bullets: [

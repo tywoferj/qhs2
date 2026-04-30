@@ -7,9 +7,9 @@ import { consultationHref } from "@/lib/consultation-routes"
 const features = [
   {
     serviceId: "accreditation" as const,
-    title: "JCI & Society for Quality in Healthcare in Nigeria (SQHN) Accreditation Excellence",
+    title: "Quality Accreditation Excellence",
     description:
-      "Our team has guided over 15 healthcare institutions through successful JCI and SafeCare Quality of Healthcare accreditation, establishing them as leaders in patient safety and quality care.",
+      "Our team supports healthcare institutions across JCI, Society for Quality in Healthcare in Nigeria (SQHN), and other quality accreditation pathways, translating standards into practical systems that elevate patient safety, clinical outcomes, and organisational credibility.",
     bullets: [
       "Gap analysis and readiness assessment",
       "Mock surveys and tracer methodology",
@@ -22,7 +22,7 @@ const features = [
     serviceId: "healthcare-strategy" as const,
     title: "Hospital Operations & Turnaround",
     description:
-      "We specialize in turning underperforming facilities into efficient, patient-centered organizations. Our operational frameworks have delivered measurable improvements across 10+ hospitals.",
+      "We help underperforming facilities become efficient, patient-centered organisations through practical turnaround plans that improve flow, strengthen accountability, and stabilise financial performance. Our operational frameworks deliver measurable gains in service quality, patient experience, and leadership confidence.",
     bullets: [
       "Workflow optimization and lean management",
       "Revenue cycle improvement",
@@ -46,11 +46,11 @@ export function FeaturedServices() {
           </h2>
         </Reveal>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid auto-rows-fr gap-8 lg:grid-cols-2">
           {features.map((feature, idx) => (
-            <Reveal key={feature.title} delayMs={idx * 90}>
+            <Reveal key={feature.title} delayMs={idx * 90} className="h-full">
             <div
-              className={`relative overflow-hidden rounded-2xl p-8 shadow-sm transition-all duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-xl md:p-10 ${
+              className={`relative flex h-full flex-col overflow-hidden rounded-2xl p-8 shadow-sm transition-all duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-xl md:p-10 ${
                 idx === 0
                   ? "bg-primary text-primary-foreground"
                   : "bg-foreground text-background"
@@ -62,7 +62,7 @@ export function FeaturedServices() {
                   idx === 0 ? "bg-primary-foreground/5" : "bg-background/5"
                 }`}
               />
-              <div className="relative">
+              <div className="relative flex h-full flex-col">
                 <h3 className="mb-4 text-2xl font-bold">{feature.title}</h3>
                 <p
                   className={`mb-6 leading-relaxed ${
@@ -93,8 +93,8 @@ export function FeaturedServices() {
                   size="lg"
                   className={
                     idx === 0
-                      ? "bg-primary-foreground text-primary shadow-sm transition-all duration-200 hover:bg-primary-foreground/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md"
-                      : "bg-background text-foreground shadow-sm transition-all duration-200 hover:bg-background/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md"
+                      ? "mt-auto bg-primary-foreground text-primary shadow-sm transition-all duration-200 hover:bg-primary-foreground/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md"
+                      : "mt-auto bg-background text-foreground shadow-sm transition-all duration-200 hover:bg-background/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md"
                   }
                   asChild
                 >

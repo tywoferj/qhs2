@@ -293,7 +293,7 @@ export default function PrivacyPolicyPage() {
 
             <section>
               <h2 className="text-xl font-semibold text-foreground">12. Security</h2>
-              <p className="text-muted-foreground">
+            <p className="text-muted-foreground">
                 We implement appropriate technical and organisational measures designed to protect personal data
                 against unauthorised access, alteration, disclosure, or destruction, commensurate with the risk
                 and nature of the data. No system is completely secure; we encourage you to use secure channels
@@ -304,7 +304,7 @@ export default function PrivacyPolicyPage() {
 
             <section>
               <h2 className="text-xl font-semibold text-foreground">13. Data breach notification</h2>
-              <p className="text-muted-foreground">
+            <p className="text-muted-foreground">
                 In the event of a personal data breach likely to result in risk to data subjects, we will assess
                 the incident and comply with notification, remediation, record-keeping, and co-operation
                 obligations under the <strong className="text-foreground">NDPA 2023</strong>, regulations and
@@ -321,7 +321,7 @@ export default function PrivacyPolicyPage() {
 
             <section>
               <h2 className="text-xl font-semibold text-foreground">14. Children</h2>
-              <p className="text-muted-foreground">
+            <p className="text-muted-foreground">
                 Our website and services are directed at organisations and professionals in healthcare and related
                 sectors. We do not knowingly collect personal data from children under the age of 16 (or higher age
                 where the laws of Nigeria or Lagos State require) without appropriate parental or guardian authority.
@@ -332,26 +332,26 @@ export default function PrivacyPolicyPage() {
 
             <section>
               <h2 className="text-xl font-semibold text-foreground">15. Processor engagements (client data)</h2>
-              <p className="text-muted-foreground">
+            <p className="text-muted-foreground">
                 When we process personal data on behalf of a healthcare client under a written agreement, we act as
                 a processor (or sub-processor) and process such data only on documented instructions, unless
                 required otherwise by law. The client remains responsible for the lawfulness of the processing and
                 for providing any required notices to its own data subjects.
-              </p>
+            </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-foreground">16. Changes to this policy</h2>
-              <p className="text-muted-foreground">
+            <p className="text-muted-foreground">
                 We may update this Privacy Policy to reflect legal, technical, or business changes. The &quot;Last
                 updated&quot; date will be revised, and where changes are material we will provide additional notice
                 as appropriate (for example, a notice on our website or email where we have your contact details).
-              </p>
+            </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-foreground">17. Applicable law (Lagos State, Nigeria)</h2>
-              <p className="text-muted-foreground">
+            <p className="text-muted-foreground">
                 This Privacy Policy and our processing practices described here are governed primarily by{" "}
                 <strong className="text-foreground">Nigerian law</strong>, including the NDPA 2023 and NDPC
                 requirements, with particular reference to our{" "}
@@ -364,7 +364,7 @@ export default function PrivacyPolicyPage() {
 
             <section>
               <h2 className="text-xl font-semibold text-foreground">18. Contact</h2>
-              <p className="text-muted-foreground">
+            <p className="text-muted-foreground">
                 For privacy questions or requests:{" "}
                 <a href={`mailto:${EMAIL_PRIVACY}`} className="text-primary hover:underline">
                   {EMAIL_PRIVACY}
