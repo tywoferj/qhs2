@@ -4,8 +4,9 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { IMAGES } from "@/lib/images"
-import { CheckCircle2, Phone, Award, Building2, Users } from "lucide-react"
+import { CheckCircle2, Phone } from "lucide-react"
 import type { Metadata } from "next"
+import { AboutHighlights } from "@/components/about-highlights"
 
 export const metadata: Metadata = {
   title: "About Us | Healthcare Consultancy Nigeria | QHS Consultants Ltd",
@@ -23,12 +24,6 @@ const values = [
   "Practical, context-aware solutions for Nigerian healthcare",
   "Partnership and knowledge transfer, not dependency",
   "Integrity and transparency in all we do",
-]
-
-const highlights = [
-  { icon: Award, label: "Hospital Accreditation Experts", sub: "Accreditation leadership" },
-  { icon: Building2, label: "Hospitals", sub: "Transformed across Nigeria" },
-  { icon: Users, label: "30+ Years", sub: "Proven experience" },
 ]
 
 export default function AboutPage() {
@@ -82,20 +77,7 @@ export default function AboutPage() {
         {/* Highlights */}
         <section className="border-t bg-muted/20 px-4 py-14 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <div className="grid gap-8 sm:grid-cols-3">
-              {highlights.map((h) => (
-                <div
-                  key={h.label}
-                  className="rounded-xl border bg-card p-6 text-center"
-                >
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                    <h.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <p className="mt-3 text-xl font-bold text-foreground">{h.label}</p>
-                  <p className="text-sm text-muted-foreground">{h.sub}</p>
-                </div>
-              ))}
-            </div>
+            <AboutHighlights />
           </div>
         </section>
 

@@ -89,22 +89,25 @@ export function StatsSection() {
   return (
     <section
       ref={ref}
-      className="bg-primary py-16 lg:py-20"
+      className="bg-primary py-10 lg:py-12"
       aria-label="Trust metrics and performance highlights"
     >
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 gap-y-10 px-4 lg:grid-cols-4 lg:gap-8 lg:px-8">
-        {stats.map((stat) => (
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 gap-y-5 px-4 lg:grid-cols-4 lg:gap-5 lg:px-8">
+        {stats.map((stat, index) => (
           <div
             key={stat.id}
-            className="flex min-w-0 flex-col items-center px-1 text-center sm:px-2"
+            className={`group relative flex min-w-0 flex-col items-center rounded-xl border border-primary-foreground/15 bg-primary-foreground/[0.06] px-2 py-4 text-center shadow-sm backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:bg-primary-foreground/[0.1] hover:shadow-lg sm:px-3 ${
+              inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+            }`}
+            style={{ transitionDelay: `${index * 90}ms` }}
           >
-            <div className="mb-3 flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-primary-foreground/10">
-              <stat.icon className="h-7 w-7 text-primary-foreground" aria-hidden />
+            <div className="mb-2 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-primary-foreground/12 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+              <stat.icon className="h-5 w-5 text-primary-foreground" aria-hidden />
             </div>
-            <p className="text-3xl font-bold tabular-nums text-primary-foreground sm:text-4xl md:text-5xl">
+            <p className="text-2xl font-bold tabular-nums text-primary-foreground sm:text-3xl">
               <AnimatedNumber target={stat.value} suffix={stat.suffix} inView={inView} />
             </p>
-            <p className="mt-2 max-w-[11rem] text-balance text-xs font-medium leading-snug text-primary-foreground/85 sm:max-w-[13rem] sm:text-sm lg:max-w-[14rem]">
+            <p className="mt-1 max-w-[10rem] text-balance text-[11px] font-medium leading-snug text-primary-foreground/85 sm:max-w-[12rem] sm:text-xs">
               {stat.label}
             </p>
           </div>
