@@ -7,7 +7,7 @@ import { getDefaultServiceCategoryFromQuery } from "@/lib/consultation-form-sche
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Consultation Request | QHS Consultants Ltd",
+  title: "Consultation Request",
   description:
     "Submit a consultation request to QHS Consultants Ltd. Hospital accreditation, clinical governance, quality, strategy, training, and equipment advisory in Nigeria and West Africa.",
   openGraph: {
@@ -29,7 +29,7 @@ export default async function ConsultationRequestPage({ searchParams }: PageProp
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-background">
+      <main id="main-content" className="min-h-screen bg-background">
         <section className="relative overflow-x-hidden border-b border-border/60 bg-muted/30 px-4 py-6 sm:px-5 sm:py-8 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary sm:text-sm">

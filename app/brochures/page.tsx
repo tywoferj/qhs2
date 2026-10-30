@@ -6,7 +6,7 @@ import { FileText, Mail, Phone } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Brochures & Capability Summaries | QHS Consultants Ltd",
+  title: "Brochures & Capability Summaries",
   description:
     "Request QHS Consultants Ltd service brochures and capability summaries for accreditation, quality, clinical governance, strategy, training, and medical equipment advisory in Nigeria.",
   keywords: [
@@ -33,7 +33,7 @@ export default function BrochuresPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-background">
+      <main id="main-content" className="min-h-screen bg-background">
         <section className="border-b bg-muted px-4 py-16 md:py-20 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">

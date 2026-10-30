@@ -35,7 +35,7 @@ const features = [
 
 export function FeaturedServices() {
   return (
-    <section className="bg-muted py-20 lg:py-28">
+    <section className="bg-gradient-to-br from-secondary/[0.08] via-muted to-primary/[0.08] py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <Reveal className="mb-14 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">

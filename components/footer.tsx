@@ -19,7 +19,7 @@ const resourceLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-secondary text-secondary-foreground">
+    <footer className="bg-secondary pb-[4.5rem] text-secondary-foreground lg:pb-0">
       <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
@@ -37,19 +37,6 @@ export function Footer() {
               medical training, healthcare quality, accreditation, clinical risk
               and governance, and medical equipment sourcing.
             </p>
-            {/* Social icons */}
-            <div className="mt-6 flex gap-3">
-              {["LinkedIn", "Twitter", "Facebook"].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary-foreground/10 text-xs font-bold text-secondary-foreground/90 transition-colors hover:bg-primary hover:text-primary-foreground"
-                  aria-label={social}
-                >
-                  {social[0]}
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -167,6 +154,12 @@ export function Footer() {
               className="text-xs text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
             >
               Cookie Policy
+            </Link>
+            <Link
+              href="/site-map"
+              className="text-xs text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
+            >
+              Sitemap
             </Link>
             <Link
               href="/terms-of-service"

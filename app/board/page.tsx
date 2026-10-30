@@ -1,12 +1,13 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
-import { BoardClient } from "@/components/board-client"
+import { BoardClient, type Director } from "@/components/board-client"
 
 export const metadata: Metadata = {
-  title: "Board of Directors | QHS Consultants Ltd",
+  title: "Board of Directors",
   description:
     "Meet the Board of Directors of Quality Healthcare Services (QHS) Consultants Ltd. Experienced leaders in healthcare, engineering, and business.",
+  alternates: { canonical: "/board" },
   openGraph: {
     title: "Board of Directors | QHS Consultants Ltd",
     description:
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   },
 }
 
-const directors = [
+const allDirectors: (Director & { hidden?: boolean })[] = [
   {
     name: "Engr. Olu Onakoya",
     role: "Chairman",
@@ -50,6 +51,7 @@ const directors = [
   {
     name: "Engr. Aramide Onakoya",
     role: "Director",
+    hidden: true, // profile hidden from the public directors page; remove this flag to restore it
     summary:
       "Engr. Aramide Onakoya is a Mechanical Engineer who qualified from the University of Portsmouth, United Kingdom, and holds postgraduate qualifications from King's College London. She has experience in financial advisory, manufacturing, corporate strategy, and consulting services.",
     email: "ara_onakoya@hotmail.com",
@@ -65,11 +67,13 @@ const directors = [
   },
 ]
 
+const directors: Director[] = allDirectors.filter((d) => !d.hidden)
+
 export default function BoardPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-background">
+      <main id="main-content" className="min-h-screen bg-background">
         <section className="relative overflow-hidden bg-muted px-4 py-14 md:py-20 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">

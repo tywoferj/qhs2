@@ -5,7 +5,7 @@ import { getBlogPostsSortedNewestFirst } from "@/lib/blog-posts"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Healthcare Insights and Blog | QHS Consultants Ltd",
+  title: "Healthcare Insights and Blog",
   description:
     "Articles on JCI and Society for Quality in Healthcare in Nigeria (SQHN) accreditation, hospital quality, patient safety, revenue cycle, and healthcare management in Nigeria and West Africa.",
   keywords: [
@@ -45,7 +45,7 @@ export default function BlogIndexPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-muted py-16 lg:py-24">
+      <main id="main-content" className="min-h-screen bg-muted py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mb-14 text-center">
             <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">Insights</p>

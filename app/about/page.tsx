@@ -9,7 +9,7 @@ import type { Metadata } from "next"
 import { AboutHighlights } from "@/components/about-highlights"
 
 export const metadata: Metadata = {
-  title: "About Us | Healthcare Consultancy Nigeria | QHS Consultants Ltd",
+  title: "About Us | Healthcare Consultancy Nigeria",
   description:
     "Quality Healthcare Services (QHS) Consultants Ltd: consultancy and advisory in healthcare strategy, clinical strategy, medical training, healthcare quality, accreditation, clinical risk and governance, and medical equipment sourcing. Call +1 (252) 691 4076.",
   openGraph: {
@@ -30,7 +30,7 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-background">
+      <main id="main-content" className="min-h-screen bg-background">
         {/* Hero */}
         <section className="relative overflow-hidden bg-muted px-4 py-16 md:py-24 lg:px-8">
           <div className="mx-auto max-w-7xl">

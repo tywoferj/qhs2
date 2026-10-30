@@ -10,8 +10,7 @@ import { CheckCircle2, Phone } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title:
-    "Healthcare Consulting Nigeria | JCI & Society for Quality in Healthcare in Nigeria (SQHN) Accreditation, Quality, Clinical Governance | QHS Consultants Ltd",
+  title: "Healthcare Consulting Services in Nigeria | JCI & SQHN Accreditation",
   description:
     "Hospital and healthcare consulting in Nigeria and West Africa: JCI accreditation support, Society for Quality in Healthcare in Nigeria (SQHN) readiness, clinical risk and governance, quality improvement and patient safety, healthcare strategy, medical training, and medical equipment sourcing with ROI advisory. Lagos-based. Call +1 (252) 691 4076.",
   keywords: [
@@ -39,7 +38,7 @@ export default function ServicesPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-background">
+      <main id="main-content" className="min-h-screen bg-background">
         {/* Hero */}
         <section className="relative overflow-x-hidden bg-muted px-4 py-12 sm:px-5 sm:py-16 md:py-24 lg:px-8">
           <div className="mx-auto max-w-7xl">
@@ -99,7 +98,6 @@ export default function ServicesPage() {
                       className="object-cover object-center"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 50vw"
                       loading="lazy"
-                      unoptimized={typeof service.image === "string" && service.image.startsWith("/")}
                     />
                   </ResponsiveMediaFrame>
                 </div>

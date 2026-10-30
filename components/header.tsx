@@ -1,11 +1,12 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Menu, X, ChevronDown } from "lucide-react"
+import { Phone, Menu, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SERVICES } from "@/lib/services-data"
+import { MobileNav } from "@/components/mobile-nav"
 
 const resourceLinks = [
   { label: "Accreditation checklist", href: "/accreditation-checklist" },
@@ -16,16 +17,17 @@ const resourceLinks = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [servicesOpen, setServicesOpen] = useState(false)
-  const [resourcesOpen, setResourcesOpen] = useState(false)
+  const closeMobile = useCallback(() => setMobileOpen(false), [])
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 10)
-    window.addEventListener("scroll", onScroll)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
   return (
+    <>
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
@@ -35,7 +37,7 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
-          <div className="relative h-14 w-14 flex-shrink-0 self-center">
+          <div className="relative h-11 w-11 flex-shrink-0 sm:h-14 sm:w-14 self-center">
             <Image
               src="/images/favicon/QHS_logo.png"
               alt="QHS Consultants Ltd logo"
@@ -46,8 +48,8 @@ export function Header() {
             />
           </div>
           <div className="flex flex-col">
-            <span className="text-xl font-bold tracking-tight text-primary">QHS Consultants Ltd</span>
-            <span className="text-[11px] font-medium tracking-widest text-muted-foreground uppercase">
+            <span className="text-base font-bold tracking-tight text-primary sm:text-xl">QHS Consultants Ltd</span>
+            <span className="hidden text-[11px] font-medium tracking-widest sm:block text-muted-foreground uppercase">
               Quality Healthcare Services
             </span>
           </div>
@@ -75,7 +77,7 @@ export function Header() {
               Services
               <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
             </Link>
-            <div className="invisible absolute left-0 top-full z-50 w-72 rounded-lg border bg-card p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
+            <div className="invisible absolute left-0 top-full z-50 w-72 rounded-lg border bg-card p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
               {SERVICES.map((s) => (
                 <Link
                   key={s.id}
@@ -106,7 +108,7 @@ export function Header() {
               Resources
               <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
             </span>
-            <div className="invisible absolute left-0 top-full z-50 w-64 rounded-lg border bg-card p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
+            <div className="invisible absolute left-0 top-full z-50 w-64 rounded-lg border bg-card p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
               {resourceLinks.map((r) => (
                 <Link
                   key={r.href}
@@ -142,106 +144,16 @@ export function Header() {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="rounded-md p-2 text-foreground lg:hidden"
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          className="-mr-2 flex h-11 w-11 items-center justify-center rounded-full text-foreground active:bg-muted lg:hidden"
+          aria-label="Open menu"
+          aria-expanded={mobileOpen}
         >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <Menu className="h-6 w-6" />
         </button>
       </div>
 
-      {mobileOpen && (
-        <div className="border-t bg-background px-4 pb-6 pt-2 lg:hidden">
-          <Link
-            href="/"
-            className="block py-3 text-sm font-medium text-foreground"
-            onClick={() => setMobileOpen(false)}
-          >
-            Home
-          </Link>
-          <Link
-            href="/about"
-            className="block py-3 text-sm font-medium text-foreground"
-            onClick={() => setMobileOpen(false)}
-          >
-            About
-          </Link>
-
-          <button
-            onClick={() => setServicesOpen(!servicesOpen)}
-            className="flex w-full items-center justify-between py-3 text-sm font-medium text-foreground"
-          >
-            Services
-            <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
-          </button>
-          {servicesOpen && (
-            <div className="mb-2 ml-4 space-y-1">
-              {SERVICES.map((s) => (
-                <Link
-                  key={s.id}
-                  href={`/services/${s.id}`}
-                  className="block py-1.5 text-sm text-muted-foreground hover:text-primary"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {s.title}
-                </Link>
-              ))}
-            </div>
-          )}
-
-          <Link
-            href="/board"
-            className="block py-3 text-sm font-medium text-foreground"
-            onClick={() => setMobileOpen(false)}
-          >
-            Board
-          </Link>
-
-          <button
-            onClick={() => setResourcesOpen(!resourcesOpen)}
-            className="flex w-full items-center justify-between py-3 text-sm font-medium text-foreground"
-          >
-            Resources
-            <ChevronDown className={`h-4 w-4 transition-transform ${resourcesOpen ? "rotate-180" : ""}`} />
-          </button>
-          {resourcesOpen && (
-            <div className="mb-2 ml-4 space-y-1">
-              {resourceLinks.map((r) => (
-                <Link
-                  key={r.href}
-                  href={r.href}
-                  className="block py-1.5 text-sm text-muted-foreground hover:text-primary"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {r.label}
-                </Link>
-              ))}
-            </div>
-          )}
-
-          <Link
-            href="/contact"
-            className="block py-3 text-sm font-medium text-foreground"
-            onClick={() => setMobileOpen(false)}
-          >
-            Contact
-          </Link>
-
-          <div className="mt-4 flex flex-col gap-3">
-            <a
-              href="tel:+12526914076"
-              className="flex items-center gap-2 text-sm font-medium text-foreground"
-            >
-              <Phone className="h-4 w-4 text-primary" />
-              +1 (252) 691 4076
-            </a>
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-              <a href="/#contact" onClick={() => setMobileOpen(false)}>
-                Free Consultation
-              </a>
-            </Button>
-          </div>
-        </div>
-      )}
     </header>
+    <MobileNav open={mobileOpen} onClose={closeMobile} resourceLinks={resourceLinks} />
+    </>
   )
 }

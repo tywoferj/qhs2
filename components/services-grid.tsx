@@ -36,7 +36,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export function ServicesGrid() {
   return (
-    <section id="services" className="bg-background py-20 lg:py-28">
+    <section id="services" className="bg-gradient-to-b from-background via-primary/[0.05] to-background py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <Reveal className="mb-14 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
@@ -59,10 +59,10 @@ export function ServicesGrid() {
               <Reveal key={service.id} delayMs={idx * 55}>
               <Link
                 href={`/services#${service.id}`}
-                className="group flex h-full flex-col rounded-xl border bg-card p-6 transition-all duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg"
+                className={`group flex h-full flex-col rounded-xl border border-t-4 ${idx % 2 ? "border-t-secondary/70" : "border-t-primary/70"} bg-card p-6 transition-all duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg`}
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
-                  <Icon className="h-6 w-6 text-primary" />
+                <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-lg transition-colors ${idx % 2 ? "bg-secondary/10 group-hover:bg-secondary/20" : "bg-primary/10 group-hover:bg-primary/20"}`}>
+                  <Icon className={`h-6 w-6 ${idx % 2 ? "text-secondary" : "text-primary"}`} />
                 </div>
                 <h3 className="mb-2 text-lg font-semibold text-card-foreground">
                   {service.title}

@@ -123,7 +123,7 @@ export default async function ServiceSlugPage({ params }: Props) {
     <>
       <ServiceJsonLd service={service} />
       <Header />
-      <main className="min-h-screen bg-background">
+      <main id="main-content" className="min-h-screen bg-background">
         {/* Breadcrumb */}
         <div className="border-b bg-muted/30">
           <div className="mx-auto max-w-7xl px-4 py-3 sm:px-5 lg:px-8">
@@ -183,7 +183,6 @@ export default async function ServiceSlugPage({ params }: Props) {
                     className="object-cover object-center"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 50vw"
                     priority
-                    unoptimized={typeof service.image === "string" && service.image.startsWith("/")}
                   />
                 </ResponsiveMediaFrame>
               </div>

@@ -4,7 +4,7 @@ const BASE_URL = "https://qhsconsultant.com"
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: "*", allow: "/" },
+    rules: { userAgent: "*", allow: "/", disallow: ["/api/", "/consultation-request/thank-you"] },
     sitemap: `${BASE_URL}/sitemap.xml`,
   }
 }

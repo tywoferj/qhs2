@@ -29,7 +29,7 @@ export function CookieConsentBanner() {
       document.body.style.paddingBottom = ""
       return
     }
-    document.body.style.paddingBottom = "max(7.5rem, env(safe-area-inset-bottom, 0px))"
+    document.body.style.paddingBottom = "max(9rem, env(safe-area-inset-bottom, 0px))"
     return () => {
       document.body.style.paddingBottom = ""
     }
@@ -39,16 +39,15 @@ export function CookieConsentBanner() {
 
   return (
     <div
-      className="fixed inset-x-0 bottom-0 z-[100] border-t border-border bg-card/95 p-4 shadow-[0_-8px_30px_rgba(0,0,0,0.12)] backdrop-blur-sm supports-[backdrop-filter]:bg-card/90 md:p-5"
+      className="fixed inset-x-0 bottom-0 z-[100] border-t border-border bg-card/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 shadow-[0_-8px_30px_rgba(0,0,0,0.12)] backdrop-blur-sm supports-[backdrop-filter]:bg-card/90 md:p-5 motion-safe:animate-in motion-safe:slide-in-from-bottom-4 motion-safe:fade-in motion-safe:duration-500"
       role="region"
       aria-label="Cookie consent"
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-4 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
         <div className="min-w-0 flex-1">
           <p className="text-sm font-semibold text-foreground">Cookies on this site</p>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            We use essential cookies so the site works. With your permission we may use optional analytics
-            cookies to understand how visitors use our pages. See our{" "}
+          <p className="mt-1 text-[13px] leading-snug text-muted-foreground sm:mt-2 sm:text-sm sm:leading-relaxed">
+            We use essential cookies so the site works, and optional analytics cookies with your permission. See our{" "}
             <Link href="/cookies" className="font-medium text-primary underline-offset-4 hover:underline">
               Cookie Policy
             </Link>{" "}
@@ -59,7 +58,7 @@ export function CookieConsentBanner() {
             .
           </p>
         </div>
-        <div className="flex flex-shrink-0 flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center lg:justify-end">
+        <div className="grid flex-shrink-0 grid-cols-2 gap-2 sm:flex sm:flex-row sm:flex-wrap sm:items-center lg:justify-end">
           <Button
             type="button"
             variant="outline"
@@ -78,7 +77,7 @@ export function CookieConsentBanner() {
           <Button
             type="button"
             size="sm"
-            className="w-full bg-primary sm:w-auto"
+            className="col-span-2 w-full bg-primary sm:w-auto"
             onClick={() => {
               setCookiePreferences(true)
               setOpen(false)

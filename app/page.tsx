@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <HeroSection />
         <ServicesGrid />
         <IndustriesSection />

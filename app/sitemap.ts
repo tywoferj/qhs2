@@ -33,12 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.85,
     },
-    {
-      url: `${BASE_URL}/consultation-request/thank-you`,
-      lastModified: SITE_REFRESH,
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
+    { url: `${BASE_URL}/site-map`, lastModified: SITE_REFRESH, changeFrequency: "monthly", priority: 0.4 },
     { url: `${BASE_URL}/services`, lastModified: SITE_REFRESH, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE_URL}/privacy-policy`, lastModified: SITE_REFRESH, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE_URL}/cookies`, lastModified: SITE_REFRESH, changeFrequency: "yearly", priority: 0.3 },

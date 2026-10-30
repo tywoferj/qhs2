@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { SocialShare } from "@/components/social-share"
-import { getPostBySlug, getAllSlugs } from "@/lib/blog-posts"
+import { getPostBySlug, getAllSlugs, getBlogPostsSortedNewestFirst } from "@/lib/blog-posts"
 import { Clock, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
@@ -17,6 +17,24 @@ export async function generateStaticParams() {
 }
 
 const SITE_ORIGIN = "https://qhsconsultant.com"
+
+/** Renders **bold** and [label](/internal-link) inside a line of post copy. */
+function renderInline(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g)
+  return parts.map((part, i) => {
+    const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+    if (link) {
+      return (
+        <Link key={i} href={link[2]} className="font-medium text-primary underline underline-offset-4 hover:no-underline">
+          {link[1]}
+        </Link>
+      )
+    }
+    const bold = part.match(/^\*\*([^*]+)\*\*$/)
+    if (bold) return <strong key={i} className="font-semibold text-foreground">{bold[1]}</strong>
+    return part
+  })
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
@@ -50,17 +68,88 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+function renderBody(content: string) {
+  const lines = content.trim().split("\n").map((l) => l.trim()).filter(Boolean)
+  const out: React.ReactNode[] = []
+  let bullets: string[] = []
+  const flush = (key: number) => {
+    if (!bullets.length) return
+    out.push(
+      <ul key={`ul-${key}`} className="mb-5 list-disc space-y-2 pl-6 text-muted-foreground marker:text-primary">
+        {bullets.map((b, j) => (
+          <li key={j} className="leading-relaxed">{renderInline(b)}</li>
+        ))}
+      </ul>
+    )
+    bullets = []
+  }
+  lines.forEach((para, i) => {
+    if (para.startsWith("- ")) {
+      bullets.push(para.slice(2))
+      return
+    }
+    flush(i)
+    if (para.startsWith("**") && para.endsWith("**") && !para.slice(2, -2).includes("**")) {
+      out.push(
+        <h2 key={i} className="mt-10 border-l-4 border-primary pl-3 text-xl font-semibold text-foreground md:text-2xl">
+          {para.replace(/\*\*/g, "")}
+        </h2>
+      )
+    } else if (para === "---") {
+      out.push(<hr key={i} className="my-8 border-border" />)
+    } else {
+      out.push(
+        <p key={i} className="mb-4 leading-relaxed text-muted-foreground">
+          {renderInline(para)}
+        </p>
+      )
+    }
+  })
+  flush(lines.length)
+  return out
+}
+
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params
   const post = getPostBySlug(slug)
   if (!post) notFound()
 
   const baseUrl = SITE_ORIGIN
+  const related = getBlogPostsSortedNewestFirst().filter((p) => p.slug !== post.slug).slice(0, 3)
+  const url = `${baseUrl}/blog/${post.slug}`
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `${url}#article`,
+        mainEntityOfPage: url,
+        headline: post.title,
+        description: post.seoDescription,
+        image: post.image.startsWith("/") ? `${baseUrl}${post.image}` : post.image,
+        datePublished: post.publishedAt,
+        dateModified: post.updatedAt ?? post.publishedAt,
+        articleSection: post.category,
+        inLanguage: "en-NG",
+        author: { "@type": "Organization", name: post.author },
+        publisher: { "@id": `${baseUrl}/#organization` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: baseUrl },
+          { "@type": "ListItem", position: 2, name: "Blog", item: `${baseUrl}/blog` },
+          { "@type": "ListItem", position: 3, name: post.title, item: url },
+        ],
+      },
+    ],
+  }
 
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <main id="main-content" className="min-h-screen bg-background">
         <article className="mx-auto max-w-3xl px-4 pb-20 pt-8 lg:px-8">
           <Link
             href="/blog"
@@ -79,7 +168,7 @@ export default async function BlogPostPage({ params }: Props) {
             </h1>
             <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
               <span>{post.author}</span>
-              <span>{post.publishedAt}</span>
+              <time dateTime={post.publishedAt}>{post.publishedAt}</time>
               <span className="flex items-center gap-1">
                 <Clock className="h-3.5 w-3.5" />
                 {post.readTime}
@@ -101,26 +190,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
 
           <div className="prose prose-neutral dark:prose-invert max-w-none">
-            {post.content
-              .trim()
-              .split("\n")
-              .map((para, i) => para.trim())
-              .filter(Boolean)
-              .map((para, i) => {
-                if (para.startsWith("**") && para.endsWith("**")) {
-                  return (
-                    <h2 key={i} className="mt-8 text-xl font-semibold text-foreground">
-                      {para.replace(/\*\*/g, "")}
-                    </h2>
-                  )
-                }
-                if (para === "---") return <hr key={i} className="my-8 border-border" />
-                return (
-                  <p key={i} className="mb-4 leading-relaxed text-muted-foreground">
-                    {para}
-                  </p>
-                )
-              })}
+            {renderBody(post.content)}
           </div>
 
           <div className="mt-10 rounded-xl border bg-muted/50 p-6">
@@ -141,6 +211,25 @@ export default async function BlogPostPage({ params }: Props) {
               </a>
             </div>
           </div>
+
+          {related.length > 0 && (
+            <section aria-labelledby="related-heading" className="mt-12">
+              <h2 id="related-heading" className="mb-4 text-lg font-semibold text-foreground">Keep reading</h2>
+              <ul className="grid gap-3 sm:grid-cols-3">
+                {related.map((r) => (
+                  <li key={r.slug}>
+                    <Link
+                      href={`/blog/${r.slug}`}
+                      className="flex h-full flex-col rounded-xl border border-t-4 border-t-primary/60 bg-card p-4 transition-all hover:-translate-y-1 hover:shadow-md"
+                    >
+                      <span className="text-xs font-semibold text-primary">{r.category}</span>
+                      <span className="mt-1 text-sm font-medium leading-snug text-foreground">{r.title}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           <footer className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t pt-6">
             <SocialShare

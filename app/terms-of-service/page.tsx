@@ -18,7 +18,7 @@ export default function TermsOfServicePage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-background">
+      <main id="main-content" className="min-h-screen bg-background">
         <div className="mx-auto max-w-3xl px-4 py-16 lg:px-8">
           <Link
             href="/"

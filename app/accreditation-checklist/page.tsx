@@ -6,7 +6,7 @@ import { CheckCircle2, Phone } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Hospital Accreditation Checklist | JCI & Society for Quality in Healthcare in Nigeria (SQHN) Readiness | QHS Consultants Ltd",
+  title: "Hospital Accreditation Checklist | JCI & Society for Quality in Healthcare in Nigeria (SQHN) Readiness",
   description:
     "A practical accreditation readiness checklist for Nigerian hospitals: governance, documentation, mock surveys, tracer readiness, and continuous improvement for JCI and Society for Quality in Healthcare in Nigeria (SQHN).",
   keywords: [
@@ -62,7 +62,7 @@ export default function AccreditationChecklistPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-background">
+      <main id="main-content" className="min-h-screen bg-background">
         <section className="border-b bg-muted px-4 py-16 md:py-20 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">

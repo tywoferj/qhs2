@@ -10,7 +10,7 @@ import { RequestProposalDialog } from "@/components/request-proposal-dialog"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Contact Us | Healthcare Consultancy Nigeria | QHS Consultants Ltd",
+  title: "Contact Us | Healthcare Consultancy Nigeria",
   description:
     "Contact Quality Healthcare Services (QHS) Consultants Ltd. Discuss services on +1 (252) 691 4076 or book a specialist or advisory appointment on +1 (573) 264 7695. Ikeja, Lagos.",
   openGraph: {
@@ -24,7 +24,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-background">
+      <main id="main-content" className="min-h-screen bg-background">
         {/* Hero */}
         <section className="relative overflow-hidden bg-muted px-4 py-16 md:py-24 lg:px-8">
           <div className="mx-auto max-w-7xl">

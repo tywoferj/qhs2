@@ -28,6 +28,10 @@ const stats = [
   },
 ]
 
+/**
+ * Counts up when scrolled into view. The final value is the initial state, so the
+ * server-rendered HTML (and crawlers, and no-JS visitors) always see the real number.
+ */
 function AnimatedNumber({
   target,
   suffix,
@@ -37,30 +41,22 @@ function AnimatedNumber({
   suffix: string
   inView: boolean
 }) {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(target)
 
   useEffect(() => {
     if (!inView) return
-    if (
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      setCount(target)
-      return
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+    const duration = 1600
+    const t0 = performance.now()
+    let raf = 0
+    const tick = (now: number) => {
+      const p = Math.min(1, (now - t0) / duration)
+      const eased = 1 - Math.pow(1 - p, 4) // ease-out quart
+      setCount(Math.round(target * eased))
+      if (p < 1) raf = requestAnimationFrame(tick)
     }
-    let start = 0
-    const duration = 2000
-    const step = Math.max(1, Math.ceil(target / (duration / 16)))
-    const timer = setInterval(() => {
-      start += step
-      if (start >= target) {
-        setCount(target)
-        clearInterval(timer)
-      } else {
-        setCount(start)
-      }
-    }, 16)
-    return () => clearInterval(timer)
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
   }, [inView, target])
 
   return (
@@ -89,27 +85,28 @@ export function StatsSection() {
   return (
     <section
       ref={ref}
-      className="bg-primary py-10 lg:py-12"
+      className="bg-gradient-to-r from-primary via-primary to-secondary py-6 lg:py-8"
       aria-label="Trust metrics and performance highlights"
     >
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 gap-y-5 px-4 lg:grid-cols-4 lg:gap-5 lg:px-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-3 px-4 lg:grid-cols-4 lg:gap-4 lg:px-8">
         {stats.map((stat, index) => (
           <div
             key={stat.id}
-            className={`group relative flex min-w-0 flex-col items-center rounded-xl border border-primary-foreground/15 bg-primary-foreground/[0.06] px-2 py-4 text-center shadow-sm backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:bg-primary-foreground/[0.1] hover:shadow-lg sm:px-3 ${
-              inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+            className={`group relative flex min-w-0 items-center gap-3 rounded-xl border border-primary-foreground/15 bg-primary-foreground/[0.08] px-3 py-2.5 text-left shadow-sm backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:bg-primary-foreground/[0.1] hover:shadow-lg sm:px-3 ${
+              ""
             }`}
-            style={{ transitionDelay: `${index * 90}ms` }}
           >
-            <div className="mb-2 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-primary-foreground/12 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-              <stat.icon className="h-5 w-5 text-primary-foreground" aria-hidden />
+            <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-primary-foreground/12 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+              <stat.icon className="h-4 w-4 text-primary-foreground" aria-hidden />
             </div>
-            <p className="text-2xl font-bold tabular-nums text-primary-foreground sm:text-3xl">
+            <div className="min-w-0">
+            <p className="text-lg font-bold leading-none tabular-nums text-primary-foreground sm:text-2xl">
               <AnimatedNumber target={stat.value} suffix={stat.suffix} inView={inView} />
             </p>
-            <p className="mt-1 max-w-[10rem] text-balance text-[11px] font-medium leading-snug text-primary-foreground/85 sm:max-w-[12rem] sm:text-xs">
+            <p className="mt-1 text-pretty text-[10.5px] font-medium leading-tight text-primary-foreground/85 sm:text-xs">
               {stat.label}
             </p>
+            </div>
           </div>
         ))}
       </div>

@@ -5,7 +5,7 @@ import type { Metadata } from "next"
 import { CookiePreferencesPanel } from "@/components/cookie-preferences-panel"
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | QHS Consultants Ltd",
+  title: "Cookie Policy",
   description:
     "Cookie policy for Quality Healthcare Services (QHS) Consultants Ltd (Lagos State, Nigeria): essential and optional cookies, NDPA 2023, and applicable Nigerian and Lagos State law.",
 }
@@ -14,7 +14,7 @@ export default function CookiesPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-background">
+      <main id="main-content" className="min-h-screen bg-background">
         <div className="mx-auto max-w-3xl px-4 py-16 lg:px-8">
           <Link
             href="/"

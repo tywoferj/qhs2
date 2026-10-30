@@ -36,7 +36,7 @@ export function TestimonialsSection() {
     setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))
 
   return (
-    <section className="bg-background py-20 lg:py-28">
+    <section className="bg-gradient-to-b from-background to-secondary/[0.06] py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mb-14 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">

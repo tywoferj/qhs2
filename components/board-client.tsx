@@ -43,7 +43,6 @@ export function BoardClient({ directors }: BoardClientProps) {
                       fill
                       className="object-cover"
                       sizes="96px"
-                      unoptimized
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center text-muted-foreground/40">
@@ -82,7 +81,6 @@ export function BoardClient({ directors }: BoardClientProps) {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 220px"
-                  unoptimized
                 />
               ) : (
                 <div className="flex h-full w-full items-center justify-center text-muted-foreground/40">
