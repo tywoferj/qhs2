@@ -71,6 +71,10 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       keyframes: {
+        'service-zoom': {
+          from: { transform: 'scale(1.1)' },
+          to: { transform: 'scale(1)' },
+        },
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-7px)' },

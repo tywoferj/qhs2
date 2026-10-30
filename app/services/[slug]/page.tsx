@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/header"
+import { Reveal } from "@/components/reveal"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { ServiceConsultationCta } from "@/components/service-consultation-cta"
@@ -38,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : service.image
 
   return {
-    title,
+    title: service.title.replace(/\.\s*$/, ""),
     description,
     openGraph: {
       title,
@@ -142,10 +143,10 @@ export default async function ServiceSlugPage({ params }: Props) {
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 md:gap-10 lg:grid-cols-2 lg:items-start lg:gap-12">
               <div className="min-w-0">
-                <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
+                <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl motion-safe:animate-in motion-safe:fade-in motion-safe:fill-mode-backwards motion-safe:duration-700 motion-safe:ease-out motion-safe:slide-in-from-bottom-4">
                   {service.title}
                 </h1>
-                <p className="mt-4 max-w-prose text-base leading-relaxed text-muted-foreground sm:text-lg">
+                <p style={{ animationDelay: "120ms" }} className="mt-4 max-w-prose text-base leading-relaxed text-muted-foreground sm:text-lg motion-safe:animate-in motion-safe:fade-in motion-safe:fill-mode-backwards motion-safe:duration-700 motion-safe:ease-out motion-safe:slide-in-from-bottom-4">
                   {service.longDescription}
                 </p>
                 {service.heroParagraph2 ? (
@@ -153,7 +154,7 @@ export default async function ServiceSlugPage({ params }: Props) {
                     {service.heroParagraph2}
                   </p>
                 ) : null}
-                <div className="mt-6 flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <div style={{ animationDelay: "260ms" }} className="mt-6 flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap motion-safe:animate-in motion-safe:fade-in motion-safe:fill-mode-backwards motion-safe:duration-700 motion-safe:ease-out motion-safe:slide-in-from-bottom-4">
                   <ServiceConsultationCta serviceId={service.id} className="w-full sm:w-auto">
                     {service.cta}
                   </ServiceConsultationCta>
@@ -174,13 +175,13 @@ export default async function ServiceSlugPage({ params }: Props) {
                   <span className="hidden sm:inline"> — {service.phoneLabel}</span>
                 </p>
               </div>
-              <div className="min-w-0 w-full max-w-full">
-                <ResponsiveMediaFrame>
+              <div style={{ animationDelay: "150ms" }} className="min-w-0 w-full max-w-full motion-safe:animate-in motion-safe:fade-in motion-safe:fill-mode-backwards motion-safe:duration-700 motion-safe:ease-out motion-safe:slide-in-from-right-8 motion-safe:duration-1000">
+                <ResponsiveMediaFrame className="shadow-2xl shadow-primary/20">
                   <Image
                     src={service.image}
                     alt={service.imageAlt}
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-center motion-safe:animate-[service-zoom_1.6s_cubic-bezier(0.16,1,0.3,1)_both]"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 50vw"
                     priority
                   />
@@ -193,17 +194,23 @@ export default async function ServiceSlugPage({ params }: Props) {
         {/* What we deliver */}
         <section className="border-t bg-muted/20 px-4 py-10 sm:px-5 sm:py-14 lg:px-8">
           <div className="mx-auto max-w-7xl">
+            <Reveal>
             <h2 className="text-2xl font-bold text-foreground md:text-3xl">
               What We Deliver
             </h2>
             <p className="mt-2 max-w-prose leading-relaxed text-muted-foreground">
               Our engagement is tailored to your facility and goals. Here is what you can expect.
             </p>
+            </Reveal>
             <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-              {service.bullets.map((bullet) => (
-                <li key={bullet} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-                  <span className="text-muted-foreground">{bullet}</span>
+              {service.bullets.map((bullet, i) => (
+                <li key={bullet}>
+                  <Reveal delayMs={(i % 2) * 90} className="h-full">
+                    <div className="group flex h-full items-start gap-3 rounded-xl border border-white bg-card p-4 shadow-md ring-1 ring-border/60 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/15">
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary transition-transform duration-500 group-hover:scale-125" />
+                      <span className="text-muted-foreground">{bullet}</span>
+                    </div>
+                  </Reveal>
                 </li>
               ))}
             </ul>
@@ -221,13 +228,14 @@ export default async function ServiceSlugPage({ params }: Props) {
                 Hospitals that partner with us see measurable, lasting results.
               </p>
               <ul className="mt-8 space-y-4">
-                {service.outcomes.map((outcome) => (
-                  <li
-                    key={outcome}
-                    className="flex items-start gap-3 rounded-lg border bg-card p-4"
-                  >
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-                    <span className="text-foreground">{outcome}</span>
+                {service.outcomes.map((outcome, i) => (
+                  <li key={outcome}>
+                    <Reveal from="left" delayMs={i * 80}>
+                      <div className="group flex items-start gap-3 rounded-2xl border border-l-4 border-l-primary bg-gradient-to-r from-primary/[0.07] to-card p-4 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-1.5 hover:shadow-lg hover:shadow-primary/10">
+                        <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary transition-transform duration-500 group-hover:scale-125" />
+                        <span className="text-foreground">{outcome}</span>
+                      </div>
+                    </Reveal>
                   </li>
                 ))}
               </ul>
@@ -237,7 +245,7 @@ export default async function ServiceSlugPage({ params }: Props) {
 
         {/* CTA box */}
         <section className="border-t bg-foreground px-4 py-12 text-background sm:px-5 sm:py-14 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <Reveal className="mx-auto max-w-3xl text-center">
             <h2 className="text-2xl font-bold md:text-3xl">
               Ready to Get Started?
             </h2>
@@ -254,7 +262,7 @@ export default async function ServiceSlugPage({ params }: Props) {
                 {service.phoneLabel}
               </a>
             </p>
-          </div>
+          </Reveal>
         </section>
 
         {/* Related services */}
@@ -266,9 +274,9 @@ export default async function ServiceSlugPage({ params }: Props) {
             <p className="mt-2 text-muted-foreground">
               We offer end-to-end support for healthcare facilities in Nigeria and West Africa.
             </p>
-            <div className="mt-8">
+            <Reveal className="mt-8">
               <RelatedServices currentId={service.id} />
-            </div>
+            </Reveal>
             <div className="mt-8 text-center">
               <Button variant="outline" size="lg" asChild>
                 <Link href="/services">

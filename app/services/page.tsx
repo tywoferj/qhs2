@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/header"
+import { Reveal } from "@/components/reveal"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { ServiceConsultationCta, ConsultationCtaLink } from "@/components/service-consultation-cta"
@@ -42,18 +43,18 @@ export default function ServicesPage() {
         {/* Hero */}
         <section className="relative overflow-x-hidden bg-muted px-4 py-12 sm:px-5 sm:py-16 md:py-24 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-4 motion-safe:fill-mode-backwards motion-safe:duration-700 motion-safe:ease-out">
               What We Do
             </p>
-            <h1 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
+            <h1 style={{ animationDelay: "100ms" }} className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-4 motion-safe:fill-mode-backwards motion-safe:duration-700 motion-safe:ease-out">
               Healthcare consulting services for hospitals and health systems
             </h1>
-            <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+            <p style={{ animationDelay: "220ms" }} className="mt-4 max-w-2xl text-lg text-muted-foreground motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-4 motion-safe:fill-mode-backwards motion-safe:duration-700 motion-safe:ease-out">
               JCI and Society for Quality in Healthcare in Nigeria (SQHN) accreditation support, clinical strategy and governance, quality improvement and
               patient safety, healthcare strategy, medical training, and medical equipment sourcing—delivered
               for hospitals, diagnostic networks, and investors across Nigeria and West Africa.
             </p>
-            <div className="mt-8 flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div style={{ animationDelay: "340ms" }} className="mt-8 flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-4 motion-safe:fill-mode-backwards motion-safe:duration-700 motion-safe:ease-out">
               <ConsultationCtaLink className="w-full sm:w-auto">Request a consultation</ConsultationCtaLink>
               <Button
                 size="lg"
@@ -89,19 +90,20 @@ export default function ServicesPage() {
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
-                <div className={`min-w-0 w-full max-w-full ${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                  <ResponsiveMediaFrame>
+                <Reveal from={index % 2 === 1 ? "right" : "left"} className={`min-w-0 w-full max-w-full ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+                  <ResponsiveMediaFrame className="group shadow-2xl shadow-primary/15">
                     <Image
                       src={service.image}
                       alt={service.imageAlt}
                       fill
-                      className="object-cover object-center"
+                      className="object-cover object-center transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] motion-safe:group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 50vw"
                       loading="lazy"
                     />
+                    <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/15" />
                   </ResponsiveMediaFrame>
-                </div>
-                <div className={`min-w-0 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+                </Reveal>
+                <Reveal delayMs={120} from={index % 2 === 1 ? "left" : "right"} className={`min-w-0 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
                   <Link href={`/services/${service.id}`}>
                     <h2 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl hover:text-primary hover:underline">
                       {service.title}
@@ -117,13 +119,13 @@ export default function ServicesPage() {
                   ) : null}
                   <ul className="mt-6 space-y-3">
                     {service.bullets.map((bullet) => (
-                      <li key={bullet} className="flex items-start gap-3">
-                        <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
+                      <li key={bullet} className="group flex items-start gap-3 transition-transform duration-300 hover:translate-x-1">
+                        <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary transition-transform duration-300 group-hover:scale-125" />
                         <span className="text-sm text-muted-foreground">{bullet}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-8 rounded-xl border border-border/80 bg-muted/40 p-5 sm:p-6">
+                  <div className="mt-8 rounded-2xl border border-white bg-gradient-to-br from-primary/[0.08] via-card to-secondary/[0.08] p-5 shadow-lg ring-1 ring-border/60 transition-shadow duration-500 hover:shadow-xl hover:shadow-primary/15 sm:p-6">
                     <p className="mb-4 text-sm font-medium text-foreground">
                       {service.ctaSubtext}
                     </p>
@@ -140,7 +142,7 @@ export default function ServicesPage() {
                       </a>
                     </p>
                   </div>
-                </div>
+                </Reveal>
               </div>
             </section>
           ))}
@@ -148,7 +150,7 @@ export default function ServicesPage() {
 
         {/* Bottom CTA */}
         <section className="border-t bg-foreground px-4 py-12 text-background sm:px-5 sm:py-16 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <Reveal className="mx-auto max-w-3xl text-center">
             <h2 className="text-2xl font-bold md:text-3xl">
               Ready to Transform Your Facility?
             </h2>
@@ -162,7 +164,7 @@ export default function ServicesPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full border-background/35 bg-transparent text-background hover:bg-background/10 sm:w-auto"
+                className="w-full border-background/35 bg-transparent text-background hover:bg-background/10 hover:text-background sm:w-auto"
                 asChild
               >
                 <a href="tel:+12526914076" className="inline-flex items-center justify-center gap-2">
@@ -173,7 +175,7 @@ export default function ServicesPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full border-background/35 bg-transparent text-background hover:bg-background/10 sm:w-auto"
+                className="w-full border-background/35 bg-transparent text-background hover:bg-background/10 hover:text-background sm:w-auto"
                 asChild
               >
                 <a href="tel:+15732647695" className="inline-flex items-center justify-center gap-2">
@@ -187,7 +189,7 @@ export default function ServicesPage() {
                 ← Back to Home
               </Link>
             </p>
-          </div>
+          </Reveal>
         </section>
       </main>
       <Footer />
