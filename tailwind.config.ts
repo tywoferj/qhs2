@@ -71,6 +71,10 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-7px)' },
+        },
         'accordion-down': {
           from: {
             height: '0',
@@ -112,6 +116,7 @@ const config: Config = {
         },
       },
       animation: {
+        float: 'float 7s ease-in-out infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'consultation-success-in': 'consultation-success-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',

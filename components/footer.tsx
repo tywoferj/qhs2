@@ -1,172 +1,90 @@
 import Link from "next/link"
 import { MapPin, Phone, Mail } from "lucide-react"
 
-import { SERVICES } from "@/lib/services-data"
-
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Board", href: "/board" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ]
 
-const resourceLinks = [
-  { label: "Accreditation checklist", href: "/accreditation-checklist" },
-  { label: "Blog", href: "/blog" },
-  { label: "Brochures", href: "/brochures" },
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Cookie Policy", href: "/cookies" },
+  { label: "Terms of Service", href: "/terms-of-service" },
+  { label: "Sitemap", href: "/site-map" },
 ]
 
 export function Footer() {
   return (
     <footer className="bg-secondary pb-[4.5rem] text-secondary-foreground lg:pb-0">
-      <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
-          <div>
-            <Link href="/" className="inline-block">
-              <span className="text-xl font-bold text-secondary-foreground">
-                QHS Consultants Ltd
-              </span>
-              <span className="mt-0.5 block text-xs font-medium tracking-widest text-secondary-foreground/70 uppercase">
-                Quality Healthcare Services
-              </span>
-            </Link>
-            <p className="mt-4 text-sm leading-relaxed text-secondary-foreground/80">
-              Consultancy and advisory in healthcare strategy, clinical strategy,
-              medical training, healthcare quality, accreditation, clinical risk
-              and governance, and medical equipment sourcing.
-            </p>
-          </div>
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.4fr] lg:px-8">
+        <div>
+          <Link href="/" className="inline-block">
+            <span className="text-lg font-bold text-secondary-foreground">QHS Consultants Ltd</span>
+            <span className="mt-0.5 block text-[11px] font-medium uppercase tracking-widest text-secondary-foreground/70">
+              Quality Healthcare Services
+            </span>
+          </Link>
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-secondary-foreground/80">
+            Healthcare consultancy and advisory for Nigeria and West Africa.
+          </p>
+        </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-secondary-foreground/90">
-              Quick Links
-            </h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-secondary-foreground/80 transition-colors hover:text-secondary-foreground"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <h4 className="mb-4 mt-8 text-sm font-semibold uppercase tracking-wider text-secondary-foreground/90">
-              Resources
-            </h4>
-            <ul className="space-y-3">
-              {resourceLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-secondary-foreground/80 transition-colors hover:text-secondary-foreground"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-secondary-foreground/90">
-              Services
-            </h4>
-            <ul className="space-y-3">
-              {SERVICES.map((s) => (
-                <li key={s.id}>
-                  <Link
-                    href={`/services/${s.id}`}
-                    className="text-sm text-secondary-foreground/80 transition-colors hover:text-secondary-foreground"
-                  >
-                    {s.title}
-                  </Link>
-                </li>
-              ))}
-              <li>
+        <nav aria-label="Footer">
+          <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-secondary-foreground/90">Explore</h4>
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
+            {quickLinks.map((link) => (
+              <li key={link.href}>
                 <Link
-                  href="/services"
+                  href={link.href}
                   className="text-sm text-secondary-foreground/80 transition-colors hover:text-secondary-foreground"
                 >
-                  All services →
+                  {link.label}
                 </Link>
               </li>
-            </ul>
-          </div>
+            ))}
+          </ul>
+        </nav>
 
-          {/* Contact */}
-          <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-secondary-foreground/90">
-              Contact Us
-            </h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                <span className="text-sm text-secondary-foreground/80">
-                  57B, Hibiscus Street, M.K.O Abiola Gardens, C.B.D, Ikeja
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                <span className="text-sm text-secondary-foreground/80">
-                  Discuss services:{" "}
-                  <a href="tel:+12526914076" className="hover:text-secondary-foreground">+1 (252) 691 4076</a>
-                  <br />
-                  Book with Dr Onakoya:{" "}
-                  <a href="tel:+15732647695" className="hover:text-secondary-foreground">+1 (573) 264 7695</a>
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                <a
-                  href="mailto:contact@qhsconsultant.com"
-                  className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground"
-                >
-                  contact@qhsconsultant.com
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div className="sm:col-span-2 lg:col-span-1">
+          <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-secondary-foreground/90">Contact</h4>
+          <ul className="space-y-2.5 text-sm text-secondary-foreground/80">
+            <li className="flex items-start gap-2.5">
+              <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary-foreground/70" />
+              <span>57B, Hibiscus Street, M.K.O Abiola Gardens, C.B.D, Ikeja</span>
+            </li>
+            <li className="flex items-center gap-2.5">
+              <Phone className="h-4 w-4 flex-shrink-0 text-primary-foreground/70" />
+              <a href="tel:+12526914076" className="hover:text-secondary-foreground">+1 (252) 691 4076</a>
+            </li>
+            <li className="flex items-center gap-2.5">
+              <Mail className="h-4 w-4 flex-shrink-0 text-primary-foreground/70" />
+              <a href="mailto:contact@qhsconsultant.com" className="hover:text-secondary-foreground">
+                contact@qhsconsultant.com
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 
-      {/* Bottom bar */}
       <div className="border-t border-secondary-foreground/20">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 sm:flex-row lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-4 sm:flex-row lg:px-8">
           <p className="text-xs text-secondary-foreground/70">
-            {"© 2026 Quality Healthcare Services (QHS) Consultants Ltd. All rights reserved."}
+            © 2026 Quality Healthcare Services (QHS) Consultants Ltd.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-            <Link
-              href="/privacy-policy"
-              className="text-xs text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/cookies"
-              className="text-xs text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
-            >
-              Cookie Policy
-            </Link>
-            <Link
-              href="/site-map"
-              className="text-xs text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
-            >
-              Sitemap
-            </Link>
-            <Link
-              href="/terms-of-service"
-              className="text-xs text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
-            >
-              Terms of Service
-            </Link>
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-1">
+            {legalLinks.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="text-xs text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
+              >
+                {l.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
