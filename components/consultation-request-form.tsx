@@ -1,5 +1,6 @@
 "use client"
 
+import type { z } from "zod"
 import { useCallback, useMemo, useState } from "react"
 import { useForm, Controller } from "react-hook-form"
 import type { FieldErrors } from "react-hook-form"
@@ -94,7 +95,7 @@ export function ConsultationRequestForm({
     control,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<ConsultationFormValues>({
+  } = useForm<z.input<typeof consultationFormSchema>, unknown, ConsultationFormValues>({
     resolver: zodResolver(consultationFormSchema),
     defaultValues: defaults,
     mode: "onSubmit",

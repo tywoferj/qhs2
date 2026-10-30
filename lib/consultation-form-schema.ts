@@ -83,17 +83,16 @@ export const consultationFormSchema = z.object({
     .min(1, "Email is required")
     .max(200)
     .refine((v) => emailRegex.test(v), "Enter a valid email address"),
-  mobile: z.preprocess(
-    (v) => (typeof v === "string" ? v.replace(/\s/g, "").trim() : ""),
-    z
-      .string()
-      .min(8, "Enter a valid mobile number")
-      .max(22, "Number is too long")
-  ),
-  whatsapp: z.preprocess(
-    (v) => (typeof v === "string" ? v.replace(/\s/g, "").trim() : ""),
-    z.string().max(22, "Number is too long").optional().default("")
-  ),
+  mobile: z
+    .string()
+    .default("")
+    .transform((v) => v.replace(/\s/g, "").trim())
+    .pipe(z.string().min(8, "Enter a valid mobile number").max(22, "Number is too long")),
+  whatsapp: z
+    .string()
+    .default("")
+    .transform((v) => v.replace(/\s/g, "").trim())
+    .pipe(z.string().max(22, "Number is too long")),
   country: z.string().trim().max(100).optional().default(""),
   stateCity: z.string().trim().max(120).optional().default(""),
 
@@ -137,11 +136,11 @@ export const consultationFormSchema = z.object({
     .superRefine((val, ctx) => {
       if (val === CONSULTATION_SCHEDULE_WORKING_HOURS) return
       if (!/^\d{4}-\d{2}-\d{2}$/.test(val)) {
-        ctx.addIssue({ code: z.ZodIssueCode.custom, message: "Invalid date" })
+        ctx.addIssue({ code: "custom", message: "Invalid date" })
         return
       }
       if (!isTodayOrFutureDate(val)) {
-        ctx.addIssue({ code: z.ZodIssueCode.custom, message: "Choose today or a future date" })
+        ctx.addIssue({ code: "custom", message: "Choose today or a future date" })
       }
     }),
 
@@ -152,12 +151,12 @@ export const consultationFormSchema = z.object({
     .superRefine((val, ctx) => {
       if (val === CONSULTATION_SCHEDULE_WORKING_HOURS) return
       if (!/^([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$/.test(val)) {
-        ctx.addIssue({ code: z.ZodIssueCode.custom, message: "Invalid time" })
+        ctx.addIssue({ code: "custom", message: "Invalid time" })
       }
     }),
 
   consent: z
-    .boolean({ required_error: "Consent is required to submit" })
+    .boolean({ error: "Consent is required to submit" })
     .refine((v) => v === true, { message: "You must consent to being contacted by QHS Consultants Ltd" }),
 })
 
