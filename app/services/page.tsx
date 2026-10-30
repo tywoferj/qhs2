@@ -11,9 +11,9 @@ import { CheckCircle2, Phone } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Healthcare Consulting Services in Nigeria | JCI & SQHN Accreditation",
+  title: "Healthcare Consulting Services in Nigeria",
   description:
-    "Hospital and healthcare consulting in Nigeria and West Africa: JCI accreditation support, Society for Quality in Healthcare in Nigeria (SQHN) readiness, clinical risk and governance, quality improvement and patient safety, healthcare strategy, medical training, and medical equipment sourcing with ROI advisory. Lagos-based. Call +1 (252) 691 4076.",
+    "Hospital and healthcare consulting in Nigeria and West Africa: JCI and SQHN accreditation support, clinical governance, quality and patient safety, healthcare strategy, medical training and equipment sourcing. Call +1 (252) 691 4076.",
   keywords: [
     "healthcare consulting Nigeria",
     "hospital consulting Lagos",
@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     "hospital accreditation consultant",
   ],
   openGraph: {
+    images: [{ url: "/images/hero-slide-2.webp", width: 1200, height: 900, alt: "QHS Consultants Ltd healthcare consultancy" }],
     title: "Healthcare Consulting Services | QHS Consultants Ltd",
     description:
       "JCI and Society for Quality in Healthcare in Nigeria (SQHN) accreditation, quality and patient safety, clinical governance, healthcare strategy, medical training, and equipment sourcing for hospitals in Nigeria and West Africa.",
@@ -41,7 +42,7 @@ export default function ServicesPage() {
       <Header />
       <main id="main-content" className="min-h-screen bg-background">
         {/* Hero */}
-        <section className="relative overflow-x-hidden bg-muted px-4 py-12 sm:px-5 sm:py-16 md:py-24 lg:px-8">
+        <section className="relative overflow-x-hidden bg-muted px-4 py-9 sm:px-5 sm:py-12 md:py-16 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-4 motion-safe:fill-mode-backwards motion-safe:duration-700 motion-safe:ease-out">
               What We Do
@@ -78,12 +79,12 @@ export default function ServicesPage() {
         </section>
 
         {/* Service sections */}
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 sm:py-12 lg:px-8">
+        <div className="mx-auto max-w-7xl overflow-x-clip px-4 py-10 sm:px-5 sm:py-9 lg:px-8">
           {SERVICES.map((service, index) => (
             <section
               key={service.id}
               id={service.id}
-              className={`scroll-mt-24 py-10 sm:py-14 md:py-16 ${index > 0 ? "border-t border-border" : ""}`}
+              className={`scroll-mt-24 py-10 sm:py-10 md:py-12 ${index > 0 ? "border-t border-border" : ""}`}
             >
               <div
                 className={`grid gap-8 md:gap-10 lg:grid-cols-2 lg:items-start lg:gap-14 ${
@@ -149,7 +150,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Bottom CTA */}
-        <section className="border-t bg-foreground px-4 py-12 text-background sm:px-5 sm:py-16 lg:px-8">
+        <section className="border-t bg-foreground px-4 py-9 text-background sm:px-5 sm:py-12 lg:px-8">
           <Reveal className="mx-auto max-w-3xl text-center">
             <h2 className="text-2xl font-bold md:text-3xl">
               Ready to Transform Your Facility?

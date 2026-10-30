@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "Submit a consultation request to QHS Consultants Ltd. Hospital accreditation, clinical governance, quality, strategy, training, and equipment advisory in Nigeria and West Africa.",
   openGraph: {
+    images: [{ url: "/images/hero-slide-2.webp", width: 1200, height: 900, alt: "QHS Consultants Ltd healthcare consultancy" }],
     title: "Consultation Request | QHS Consultants Ltd",
     description:
       "Structured consultation form for healthcare institutions and partners across Nigeria and West Africa.",

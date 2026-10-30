@@ -31,7 +31,7 @@ import { Loader2 } from "lucide-react"
 import Link from "next/link"
 
 const selectClassName = cn(
-  "flex min-h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-base leading-normal ring-offset-background",
+  "flex min-h-11 w-full min-w-0 max-w-full truncate rounded-md border border-input bg-background px-3 py-2 text-base leading-normal ring-offset-background",
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
   "disabled:cursor-not-allowed disabled:opacity-50"
 )
@@ -181,7 +181,7 @@ export function ConsultationRequestForm({
         title="1. Contact information"
         description="How we can reach you about this consultation. Use country code for phone numbers."
       >
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-2 sm:col-span-2">
             <Label htmlFor="fullName" className={labelReadabilityClass}>
               Full name <span className="text-destructive">*</span>
@@ -375,7 +375,7 @@ export function ConsultationRequestForm({
         title="4. Organization details"
         description="Optional but helps us scope the conversation."
       >
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-2 sm:col-span-2">
             <Label htmlFor="facilityType" className={labelReadabilityClass}>
               Facility type
@@ -465,7 +465,7 @@ export function ConsultationRequestForm({
         title="6. Preferred date / time"
         description="Optional. Leave either or both blank and we will record them as working hours and schedule with you separately."
       >
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-2">
             <Label htmlFor="preferredDate" className={labelReadabilityClass}>
               Preferred consultation date

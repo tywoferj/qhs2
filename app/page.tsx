@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main id="main-content">
+      <main id="main-content" className="overflow-x-clip">
         <HeroSection />
         <ServicesGrid />
         <IndustriesSection />

@@ -31,8 +31,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getServiceBySlug(slug)
   if (!service) return { title: "Service Not Found" }
   const title = `${service.title} | QHS Consultants Ltd`
-  const description =
-    service.shortDescription + " Call +1 (252) 691 4076 to discuss."
+  const description = (
+    service.shortDescription +
+    " QHS Consultants Ltd supports hospitals and clinics across Nigeria and West Africa. Call +1 (252) 691 4076 to discuss."
+  ).slice(0, 300)
   const ogImage =
     typeof service.image === "string" && service.image.startsWith("/")
       ? `${BASE_URL}${service.image}`
@@ -139,7 +141,7 @@ export default async function ServiceSlugPage({ params }: Props) {
         </div>
 
         {/* Hero */}
-        <section className="relative overflow-x-hidden px-4 py-8 sm:py-12 md:py-16 sm:px-5 lg:px-8">
+        <section className="relative overflow-x-hidden px-4 py-8 sm:py-9 md:py-12 sm:px-5 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 md:gap-10 lg:grid-cols-2 lg:items-start lg:gap-12">
               <div className="min-w-0">
@@ -192,7 +194,7 @@ export default async function ServiceSlugPage({ params }: Props) {
         </section>
 
         {/* What we deliver */}
-        <section className="border-t bg-muted/20 px-4 py-10 sm:px-5 sm:py-14 lg:px-8">
+        <section className="border-t bg-muted/20 px-4 py-10 sm:px-5 sm:py-10 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <Reveal>
             <h2 className="text-2xl font-bold text-foreground md:text-3xl">
@@ -219,7 +221,7 @@ export default async function ServiceSlugPage({ params }: Props) {
 
         {/* Outcomes */}
         {service.outcomes && service.outcomes.length > 0 && (
-          <section className="px-4 py-10 sm:px-5 sm:py-14 lg:px-8">
+          <section className="px-4 py-10 sm:px-5 sm:py-10 lg:px-8">
             <div className="mx-auto max-w-7xl">
               <h2 className="text-2xl font-bold text-foreground md:text-3xl">
                 What You Gain
@@ -244,7 +246,7 @@ export default async function ServiceSlugPage({ params }: Props) {
         )}
 
         {/* CTA box */}
-        <section className="border-t bg-foreground px-4 py-12 text-background sm:px-5 sm:py-14 lg:px-8">
+        <section className="border-t bg-foreground px-4 py-9 text-background sm:px-5 sm:py-10 lg:px-8">
           <Reveal className="mx-auto max-w-3xl text-center">
             <h2 className="text-2xl font-bold md:text-3xl">
               Ready to Get Started?
@@ -266,7 +268,7 @@ export default async function ServiceSlugPage({ params }: Props) {
         </section>
 
         {/* Related services */}
-        <section className="px-4 py-10 sm:px-5 sm:py-14 lg:px-8">
+        <section className="px-4 py-10 sm:px-5 sm:py-10 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <h2 className="text-2xl font-bold text-foreground md:text-3xl">
               Explore More Services

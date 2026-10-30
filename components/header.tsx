@@ -180,7 +180,7 @@ export function Header() {
           </Link>
 
           <nav
-            className="hidden items-center gap-0.5 rounded-full border border-border/70 bg-muted/60 p-1 shadow-inner backdrop-blur lg:flex"
+            className="hidden items-center gap-0.5 rounded-full border border-border/70 bg-muted/60 p-1 shadow-inner backdrop-blur xl:flex"
             aria-label="Main navigation"
           >
             <NavLink href="/" active={is("/")}>Home</NavLink>
@@ -215,7 +215,7 @@ export function Header() {
             <NavLink href="/contact" active={is("/contact")}>Contact</NavLink>
           </nav>
 
-          <div className="hidden items-center gap-4 lg:flex">
+          <div className="hidden items-center gap-4 xl:flex">
             <a
               href="tel:+12526914076" aria-label="Call +1 252 691 4076"
               className="group/tel flex items-center gap-2.5 whitespace-nowrap text-sm font-semibold text-foreground"
@@ -223,7 +223,7 @@ export function Header() {
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 group-hover/tel:bg-primary group-hover/tel:text-primary-foreground motion-safe:group-hover/tel:rotate-12">
                 <Phone className="h-4 w-4" />
               </span>
-              <span className="hidden xl:inline">+1 (252) 691 4076</span>
+              <span className="hidden 2xl:inline">+1 (252) 691 4076</span>
             </a>
             <Link
               href="/consultation-request"
@@ -240,7 +240,7 @@ export function Header() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="-mr-2 flex h-11 w-11 items-center justify-center rounded-full text-foreground active:bg-muted lg:hidden"
+            className="-mr-2 flex h-11 w-11 items-center justify-center rounded-full text-foreground active:bg-muted xl:hidden"
             aria-label="Open menu"
             aria-expanded={mobileOpen}
           >

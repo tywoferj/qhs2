@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
   title: {
-    default: "Quality Healthcare Services (QHS) Consultants Ltd | Healthcare Consultancy Nigeria",
+    default: "QHS Consultants Ltd | Healthcare Consultancy & Accreditation, Nigeria",
     template: "%s | QHS Consultants Ltd",
   },
   description:

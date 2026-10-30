@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     "healthcare management West Africa",
   ],
   openGraph: {
+    images: [{ url: "/images/hero-slide-2.webp", width: 1200, height: 900, alt: "QHS Consultants Ltd healthcare consultancy" }],
     title: "Healthcare Insights and Blog | QHS Consultants Ltd",
     description:
       "Expert articles on accreditation, quality, safety, and operations for hospitals in Nigeria and West Africa.",
@@ -45,9 +46,9 @@ export default function BlogIndexPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="min-h-screen bg-muted py-16 lg:py-24">
+      <main id="main-content" className="min-h-screen bg-muted py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="mb-14 text-center">
+          <div className="mb-10 text-center">
             <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">Insights</p>
             <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">
               Healthcare Insights and Industry Expertise

@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const modifiedTime = post.updatedAt ? `${post.updatedAt}T12:00:00.000Z` : publishedTime
 
   return {
-    title: post.seoTitle,
+    title: { absolute: post.seoTitle.replace(/\s*\|\s*QHS Consultants Ltd\s*$/, "") },
     description: post.seoDescription,
     alternates: { canonical },
     openGraph: {
@@ -91,7 +91,7 @@ function renderBody(content: string) {
     flush(i)
     if (para.startsWith("**") && para.endsWith("**") && !para.slice(2, -2).includes("**")) {
       out.push(
-        <h2 key={i} className="mt-10 border-l-4 border-primary pl-3 text-xl font-semibold text-foreground md:text-2xl">
+        <h2 key={i} className="mt-8 border-l-4 border-primary pl-3 text-xl font-semibold text-foreground md:text-2xl">
           {para.replace(/\*\*/g, "")}
         </h2>
       )
@@ -176,7 +176,7 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </header>
 
-          <div className="relative mb-10 aspect-[16/10] overflow-hidden rounded-xl bg-muted">
+          <div className="relative mb-8 aspect-[16/10] overflow-hidden rounded-xl bg-muted">
             <Image
               src={post.image}
               alt={post.imageAlt}
@@ -193,7 +193,7 @@ export default async function BlogPostPage({ params }: Props) {
             {renderBody(post.content)}
           </div>
 
-          <div className="mt-10 rounded-xl border bg-muted/50 p-6">
+          <div className="mt-8 rounded-xl border bg-muted/50 p-6">
             <p className="mb-4 text-sm font-medium text-foreground">{post.cta}</p>
             <div className="flex flex-wrap items-center gap-4">
               <a
@@ -213,7 +213,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
 
           {related.length > 0 && (
-            <section aria-labelledby="related-heading" className="mt-12">
+            <section aria-labelledby="related-heading" className="mt-9">
               <h2 id="related-heading" className="mb-4 text-lg font-semibold text-foreground">Keep reading</h2>
               <ul className="grid gap-3 sm:grid-cols-3">
                 {related.map((r) => (
@@ -231,7 +231,7 @@ export default async function BlogPostPage({ params }: Props) {
             </section>
           )}
 
-          <footer className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t pt-6">
+          <footer className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t pt-6">
             <SocialShare
               url={`${baseUrl}/blog/${post.slug}`}
               title={post.title}

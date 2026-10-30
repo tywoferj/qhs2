@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   description:
     "Contact Quality Healthcare Services (QHS) Consultants Ltd. Discuss services on +1 (252) 691 4076 or book a specialist or advisory appointment on +1 (573) 264 7695. Ikeja, Lagos.",
   openGraph: {
+    images: [{ url: "/images/hero-slide-2.webp", width: 1200, height: 900, alt: "QHS Consultants Ltd healthcare consultancy" }],
     title: "Contact QHS Consultants Ltd | Healthcare Consultancy Nigeria",
     description:
       "Get in touch for JCI accreditation, hospital operations, and healthcare consulting. Lagos, Nigeria.",
@@ -26,7 +27,7 @@ export default function ContactPage() {
       <Header />
       <main id="main-content" className="min-h-screen bg-background">
         {/* Hero */}
-        <section className="relative overflow-hidden bg-muted px-4 py-16 md:py-24 lg:px-8">
+        <section className="relative overflow-hidden bg-muted px-4 py-12 md:py-16 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
               Contact Us
@@ -41,7 +42,7 @@ export default function ContactPage() {
         </section>
 
         {/* Content + image */}
-        <section className="px-4 py-16 lg:px-8">
+        <section className="px-4 py-12 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
               <Reveal className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted shadow-md">
@@ -120,7 +121,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="border-t px-4 py-12 lg:px-8">
+        <section className="border-t px-4 py-9 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <Link href="/" className="text-sm font-medium text-muted-foreground hover:text-primary">
               ← Back to Home

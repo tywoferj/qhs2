@@ -4,7 +4,7 @@ import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Terms of Service | QHS Consultants Ltd – Healthcare Consultancy Nigeria",
+  title: "Terms of Service",
   description:
     "Terms of service for Quality Healthcare Services (QHS) Consultants Ltd (Lagos State, Nigeria): website use, consultancy engagements, liability, governing law and courts of Lagos State, and dispute resolution.",
 }
@@ -19,7 +19,7 @@ export default function TermsOfServicePage() {
     <>
       <Header />
       <main id="main-content" className="min-h-screen bg-background">
-        <div className="mx-auto max-w-3xl px-4 py-16 lg:px-8">
+        <div className="mx-auto max-w-3xl px-4 py-12 lg:px-8">
           <Link
             href="/"
             className="mb-8 inline-block text-sm font-medium text-muted-foreground hover:text-primary"
@@ -41,7 +41,7 @@ export default function TermsOfServicePage() {
             located in <strong className="text-foreground">Lagos State, Nigeria</strong>.
           </p>
 
-          <div className="prose prose-neutral dark:prose-invert mt-10 max-w-none space-y-10">
+          <div className="prose prose-neutral dark:prose-invert mt-8 max-w-none space-y-10">
             <section>
               <h2 className="text-xl font-semibold text-foreground">1. Acceptance and eligibility</h2>
               <p className="text-muted-foreground">
@@ -332,7 +332,7 @@ export default function TermsOfServicePage() {
             </section>
           </div>
 
-          <p className="mt-12 text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-9 text-sm leading-relaxed text-muted-foreground">
             These Terms are not a substitute for legal advice. For organisation-specific questions, consult
             qualified counsel in your jurisdiction.
           </p>

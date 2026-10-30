@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description:
     "Quality Healthcare Services (QHS) Consultants Ltd: consultancy and advisory in healthcare strategy, clinical strategy, medical training, healthcare quality, accreditation, clinical risk and governance, and medical equipment sourcing. Call +1 (252) 691 4076.",
   openGraph: {
+    images: [{ url: "/images/hero-slide-2.webp", width: 1200, height: 900, alt: "QHS Consultants Ltd healthcare consultancy" }],
     title: "About QHS Consultants Ltd | Healthcare Consultancy Nigeria",
     description:
       "Consultancy and advisory in healthcare strategy, clinical strategy, medical training, healthcare quality, accreditation, clinical risk and governance, and medical equipment sourcing.",
@@ -32,7 +33,7 @@ export default function AboutPage() {
       <Header />
       <main id="main-content" className="min-h-screen bg-background">
         {/* Hero */}
-        <section className="relative overflow-hidden bg-muted px-4 py-16 md:py-24 lg:px-8">
+        <section className="relative overflow-hidden bg-muted px-4 py-12 md:py-16 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
               About Us
@@ -47,7 +48,7 @@ export default function AboutPage() {
         </section>
 
         {/* Story + image */}
-        <section className="px-4 py-12 sm:px-5 sm:py-16 lg:px-8">
+        <section className="px-4 py-9 sm:px-5 sm:py-12 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-10 sm:gap-12 lg:grid-cols-2 lg:items-start">
               <div className="relative aspect-[4/3] w-full min-w-0 max-w-full overflow-hidden rounded-2xl bg-muted shadow-sm ring-1 ring-border/30">
@@ -75,14 +76,14 @@ export default function AboutPage() {
         </section>
 
         {/* Highlights */}
-        <section className="border-t bg-muted/20 px-4 py-14 lg:px-8">
+        <section className="border-t bg-muted/20 px-4 py-10 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <AboutHighlights />
           </div>
         </section>
 
         {/* Values */}
-        <section className="px-4 py-14 lg:px-8">
+        <section className="px-4 py-10 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <h2 className="text-2xl font-bold text-foreground md:text-3xl">
               What We Stand For
@@ -99,7 +100,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA */}
-        <section className="border-t bg-foreground px-4 py-16 text-background lg:px-8">
+        <section className="border-t bg-foreground px-4 py-12 text-background lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-2xl font-bold md:text-3xl">
               Let’s Work Together

@@ -20,7 +20,7 @@ export default function ConsultationThankYouPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="min-h-[70vh] bg-background px-4 py-16 sm:px-5 sm:py-24 lg:px-8">
+      <main id="main-content" className="min-h-[70vh] bg-background px-4 py-12 sm:px-5 sm:py-16 lg:px-8">
         <div className="mx-auto max-w-lg text-center">
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
             <CheckCircle2 className="h-9 w-9" aria-hidden />
@@ -39,7 +39,7 @@ export default function ConsultationThankYouPage() {
             </a>
             .
           </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Button className="w-full bg-primary text-primary-foreground sm:w-auto" asChild>
               <Link href="/">Back to home</Link>
             </Button>

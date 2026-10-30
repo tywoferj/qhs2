@@ -35,9 +35,9 @@ const features = [
 
 export function FeaturedServices() {
   return (
-    <section className="bg-gradient-to-br from-secondary/[0.08] via-muted to-primary/[0.08] py-14 sm:py-20 lg:py-28">
+    <section className="bg-gradient-to-br from-secondary/[0.08] via-muted to-primary/[0.08] py-10 sm:py-14 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <Reveal className="mb-14 text-center">
+        <Reveal className="mb-10 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
             Featured Expertise
           </p>
@@ -48,9 +48,9 @@ export function FeaturedServices() {
 
         <div className="grid auto-rows-fr gap-8 lg:grid-cols-2">
           {features.map((feature, idx) => (
-            <Reveal key={feature.title} delayMs={idx * 90} className="h-full">
+            <Reveal key={feature.title} delayMs={idx * 90} className="h-full min-w-0">
             <div
-              className={`relative flex h-full flex-col overflow-hidden rounded-2xl p-8 shadow-sm transition-all duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-xl md:p-10 ${
+              className={`relative flex h-full flex-col overflow-hidden rounded-2xl p-6 shadow-sm sm:p-8 transition-all duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-xl md:p-10 ${
                 idx === 0
                   ? "bg-primary text-primary-foreground"
                   : "bg-foreground text-background"
@@ -93,8 +93,8 @@ export function FeaturedServices() {
                   size="lg"
                   className={
                     idx === 0
-                      ? "mt-auto bg-primary-foreground text-primary shadow-sm transition-all duration-200 hover:bg-primary-foreground/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md"
-                      : "mt-auto bg-background text-foreground shadow-sm transition-all duration-200 hover:bg-background/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md"
+                      ? "mt-auto h-auto whitespace-normal py-3 text-center bg-primary-foreground text-primary shadow-sm transition-all duration-200 hover:bg-primary-foreground/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md"
+                      : "mt-auto h-auto whitespace-normal py-3 text-center bg-background text-foreground shadow-sm transition-all duration-200 hover:bg-background/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md"
                   }
                   asChild
                 >

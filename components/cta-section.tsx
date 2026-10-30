@@ -8,7 +8,7 @@ const PHONE_APPOINTMENT = "+15732647695"
 
 export function CtaSection() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-foreground py-14 sm:py-20 lg:py-28">
+    <section id="contact" className="relative overflow-hidden bg-foreground py-10 sm:py-14 lg:py-20">
       <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-primary/10" />
       <div className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-secondary/10" />
 

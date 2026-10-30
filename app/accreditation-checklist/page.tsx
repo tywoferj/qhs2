@@ -6,7 +6,7 @@ import { CheckCircle2, Phone } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Hospital Accreditation Checklist | JCI & Society for Quality in Healthcare in Nigeria (SQHN) Readiness",
+  title: "Hospital Accreditation Checklist",
   description:
     "A practical accreditation readiness checklist for Nigerian hospitals: governance, documentation, mock surveys, tracer readiness, and continuous improvement for JCI and Society for Quality in Healthcare in Nigeria (SQHN).",
   keywords: [
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "healthcare documentation standards",
   ],
   openGraph: {
+    images: [{ url: "/images/hero-slide-2.webp", width: 1200, height: 900, alt: "QHS Consultants Ltd healthcare consultancy" }],
     title: "Accreditation Readiness Checklist | QHS Consultants Ltd",
     description:
       "High-level checklist to prepare your hospital for JCI, Society for Quality in Healthcare in Nigeria (SQHN), and related quality surveys.",
@@ -63,7 +64,7 @@ export default function AccreditationChecklistPage() {
     <>
       <Header />
       <main id="main-content" className="min-h-screen bg-background">
-        <section className="border-b bg-muted px-4 py-16 md:py-20 lg:px-8">
+        <section className="border-b bg-muted px-4 py-12 md:py-14 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
               Resources
@@ -89,9 +90,9 @@ export default function AccreditationChecklistPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-3xl px-4 py-16 lg:px-8">
+        <section className="mx-auto max-w-3xl px-4 py-12 lg:px-8">
           {checklistSections.map((section) => (
-            <div key={section.title} className="mb-12 last:mb-0">
+            <div key={section.title} className="mb-9 last:mb-0">
               <h2 className="text-xl font-semibold text-foreground">{section.title}</h2>
               <ul className="mt-4 space-y-3">
                 {section.items.map((item) => (

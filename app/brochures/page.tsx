@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     "JCI accreditation consulting",
   ],
   openGraph: {
+    images: [{ url: "/images/hero-slide-2.webp", width: 1200, height: 900, alt: "QHS Consultants Ltd healthcare consultancy" }],
     title: "Brochures | QHS Consultants Ltd",
     description: "Request printed or PDF brochures outlining our healthcare consultancy services.",
   },
@@ -34,7 +35,7 @@ export default function BrochuresPage() {
     <>
       <Header />
       <main id="main-content" className="min-h-screen bg-background">
-        <section className="border-b bg-muted px-4 py-16 md:py-20 lg:px-8">
+        <section className="border-b bg-muted px-4 py-12 md:py-14 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
               Resources
@@ -49,7 +50,7 @@ export default function BrochuresPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-2xl px-4 py-16 lg:px-8">
+        <section className="mx-auto max-w-2xl px-4 py-12 lg:px-8">
           <div className="rounded-2xl border bg-card p-8 shadow-sm">
             <div className="mb-6 flex justify-center">
               <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">

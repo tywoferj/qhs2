@@ -60,11 +60,11 @@ const industries: Industry[] = [
 export function IndustriesSection() {
   return (
     <section
-      className="border-t border-border bg-gradient-to-b from-secondary/[0.06] via-background to-primary/[0.06] py-14 sm:py-20 lg:py-28"
+      className="border-t border-border bg-gradient-to-b from-secondary/[0.06] via-background to-primary/[0.06] py-10 sm:py-14 lg:py-20"
       aria-labelledby="industries-heading"
     >
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="mx-auto mb-12 max-w-2xl text-center lg:mb-14">
+        <div className="mx-auto mb-9 max-w-2xl text-center lg:mb-10">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
             Who We Work With
           </p>
@@ -158,7 +158,7 @@ export function IndustriesSection() {
           })}
         </ul>
 
-        <div className="mt-12 flex justify-center lg:mt-14">
+        <div className="mt-9 flex justify-center lg:mt-10">
           <Button
             size="lg"
             className="bg-primary text-primary-foreground shadow-sm transition-all duration-200 hover:bg-primary/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md"

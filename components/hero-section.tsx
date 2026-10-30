@@ -14,7 +14,7 @@ export function HeroSection() {
     <section className="relative overflow-hidden bg-gradient-to-br from-primary/[0.12] via-background to-secondary/[0.12]">
       <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
       <div aria-hidden className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-secondary/15 blur-3xl" />
-      <div className="mx-auto flex max-w-7xl min-w-0 flex-col items-center gap-8 px-4 pb-10 pt-8 sm:px-5 sm:py-14 md:py-20 lg:flex-row lg:items-start lg:gap-10 lg:px-8">
+      <div className="mx-auto flex max-w-7xl min-w-0 flex-col items-center gap-8 px-4 pb-10 pt-8 sm:px-5 sm:py-10 md:py-14 lg:flex-row lg:items-start lg:gap-10 lg:px-8">
         {/* Left content */}
         <Reveal className="min-w-0 w-full flex-1 lg:max-w-[58%]">
           <p className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">

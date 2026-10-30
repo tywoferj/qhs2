@@ -48,7 +48,7 @@ export default function SitemapPage() {
     <>
       <Header />
       <main id="main-content" className="min-h-screen bg-background">
-        <section className="bg-muted px-4 py-12 md:py-20 lg:px-8">
+        <section className="bg-muted px-4 py-9 md:py-14 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">Site map</p>
             <h1 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl">
@@ -65,7 +65,7 @@ export default function SitemapPage() {
           </div>
         </section>
 
-        <section className="px-4 py-12 lg:px-8 lg:py-16">
+        <section className="px-4 py-9 lg:px-8 lg:py-12">
           <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-3">
             {groups.map((g, i) => (
               <Reveal key={g.title} delayMs={i * 60}>

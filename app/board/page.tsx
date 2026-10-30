@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     "Meet the Board of Directors of Quality Healthcare Services (QHS) Consultants Ltd. Experienced leaders in healthcare, engineering, and business.",
   alternates: { canonical: "/board" },
   openGraph: {
+    images: [{ url: "/images/hero-slide-2.webp", width: 1200, height: 900, alt: "QHS Consultants Ltd healthcare consultancy" }],
     title: "Board of Directors | QHS Consultants Ltd",
     description:
       "Leadership team of QHS Consultants Ltd – healthcare strategy, clinical governance, and consultancy excellence.",
@@ -74,7 +75,7 @@ export default function BoardPage() {
     <>
       <Header />
       <main id="main-content" className="min-h-screen bg-background">
-        <section className="relative overflow-hidden bg-muted px-4 py-14 md:py-20 lg:px-8">
+        <section className="relative overflow-hidden bg-muted px-4 py-10 md:py-14 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
               Governance
@@ -88,7 +89,7 @@ export default function BoardPage() {
           </div>
         </section>
 
-        <section className="px-4 py-14 lg:px-8">
+        <section className="px-4 py-10 lg:px-8">
           <BoardClient directors={directors} />
         </section>
       </main>

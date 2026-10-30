@@ -4,7 +4,7 @@ import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | QHS Consultants Ltd – Healthcare Consultancy Nigeria",
+  title: "Privacy Policy",
   description:
     "Privacy policy for Quality Healthcare Services (QHS) Consultants Ltd (Lagos State, Nigeria): NDPA 2023, NDPC, data breach handling under Nigerian and Lagos State law, GDPR where applicable, and your rights.",
 }
@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
     <>
       <Header />
       <main id="main-content" className="min-h-screen bg-background">
-        <div className="mx-auto max-w-3xl px-4 py-16 lg:px-8">
+        <div className="mx-auto max-w-3xl px-4 py-12 lg:px-8">
           <Link
             href="/"
             className="mb-8 inline-block text-sm font-medium text-muted-foreground hover:text-primary"
@@ -50,7 +50,7 @@ export default function PrivacyPolicyPage() {
             and the <strong className="text-foreground">UK GDPR</strong> (as retained in United Kingdom law).
           </p>
 
-          <div className="prose prose-neutral dark:prose-invert mt-10 max-w-none space-y-10">
+          <div className="prose prose-neutral dark:prose-invert mt-8 max-w-none space-y-10">
             <section>
               <h2 className="text-xl font-semibold text-foreground">1. Who we are (data controller)</h2>
               <p className="text-muted-foreground">
@@ -378,7 +378,7 @@ export default function PrivacyPolicyPage() {
             </section>
           </div>
 
-          <p className="mt-12 text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-9 text-sm leading-relaxed text-muted-foreground">
             By using our website or engaging with us, you acknowledge that you have read this Privacy Policy. For
             legal advice specific to your organisation, consult qualified counsel; this policy is not a substitute
             for professional legal advice.

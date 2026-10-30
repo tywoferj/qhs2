@@ -42,9 +42,9 @@ const iconMap: Record<string, LucideIcon> = {
 
 export function ServicesGrid() {
   return (
-    <section id="services" className="bg-gradient-to-b from-background via-primary/[0.05] to-background py-14 sm:py-20 lg:py-28">
+    <section id="services" className="bg-gradient-to-b from-background via-primary/[0.05] to-background py-10 sm:py-14 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <Reveal className="mb-14 text-center">
+        <Reveal className="mb-10 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
             What We Do
           </p>
