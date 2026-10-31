@@ -19,7 +19,7 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-secondary pb-[4.5rem] text-secondary-foreground xl:pb-0">
+    <footer className="bg-secondary pb-[4.5rem] text-secondary-foreground lg:pb-0">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.4fr] lg:px-8">
         <div>
           <Link href="/" className="inline-block">

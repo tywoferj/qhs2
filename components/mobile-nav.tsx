@@ -45,7 +45,7 @@ export function MobileNav({ open, onClose, resourceLinks }: MobileNavProps) {
 
   return (
     <div
-      className={cn("fixed inset-0 z-[110] overflow-hidden xl:hidden", open ? "visible" : "pointer-events-none invisible delay-300")}
+      className={cn("fixed inset-0 z-[110] overflow-hidden lg:hidden", open ? "visible" : "pointer-events-none invisible delay-300")}
       aria-hidden={!open}
     >
       <button

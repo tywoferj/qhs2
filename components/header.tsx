@@ -16,7 +16,7 @@ const resourceLinks = [
 ] as const
 
 const linkBase =
-  "relative flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-2 text-[12px] xl:px-4 xl:text-[13px] font-semibold uppercase tracking-[0.08em] transition-colors duration-300"
+  "relative flex items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 py-2 text-[11.5px] xl:px-4 xl:text-[13px] font-semibold uppercase tracking-[0.08em] transition-colors duration-300"
 
 function NavLink({ href, active, children }: { href: string; active: boolean; children: ReactNode }) {
   return (
@@ -173,14 +173,14 @@ export function Header() {
             </div>
             <div className="flex flex-col">
               <span className="whitespace-nowrap text-base font-bold tracking-tight text-primary sm:text-xl">QHS Consultants Ltd</span>
-              <span className="hidden text-[11px] font-medium uppercase tracking-widest text-muted-foreground sm:block">
+              <span className="hidden text-[11px] font-medium uppercase tracking-widest text-muted-foreground sm:block lg:hidden xl:block">
                 Quality Healthcare Services
               </span>
             </div>
           </Link>
 
           <nav
-            className="hidden items-center gap-0.5 rounded-full border border-border/70 bg-muted/60 p-1 shadow-inner backdrop-blur xl:flex"
+            className="hidden items-center gap-0.5 rounded-full border border-border/70 bg-muted/60 p-1 shadow-inner backdrop-blur lg:flex"
             aria-label="Main navigation"
           >
             <NavLink href="/" active={is("/")}>Home</NavLink>
@@ -215,10 +215,10 @@ export function Header() {
             <NavLink href="/contact" active={is("/contact")}>Contact</NavLink>
           </nav>
 
-          <div className="hidden items-center gap-4 xl:flex">
+          <div className="hidden items-center gap-4 lg:flex">
             <a
               href="tel:+12526914076" aria-label="Call +1 252 691 4076"
-              className="group/tel flex items-center gap-2.5 whitespace-nowrap text-sm font-semibold text-foreground"
+              className="group/tel hidden items-center xl:flex gap-2.5 whitespace-nowrap text-sm font-semibold text-foreground"
             >
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 group-hover/tel:bg-primary group-hover/tel:text-primary-foreground motion-safe:group-hover/tel:rotate-12">
                 <Phone className="h-4 w-4" />
@@ -227,7 +227,7 @@ export function Header() {
             </a>
             <Link
               href="/consultation-request"
-              className="group/cta relative inline-flex h-11 items-center gap-2 whitespace-nowrap overflow-hidden rounded-full bg-gradient-to-r from-primary to-[hsl(165_55%_30%)] px-6 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary/40 motion-safe:hover:-translate-y-0.5"
+              className="group/cta relative inline-flex h-11 items-center gap-2 whitespace-nowrap overflow-hidden rounded-full bg-gradient-to-r from-primary to-[hsl(165_55%_30%)] px-4 xl:px-6 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary/40 motion-safe:hover:-translate-y-0.5"
             >
               <span
                 aria-hidden
@@ -240,7 +240,7 @@ export function Header() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="-mr-2 flex h-11 w-11 items-center justify-center rounded-full text-foreground active:bg-muted xl:hidden"
+            className="-mr-2 flex h-11 w-11 items-center justify-center rounded-full text-foreground active:bg-muted lg:hidden"
             aria-label="Open menu"
             aria-expanded={mobileOpen}
           >
